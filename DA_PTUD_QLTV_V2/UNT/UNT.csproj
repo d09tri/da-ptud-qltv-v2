@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>0fe5c163-8c9a-4162-9110-591c4db5f926</ProjectGuid>
+    <ProjectGuid>{8940F370-BD90-41C1-B879-87EB67339E0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UNT</RootNamespace>
@@ -50,8 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest_XuLyChuoi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTL\UTL.csproj">
+      <Project>{3bcde69d-ab6a-4aa8-b9bf-989163f4299b}</Project>
+      <Name>UTL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
