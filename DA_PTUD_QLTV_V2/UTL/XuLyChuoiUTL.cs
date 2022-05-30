@@ -9,10 +9,11 @@ namespace UTL
     public class XuLyChuoiUTL
     {
         /// <summary>
-        /// 
+        /// Tạo tên viết từ tên thể loại, sách và được sử dụng cho việc
+        /// sinh ra mã của bản in của đầu sách đó, thuộc thể loại đó
         /// </summary>
-        /// <param name="tenDayDu"></param>
-        /// <param name="doDai"></param>
+        /// <param name="tenDayDu">Tên đầy đủ để chuyển sang tên viết tắt</param>
+        /// <param name="doDai">Số lượng chữ cái viết tắt</param>
         /// <returns></returns>
         public string TaoTenVietTat(string tenDayDu, int doDai)
         {
