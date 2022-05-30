@@ -9,24 +9,22 @@ namespace UTL
     public class XuLyChuoiUTL
     {
         /// <summary>
-        /// Một đầu sách bao gồm nhiều bản in vì vậy mỗi bản in sẽ có một mã bản in khác nhau
-        /// Mã bản in có cấu trúc như sau: tên viết tắt thể loại (2 chữ cái) của đầu sách bản in đó_số thứ tự
-        /// Ví dụ: 
-        /// Thể loại chính trị - pháp luật, bản in số thứ tự 1 -> CT_001
+        /// 
         /// </summary>
-        /// <param name="tenTheLoai">Tên thể loại</param>
-        /// <returns>Tên viết tắt thể loại</returns>
-        public string TaoTenVietTatTheLoai(string tenTheLoai)
+        /// <param name="tenDayDu"></param>
+        /// <param name="doDai"></param>
+        /// <returns></returns>
+        public string TaoTenVietTat(string tenDayDu, int doDai)
         {
-            string maTheLoai = string.Empty;
-            string[] arrTenTheLoai = tenTheLoai.Split(' ');
+            string tenVietTat = string.Empty;
+            string[] arrTu = tenDayDu.Split(' ');
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < doDai; i++)
             {
-                maTheLoai += arrTenTheLoai[i].Substring(0, 1);
+                tenVietTat += arrTu[i].Substring(0, 1);
             }
 
-            return maTheLoai;
+            return tenVietTat;
         }
     }
 }
