@@ -51,12 +51,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest_XuLyChuoi.cs" />
+    <Compile Include="UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UTL\UTL.csproj">
-      <Project>{3bcde69d-ab6a-4aa8-b9bf-989163f4299b}</Project>
-      <Name>UTL</Name>
+    <ProjectReference Include="..\GUI\GUI.csproj">
+      <Project>{ae42d668-e1b5-4f0b-8089-8c5d4ec22602}</Project>
+      <Name>GUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

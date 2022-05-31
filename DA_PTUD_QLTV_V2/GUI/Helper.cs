@@ -38,7 +38,7 @@ namespace GUI
         public string LayDuongDanAnhBia()
         {
             string curDirect = Environment.CurrentDirectory;
-            string direct = curDirect.Substring(0, curDirect.Length - 9) + "Resources/AnhBia";
+            string direct = curDirect.Substring(0, curDirect.Length - 9) + "Resources/AnhBia/";
             return direct;
         }
     }

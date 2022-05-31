@@ -45,14 +45,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest.Designer.cs">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTrangChu.Designer.cs">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmTest.resx">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,10 +93,97 @@
       <Project>{3436fb88-284f-42bd-997f-4307ac7197c3}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{a211ecc7-0415-4270-8dac-b5d98645377c}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{038acd6d-e1e4-4cf6-9a85-5be0d63c467d}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\AnhBia\Ban-chat-cua-doi-tra.jpg" />
+    <Content Include="Resources\AnhBia\Ban-ve-tu-do.jpg" />
+    <Content Include="Resources\AnhBia\Ben-rang-tuyet-son.jpg" />
+    <Content Include="Resources\AnhBia\Bo-cau-di-tim-ba.jpg" />
+    <Content Include="Resources\AnhBia\Bo-luat-hinh-su.jpg" />
+    <Content Include="Resources\AnhBia\Bo-luat-lao-dong-2019.jpg" />
+    <Content Include="Resources\AnhBia\Bo-luat-to-tung-hinh-su-2015.jpg" />
+    <Content Include="Resources\AnhBia\bo-sach-vung-dat-nam-bo-qua-trinh-hinh-thanh-va-phat-trien.jpg" />
+    <Content Include="Resources\AnhBia\Bup-sen-xanh.jpg" />
+    <Content Include="Resources\AnhBia\Calling-you.jpg" />
+    <Content Include="Resources\AnhBia\canh-dong-bat-tan.jpg" />
+    <Content Include="Resources\AnhBia\Charlotte-va-wilbur.jpg" />
+    <Content Include="Resources\AnhBia\Chu-be-mang-pyjama-soc-2018.jpg" />
+    <Content Include="Resources\AnhBia\Chung-ta-quyet-dinh-nhu-the-nao.jpg" />
+    <Content Include="Resources\AnhBia\Chuyen-nay-chuyen-kia.jpg" />
+    <Content Include="Resources\AnhBia\Con-meo-day-hai-au-bay.jpg" />
+    <Content Include="Resources\AnhBia\Con-yeu-bo.jpg" />
+    <Content Include="Resources\AnhBia\cuon-sach-van-minh-trung-hoa.jpg" />
+    <Content Include="Resources\AnhBia\Dang-do.jpg" />
+    <Content Include="Resources\AnhBia\Dat-rung-phuong-nam.jpg" />
+    <Content Include="Resources\AnhBia\Dau-chan-tren-cat-2020.jpg" />
+    <Content Include="Resources\AnhBia\De-men-phieu-luu-ky-2019.jpg" />
+    <Content Include="Resources\AnhBia\di-tim-le-song.jpg" />
+    <Content Include="Resources\AnhBia\Diem-bung-phat.jpg" />
+    <Content Include="Resources\AnhBia\Doc-vi-bat-ki-ai.jpg" />
+    <Content Include="Resources\AnhBia\ha-noi-bam-sau-pho-phuong.jpg" />
+    <Content Include="Resources\AnhBia\Hoang-tu-be-2019.jpg" />
+    <Content Include="Resources\AnhBia\Housemates.jpg" />
+    <Content Include="Resources\AnhBia\Kho-khan-nhu-chan-meo.jpg" />
+    <Content Include="Resources\AnhBia\Khong-diet-khong-sinh-dung-so-hai.jpg" />
+    <Content Include="Resources\AnhBia\Luat-hon-nhan-va-gia-dinh.jpg" />
+    <Content Include="Resources\AnhBia\Luat-kinh-doanh-bat-dong-san.jpg" />
+    <Content Include="Resources\AnhBia\Luat-thuong-mai.jpg" />
+    <Content Include="Resources\AnhBia\Luat-to-tung-dan-su.jpg" />
+    <Content Include="Resources\AnhBia\Luat-to-tung-hanh-chinh.jpg" />
+    <Content Include="Resources\AnhBia\Muon-an-duoc-an.jpg" />
+    <Content Include="Resources\AnhBia\Muon-kiep-nhan-sinh.jpg" />
+    <Content Include="Resources\AnhBia\Nang-doan-kim-cuong-2020.jpg" />
+    <Content Include="Resources\AnhBia\Nghich-ly-cua-su-lua-chon.jpg" />
+    <Content Include="Resources\AnhBia\Nhat-ky-cua-mot-co-nang-tu-lap.jpg" />
+    <Content Include="Resources\AnhBia\Nho-cau-hat-luon.jpg" />
+    <Content Include="Resources\AnhBia\Nhung-don-tam-lý-trong-thuyet-phuc.jpg" />
+    <Content Include="Resources\AnhBia\nhung-ngay-tho-au.jpg" />
+    <Content Include="Resources\AnhBia\Nhung-noi-so-sau-tham.jpg" />
+    <Content Include="Resources\AnhBia\Osho-uom-mam.jpg" />
+    <Content Include="Resources\AnhBia\pippy-tat-dai.jpg" />
+    <Content Include="Resources\AnhBia\Pocco-o-the-gioi-udon-chap1.jpg" />
+    <Content Include="Resources\AnhBia\ReLife-chap13.jpg" />
+    <Content Include="Resources\AnhBia\Rung-huong.jpg" />
+    <Content Include="Resources\AnhBia\Ruot-oi-la-ruot.jpg" />
+    <Content Include="Resources\AnhBia\sach-12-xu-huong-cong-nghe-trong-thoi-dai-4.0.png" />
+    <Content Include="Resources\AnhBia\sach-6-phat-minh-lam-nen-thoi-da.png" />
+    <Content Include="Resources\AnhBia\sach-cam-nang-le-hoi-truyen-thong-viet-nam.jpg" />
+    <Content Include="Resources\AnhBia\sach-cuoc-chien-cong-nghe-so.png" />
+    <Content Include="Resources\AnhBia\sach-cuoc-doi-bat-tu-cua-henrietta-lacks.png" />
+    <Content Include="Resources\AnhBia\sach-danh-ngon-cua-chu-tich-ho-chi-minh.jpg" />
+    <Content Include="Resources\AnhBia\sach-dau-an-lich-su-cua-viet-nam-tren-bien-dong.jpg" />
+    <Content Include="Resources\AnhBia\sach-di-san-van-hoa-dong-ho-nhung-den-tho-lang-va-cung-dien-ho-nguyen-viet-nam.jpg" />
+    <Content Include="Resources\AnhBia\sach-dk-thuyet-minh-truc-quan-nhat-ve-khoa-hoc.png" />
+    <Content Include="Resources\AnhBia\sach-elon-musk-tesla.png" />
+    <Content Include="Resources\AnhBia\sach-fintech-4.0.png" />
+    <Content Include="Resources\AnhBia\sach-ky-tich-duong-ho-chi-minh-tren-bien.jpg" />
+    <Content Include="Resources\AnhBia\sach-lich-su-quan-su-viet-nam-.jpg" />
+    <Content Include="Resources\AnhBia\sach-luoc-su-thoi-gian.png" />
+    <Content Include="Resources\AnhBia\sach-nghi-le-tho-cung-co-truyen-cua-nguoi-viet.jpg" />
+    <Content Include="Resources\AnhBia\sach-thanh-pho-thong-minh-nen-tang-nguyen-ly.png" />
+    <Content Include="Resources\AnhBia\sach-vat-lieu-va-thiet-bi-nano.png" />
+    <Content Include="Resources\AnhBia\So-do.jpg" />
+    <Content Include="Resources\AnhBia\Suc-manh-tiem-thuc.jpg" />
+    <Content Include="Resources\AnhBia\Tam-li-hoc.jpg" />
+    <Content Include="Resources\AnhBia\Tam-ly-hoc-hai-huoc.jpg" />
+    <Content Include="Resources\AnhBia\Thien-osho.jpg" />
+    <Content Include="Resources\AnhBia\Thua-ke-tai-san-nha-dat.jpg" />
+    <Content Include="Resources\AnhBia\Thuc-hanh-thien-dinh.jpg" />
+    <Content Include="Resources\AnhBia\Thuong_nho_muoi_hai.jpg" />
+    <Content Include="Resources\AnhBia\tim-hieu-di-tich-lich-su-cac-nha-tu-trong-cuoc-khang-chien-chong-phap-va-my.jpg" />
+    <Content Include="Resources\AnhBia\Tinh-chieu.jpg" />
+    <Content Include="Resources\AnhBia\Truyen-co-tich-cua-anh-em-grim.jpg" />
+    <Content Include="Resources\AnhBia\Tuyen-tap-trieu-kim-van.jpg" />
+    <Content Include="Resources\AnhBia\Vo-nga-va-luan-hoi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

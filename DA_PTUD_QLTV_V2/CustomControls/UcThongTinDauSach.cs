@@ -16,5 +16,15 @@ namespace CustomControls
         {
             InitializeComponent();
         }
+
+        public void LoadThongTinDauSach(string tenSach, string theLoai, string tacGia, string nhaXuatBan, string namXuatBan, Image anhBia)
+        {
+            lblTenSach.Text = tenSach;
+            lblTheLoai.Text = theLoai;
+            lblTacGia.Text = tacGia;
+            lblNhaXuatBan.Text = nhaXuatBan;
+            lblNamXuatBan.Text = namXuatBan;
+            pcbAnhBia.Image = anhBia;
+        }
     }
 }
