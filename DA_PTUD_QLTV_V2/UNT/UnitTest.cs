@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UTL;
+using GUI;
 
 namespace UNT
 {
@@ -10,11 +10,11 @@ namespace UNT
     /// Summary description for UnitTest_XuLyChuoi
     /// </summary>
     [TestClass]
-    public class UnitTest_XuLyChuoi
+    public class UnitTest
     {
-        XuLyChuoiUTL xlcUTL = new XuLyChuoiUTL();
+        Helper helper = new Helper();
 
-        public UnitTest_XuLyChuoi()
+        public UnitTest()
         {
             //
             // TODO: Add constructor logic here
@@ -66,7 +66,7 @@ namespace UNT
         {
             string tenTheLoai = "Chính trị - pháp luật";
 
-            string actual = xlcUTL.TaoTenVietTat(tenTheLoai, 5);
+            string actual = helper.TaoTenVietTat(tenTheLoai, 5);
             string expected = "CT-PL";
 
             Assert.AreEqual(expected, actual, true, "Sai mã thể loại");

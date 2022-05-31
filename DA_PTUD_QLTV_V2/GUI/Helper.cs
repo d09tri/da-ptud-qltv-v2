@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UTL
+namespace GUI
 {
-    public class XuLyChuoiUTL
+    public class Helper
     {
         /// <summary>
         /// Tạo tên viết từ tên thể loại, sách và được sử dụng cho việc
@@ -26,6 +27,19 @@ namespace UTL
             }
 
             return tenVietTat;
+        }
+
+        public Image LayAnhBiaDauSach(string duongDan, int chieuRong, int chieuCao)
+        {
+            Image i = Image.FromFile(duongDan);
+            return (Image)(new Bitmap(i, new Size(chieuRong, chieuCao)));
+        }
+
+        public string LayDuongDanAnhBia()
+        {
+            string curDirect = Environment.CurrentDirectory;
+            string direct = curDirect.Substring(0, curDirect.Length - 9) + "Resources/AnhBia";
+            return direct;
         }
     }
 }
