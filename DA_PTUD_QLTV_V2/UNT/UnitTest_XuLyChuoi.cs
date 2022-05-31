@@ -66,8 +66,8 @@ namespace UNT
         {
             string tenTheLoai = "Chính trị - pháp luật";
 
-            string actual = xlcUTL.TaoTenVietTat(tenTheLoai);
-            string expected = "CT";
+            string actual = xlcUTL.TaoTenVietTat(tenTheLoai, 5);
+            string expected = "CT-PL";
 
             Assert.AreEqual(expected, actual, true, "Sai mã thể loại");
         }

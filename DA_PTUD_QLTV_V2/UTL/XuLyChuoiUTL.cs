@@ -22,7 +22,7 @@ namespace UTL
 
             for (int i = 0; i < doDai; i++)
             {
-                tenVietTat += arrTu[i].Substring(0, 1);
+                tenVietTat += arrTu[i].Substring(0, 1).ToUpper();
             }
 
             return tenVietTat;

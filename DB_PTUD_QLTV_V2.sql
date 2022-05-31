@@ -228,3 +228,11 @@ insert into DauSach values
 	Lưu ý ghi chú lại view dùng để làm gì
 	======================================	*/
 
+
+
+/*	======================================
+	Bãi thử
+	======================================	*/
+select ds.*, tl.TenTheLoai, nxb.TenNXB from
+DauSach ds, TheLoai tl, NhaXuatBan nxb
+where ds.MaTheLoai = tl.MaTheLoai and ds.MaNXB = nxb.MaNXB
