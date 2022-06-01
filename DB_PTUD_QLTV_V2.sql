@@ -236,3 +236,5 @@ insert into DauSach values
 select ds.*, tl.TenTheLoai, nxb.TenNXB from
 DauSach ds, TheLoai tl, NhaXuatBan nxb
 where ds.MaTheLoai = tl.MaTheLoai and ds.MaNXB = nxb.MaNXB
+
+select * from DauSach where MaTheLoai = 3 and MaNXB = 1
