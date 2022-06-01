@@ -33,16 +33,22 @@
             // 
             // ucThongTinDauSach
             // 
+            this.ucThongTinDauSach.AnhBia = null;
             this.ucThongTinDauSach.Location = new System.Drawing.Point(12, 12);
             this.ucThongTinDauSach.Name = "ucThongTinDauSach";
-            this.ucThongTinDauSach.Size = new System.Drawing.Size(603, 209);
+            this.ucThongTinDauSach.NamXuatBan = null;
+            this.ucThongTinDauSach.NhaXuatBan = null;
+            this.ucThongTinDauSach.Size = new System.Drawing.Size(537, 167);
             this.ucThongTinDauSach.TabIndex = 0;
+            this.ucThongTinDauSach.TacGia = null;
+            this.ucThongTinDauSach.TenSach = null;
+            this.ucThongTinDauSach.TheLoai = null;
             // 
             // FrmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 553);
+            this.ClientSize = new System.Drawing.Size(824, 382);
             this.Controls.Add(this.ucThongTinDauSach);
             this.Name = "FrmTest";
             this.Text = "FrmTest";

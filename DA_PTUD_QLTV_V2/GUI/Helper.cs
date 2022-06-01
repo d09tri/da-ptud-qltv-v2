@@ -35,6 +35,11 @@ namespace GUI
             return (Image)(new Bitmap(i, new Size(chieuRong, chieuCao)));
         }
 
+        public Image LayAnhBiaDauSach(string duongDan)
+        {
+            return Image.FromFile(duongDan);
+        }
+
         public string LayDuongDanAnhBia()
         {
             string curDirect = Environment.CurrentDirectory;

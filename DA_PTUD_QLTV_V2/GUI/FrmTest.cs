@@ -22,7 +22,9 @@ namespace GUI
         private void FrmTest_Load(object sender, EventArgs e)
         {
             string duongDan = helper.LayDuongDanAnhBia() + "Ban-ve-tu-do.jpg";
-            Image anhBia = helper.LayAnhBiaDauSach(duongDan, 170, 178);
+            Image anhBia = helper.LayAnhBiaDauSach(duongDan);
+            ucThongTinDauSach.AnhBia = anhBia;
+            ucThongTinDauSach.LoadAnhBia();
         }
     }
 }
