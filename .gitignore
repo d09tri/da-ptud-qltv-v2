@@ -348,8 +348,3 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-DA_PTUD_QLTV_V2/DTO/app.config
-DA_PTUD_QLTV_V2/DTO/DB_PTUD_QLTV_V2.dbml
-DA_PTUD_QLTV_V2/DTO/DB_PTUD_QLTV_V2.dbml.layout
-DA_PTUD_QLTV_V2/DTO/Properties/Settings.Designer.cs
-DA_PTUD_QLTV_V2/DTO/Properties/Settings.settings
