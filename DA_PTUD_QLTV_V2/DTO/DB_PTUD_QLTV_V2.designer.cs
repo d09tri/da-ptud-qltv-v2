@@ -168,7 +168,7 @@ namespace DTO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MaBanIn;
+		private int _MaBanIn;
 		
 		private System.Nullable<int> _MaSach;
 		
@@ -182,7 +182,7 @@ namespace DTO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaBanInChanging(string value);
+    partial void OnMaBanInChanging(int value);
     partial void OnMaBanInChanged();
     partial void OnMaSachChanging(System.Nullable<int> value);
     partial void OnMaSachChanged();
@@ -197,8 +197,8 @@ namespace DTO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBanIn", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaBanIn
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBanIn", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaBanIn
 		{
 			get
 			{
@@ -600,7 +600,7 @@ namespace DTO
 		
 		private int _MaPhieuMuon;
 		
-		private string _MaBanIn;
+		private int _MaBanIn;
 		
 		private System.Nullable<System.DateTime> _NgayTra;
 		
@@ -616,7 +616,7 @@ namespace DTO
     partial void OnCreated();
     partial void OnMaPhieuMuonChanging(int value);
     partial void OnMaPhieuMuonChanged();
-    partial void OnMaBanInChanging(string value);
+    partial void OnMaBanInChanging(int value);
     partial void OnMaBanInChanged();
     partial void OnNgayTraChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayTraChanged();
@@ -655,8 +655,8 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBanIn", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaBanIn
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBanIn", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaBanIn
 		{
 			get
 			{
@@ -746,7 +746,7 @@ namespace DTO
 					}
 					else
 					{
-						this._MaBanIn = default(string);
+						this._MaBanIn = default(int);
 					}
 					this.SendPropertyChanged("BanIn");
 				}

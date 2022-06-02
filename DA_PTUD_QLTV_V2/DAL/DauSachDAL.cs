@@ -30,12 +30,7 @@ namespace DAL
 
         public List<DauSach> GetDSDauSachTongHop(int maTheLoai, int maNXB)
         {
-            if (maTheLoai == 0)
-                return GetDSDauSachTheoNhaXuatBan(maNXB);
-            else if (maNXB == 0)
-                return GetDSDauSachTheoTheLoai(maTheLoai);
-            else
-                return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai && t.MaNXB == maNXB).ToList();
+            return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai && t.MaNXB == maNXB).ToList();
         }
 
         public DauSach GetDLDauSachTheoMa(int maSach)

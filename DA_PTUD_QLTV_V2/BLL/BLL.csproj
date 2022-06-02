@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanInBLL.cs" />
     <Compile Include="DauSachBLL.cs" />
     <Compile Include="NhaXuatBanBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

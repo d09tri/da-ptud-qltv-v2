@@ -12,7 +12,7 @@ using BLL;
 
 namespace GUI
 {
-    public partial class FrmBanIn : Form
+    public partial class FrmBanIn_v2 : Form
     {
         TheLoaiBLL tlBLL = new TheLoaiBLL();
         NhaXuatBanBLL nxbBLL = new NhaXuatBanBLL();
@@ -30,7 +30,7 @@ namespace GUI
         int _maSach = 0;
         int _maBanIn = 0;
 
-        public FrmBanIn()
+        public FrmBanIn_v2()
         {
             InitializeComponent();
             dgvDSDauSach.AutoGenerateColumns = false;
@@ -67,7 +67,7 @@ namespace GUI
             ucThongTinDauSach.LoadAnhBia();
         }
 
-        private void FrmBanIn_Load(object sender, EventArgs e)
+        private void FrmBanIn_v2_Load(object sender, EventArgs e)
         {
             LoadDuLieu();
         }
@@ -89,7 +89,6 @@ namespace GUI
             }
 
             _maTheLoai = int.Parse(maTheLoai);
-
         }
 
         private void cmbNhaXuatBan_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,7 +140,7 @@ namespace GUI
             _maBanIn = int.Parse(dgvDSBanIn.CurrentRow.Cells[0].Value.ToString());
         }
 
-        private void bthThem_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             if (_maSach == 0)
             {

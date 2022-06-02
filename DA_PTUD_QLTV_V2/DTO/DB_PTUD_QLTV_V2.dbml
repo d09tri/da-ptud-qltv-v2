@@ -2,7 +2,7 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=DANGTRI-LAPTOP\SQLEXPRESS;Initial Catalog=DB_PTUD_QLTV_V2;Persist Security Info=True;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="DB_PTUD_QLTV_V2ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BanIn" Member="BanIns">
     <Type Name="BanIn">
-      <Column Name="MaBanIn" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaBanIn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="BanIn_ChiTietPhieuMuon" Member="ChiTietPhieuMuons" ThisKey="MaBanIn" OtherKey="MaBanIn" Type="ChiTietPhieuMuon" />
@@ -24,7 +24,7 @@
   <Table Name="dbo.ChiTietPhieuMuon" Member="ChiTietPhieuMuons">
     <Type Name="ChiTietPhieuMuon">
       <Column Name="MaPhieuMuon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaBanIn" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaBanIn" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NgayTra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DaTra" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="BanIn_ChiTietPhieuMuon" Member="BanIn" ThisKey="MaBanIn" OtherKey="MaBanIn" Type="BanIn" IsForeignKey="true" />
