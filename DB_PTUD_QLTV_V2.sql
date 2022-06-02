@@ -34,12 +34,9 @@ create table DauSach
 	constraint PK_DauSach primary key (MaSach)
 )
 
--- Mã bản in sẽ là tên viết tắt của thể loại_tên viết tắt của sách_số thứ tự
--- VD: CTPL_BVTD_0001
--- Trạng thái của bản in là bản in đang có hay đã được mượn
 create table BanIn
 (
-	MaBanIn varchar(30),
+	MaBanIn int identity(1,1),
 	MaSach int,
 	TrangThai bit,
 	constraint PK_BanIn primary key (MaBanIn)
@@ -86,7 +83,7 @@ create table PhieuMuon
 create table ChiTietPhieuMuon
 (
 	MaPhieuMuon int,
-	MaBanIn varchar(30),
+	MaBanIn int,
 	NgayTra datetime,
 	DaTra bit,
 	constraint PK_ChiTietMuonTra primary key (MaPhieuMuon, MaBanIn)
@@ -113,6 +110,7 @@ constraint FK_PhieuMuon_TheThuVien foreign key (MaThe) references TheThuVien(MaT
 alter table ChiTietPhieuMuon add
 constraint FK_CTPM_PhieuMuon foreign key (MaPhieuMuon) references PhieuMuon(MaPhieuMuon),
 constraint FK_CTPM_BanIn foreign key (MaBanIn) references BanIn(MaBanIn)
+
 
 /*	======================================
 	Dữ liệu
@@ -228,13 +226,11 @@ insert into DauSach values
 	Lưu ý ghi chú lại view dùng để làm gì
 	======================================	*/
 
-
+/*	======================================
+	Các chỉnh sửa
+	======================================	*/
 
 /*	======================================
 	Bãi thử
 	======================================	*/
-select ds.*, tl.TenTheLoai, nxb.TenNXB from
-DauSach ds, TheLoai tl, NhaXuatBan nxb
-where ds.MaTheLoai = tl.MaTheLoai and ds.MaNXB = nxb.MaNXB
 
-select * from DauSach where MaTheLoai = 3 and MaNXB = 1
