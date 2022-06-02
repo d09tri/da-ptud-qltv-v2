@@ -234,3 +234,4 @@ insert into DauSach values
 	Bãi thử
 	======================================	*/
 
+select * from BanIn
