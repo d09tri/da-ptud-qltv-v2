@@ -35,19 +35,19 @@
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.dgvDSBanIn = new System.Windows.Forms.DataGridView();
+            this.colMaBanIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaSach_bi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ucThongTinDauSach = new CustomControls.UcThongTinDauSach();
             this.grbDSDauSach = new System.Windows.Forms.GroupBox();
             this.dgvDSDauSach = new System.Windows.Forms.DataGridView();
+            this.colMaSach_ds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbLocDauSach = new System.Windows.Forms.GroupBox();
             this.cmbNhaXuatBan = new System.Windows.Forms.ComboBox();
             this.cmbTheLoai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.colMaSach_ds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaBanIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaSach_bi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grbDSBanIn.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBanIn)).BeginInit();
@@ -124,6 +124,26 @@
             this.dgvDSBanIn.TabIndex = 2;
             this.dgvDSBanIn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBanIn_CellClick);
             // 
+            // colMaBanIn
+            // 
+            this.colMaBanIn.DataPropertyName = "MaBanIn";
+            this.colMaBanIn.HeaderText = "Mã bản in";
+            this.colMaBanIn.Name = "colMaBanIn";
+            this.colMaBanIn.ReadOnly = true;
+            // 
+            // colMaSach_bi
+            // 
+            this.colMaSach_bi.DataPropertyName = "MaSach";
+            this.colMaSach_bi.HeaderText = "Mã sách";
+            this.colMaSach_bi.Name = "colMaSach_bi";
+            this.colMaSach_bi.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Đã mượn";
+            this.colTrangThai.Name = "colTrangThai";
+            // 
             // ucThongTinDauSach
             // 
             this.ucThongTinDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -169,6 +189,20 @@
             this.dgvDSDauSach.Size = new System.Drawing.Size(410, 395);
             this.dgvDSDauSach.TabIndex = 1;
             this.dgvDSDauSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDauSach_CellClick);
+            // 
+            // colMaSach_ds
+            // 
+            this.colMaSach_ds.DataPropertyName = "MaSach";
+            this.colMaSach_ds.HeaderText = "Mã sách";
+            this.colMaSach_ds.Name = "colMaSach_ds";
+            this.colMaSach_ds.ReadOnly = true;
+            // 
+            // colTenSach
+            // 
+            this.colTenSach.DataPropertyName = "TenSach";
+            this.colTenSach.HeaderText = "Tên sách";
+            this.colTenSach.Name = "colTenSach";
+            this.colTenSach.ReadOnly = true;
             // 
             // grbLocDauSach
             // 
@@ -223,40 +257,6 @@
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Thể loại";
-            // 
-            // colMaSach_ds
-            // 
-            this.colMaSach_ds.DataPropertyName = "MaSach";
-            this.colMaSach_ds.HeaderText = "Mã sách";
-            this.colMaSach_ds.Name = "colMaSach_ds";
-            this.colMaSach_ds.ReadOnly = true;
-            // 
-            // colTenSach
-            // 
-            this.colTenSach.DataPropertyName = "TenSach";
-            this.colTenSach.HeaderText = "Tên sách";
-            this.colTenSach.Name = "colTenSach";
-            this.colTenSach.ReadOnly = true;
-            // 
-            // colMaBanIn
-            // 
-            this.colMaBanIn.DataPropertyName = "MaBanIn";
-            this.colMaBanIn.HeaderText = "Mã bản in";
-            this.colMaBanIn.Name = "colMaBanIn";
-            this.colMaBanIn.ReadOnly = true;
-            // 
-            // colMaSach_bi
-            // 
-            this.colMaSach_bi.DataPropertyName = "MaSach";
-            this.colMaSach_bi.HeaderText = "Mã sách";
-            this.colMaSach_bi.Name = "colMaSach_bi";
-            this.colMaSach_bi.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Đã mượn";
-            this.colTrangThai.Name = "colTrangThai";
             // 
             // FrmBanIn_v2
             // 
