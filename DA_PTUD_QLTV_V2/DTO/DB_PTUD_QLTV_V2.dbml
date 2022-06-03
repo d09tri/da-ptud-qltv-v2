@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_PTUD_QLTV_V2" Class="DB_PTUD_QLTV_V2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DANGTRI-LAPTOP\SQLEXPRESS;Initial Catalog=DB_PTUD_QLTV_V2;Persist Security Info=True;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="DB_PTUD_QLTV_V2ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-9B9I6V6\SQLEXPRESS;Initial Catalog=DB_PTUD_QLTV_V2;Persist Security Info=True;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="DB_PTUD_QLTV_V2ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BanIn" Member="BanIns">
     <Type Name="BanIn">
       <Column Name="MaBanIn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
