@@ -21,7 +21,7 @@ namespace GUI
         {
             try
             {
-                if(txtUserName.Text=="")
+                if (txtUserName.Text == "")
                 {
                     txtUserName.Text = "Enter User Name";
                     return;
@@ -31,7 +31,7 @@ namespace GUI
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
         }
@@ -73,18 +73,12 @@ namespace GUI
                 txtUserName.Focus();
                 return;
             }
-                if(txtPassword.Text == "Enter Password")
-                {
-                    pnlWarningPass.Visible = true;
-                    txtPassword.Focus();
-                    return;
-                }
-            
-
+            if (txtPassword.Text == "Enter Password")
+            {
+                pnlWarningPass.Visible = true;
+                txtPassword.Focus();
+                return;
+            }
         }
-
-      
-
-       
     }
 }
