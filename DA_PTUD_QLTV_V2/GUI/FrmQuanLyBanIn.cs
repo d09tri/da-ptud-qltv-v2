@@ -12,7 +12,7 @@ using BLL;
 
 namespace GUI
 {
-    public partial class FrmBanIn_v2 : Form
+    public partial class FrmQuanLyBanIn : Form
     {
         TheLoaiBLL tlBLL = new TheLoaiBLL();
         NhaXuatBanBLL nxbBLL = new NhaXuatBanBLL();
@@ -30,7 +30,7 @@ namespace GUI
         int _maSach = 0;
         int _maBanIn = 0;
 
-        public FrmBanIn_v2()
+        public FrmQuanLyBanIn()
         {
             InitializeComponent();
             dgvDSDauSach.AutoGenerateColumns = false;

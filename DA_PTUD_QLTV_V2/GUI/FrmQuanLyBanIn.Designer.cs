@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FrmBanIn_v2
+    partial class FrmQuanLyBanIn
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBanIn_v2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuanLyBanIn));
             this.grbDSBanIn = new System.Windows.Forms.GroupBox();
             this.toolStripChucNang = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
@@ -258,7 +258,7 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Thể loại";
             // 
-            // FrmBanIn_v2
+            // FrmQuanLyBanIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -266,8 +266,8 @@
             this.Controls.Add(this.grbDSBanIn);
             this.Controls.Add(this.ucThongTinDauSach);
             this.Controls.Add(this.grbDSDauSach);
-            this.Name = "FrmBanIn_v2";
-            this.Text = "FrmBanIn_v2";
+            this.Name = "FrmQuanLyBanIn";
+            this.Text = "Quản lý bản in";
             this.Load += new System.EventHandler(this.FrmBanIn_v2_Load);
             this.grbDSBanIn.ResumeLayout(false);
             this.grbDSBanIn.PerformLayout();

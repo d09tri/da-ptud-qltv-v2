@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBanIn_v2());
+            Application.Run(new FrmQuanLyBanIn());
         }
     }
 }
