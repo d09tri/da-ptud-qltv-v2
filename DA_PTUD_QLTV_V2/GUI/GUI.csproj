@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmBanIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBanIn.Designer.cs">
-      <DependentUpon>FrmBanIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQuanLyBanIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,12 +63,6 @@
     <Compile Include="FrmQuanLyDauSach.Designer.cs">
       <DependentUpon>FrmQuanLyDauSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTest.Designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +72,6 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmBanIn.resx">
-      <DependentUpon>FrmBanIn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyBanIn.resx">
       <DependentUpon>FrmQuanLyBanIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,9 +80,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyDauSach.resx">
       <DependentUpon>FrmQuanLyDauSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTest.resx">
-      <DependentUpon>FrmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>

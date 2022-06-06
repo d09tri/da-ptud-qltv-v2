@@ -38,7 +38,6 @@
             this.colMaBanIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaSach_bi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ucThongTinDauSach = new CustomControls.UcThongTinDauSach();
             this.grbDSDauSach = new System.Windows.Forms.GroupBox();
             this.dgvDSDauSach = new System.Windows.Forms.DataGridView();
             this.colMaSach_ds = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             this.cmbTheLoai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ucThongTinDauSach = new CustomControls.UcThongTinDauSach();
             this.grbDSBanIn.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBanIn)).BeginInit();
@@ -118,6 +118,7 @@
             this.colMaSach_bi,
             this.colTrangThai});
             this.dgvDSBanIn.Location = new System.Drawing.Point(6, 44);
+            this.dgvDSBanIn.MultiSelect = false;
             this.dgvDSBanIn.Name = "dgvDSBanIn";
             this.dgvDSBanIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSBanIn.Size = new System.Drawing.Size(525, 303);
@@ -143,20 +144,6 @@
             this.colTrangThai.DataPropertyName = "TrangThai";
             this.colTrangThai.HeaderText = "Đã mượn";
             this.colTrangThai.Name = "colTrangThai";
-            // 
-            // ucThongTinDauSach
-            // 
-            this.ucThongTinDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucThongTinDauSach.AnhBia = null;
-            this.ucThongTinDauSach.Location = new System.Drawing.Point(440, 12);
-            this.ucThongTinDauSach.Name = "ucThongTinDauSach";
-            this.ucThongTinDauSach.NamXuatBan = null;
-            this.ucThongTinDauSach.NhaXuatBan = null;
-            this.ucThongTinDauSach.Size = new System.Drawing.Size(537, 167);
-            this.ucThongTinDauSach.TabIndex = 5;
-            this.ucThongTinDauSach.TacGia = null;
-            this.ucThongTinDauSach.TenSach = null;
-            this.ucThongTinDauSach.TheLoai = null;
             // 
             // grbDSDauSach
             // 
@@ -257,6 +244,20 @@
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Thể loại";
+            // 
+            // ucThongTinDauSach
+            // 
+            this.ucThongTinDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucThongTinDauSach.AnhBia = null;
+            this.ucThongTinDauSach.Location = new System.Drawing.Point(440, 12);
+            this.ucThongTinDauSach.Name = "ucThongTinDauSach";
+            this.ucThongTinDauSach.NamXuatBan = null;
+            this.ucThongTinDauSach.NhaXuatBan = null;
+            this.ucThongTinDauSach.Size = new System.Drawing.Size(537, 167);
+            this.ucThongTinDauSach.TabIndex = 5;
+            this.ucThongTinDauSach.TacGia = null;
+            this.ucThongTinDauSach.TenSach = null;
+            this.ucThongTinDauSach.TheLoai = null;
             // 
             // FrmQuanLyBanIn
             // 

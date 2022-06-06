@@ -278,3 +278,5 @@ dbo.NhaXuatBan ON dbo.DauSach.MaNXB = dbo.NhaXuatBan.MaNXB INNER JOIN
 dbo.TheLoai ON dbo.DauSach.MaTheLoai = dbo.TheLoai.MaTheLoai
 
 select * from view_DSDauSach
+
+SELECT IDENT_CURRENT('BanIn')
