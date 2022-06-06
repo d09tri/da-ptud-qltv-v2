@@ -21,6 +21,9 @@ namespace GUI
 
         List<view_DSDauSach> dsLst = new List<view_DSDauSach>();
 
+        int _maNXB = 0;
+        int _maTheLoai = 0;
+
         public FrmQuanLyDauSach()
         {
             InitializeComponent();
@@ -39,9 +42,17 @@ namespace GUI
             cmbTheLoai.DisplayMember = "TenTheLoai";
             cmbTheLoai.ValueMember = "MaTheLoai";
 
+            cmbLocTheLoai.DataSource = tlBLL.GetDSTheLoai();
+            cmbLocTheLoai.DisplayMember = "TenTheLoai";
+            cmbLocTheLoai.ValueMember = "MaTheLoai";
+
             cmbNhaXuatBan.DataSource = nxbBLL.GetDSNhaXuatBan();
             cmbNhaXuatBan.DisplayMember = "TenNXB";
             cmbNhaXuatBan.ValueMember = "MaNXB";
+
+            cmbLocNhaXuatBan.DataSource = nxbBLL.GetDSNhaXuatBan();
+            cmbLocNhaXuatBan.DisplayMember = "TenNXB";
+            cmbLocNhaXuatBan.ValueMember = "MaNXB";
 
             LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
 
@@ -53,6 +64,44 @@ namespace GUI
         private void FrmQuanLyDauSach_Load(object sender, EventArgs e)
         {
             LoadDuLieu();
+        }
+
+        private void cmbLocTheLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maTheLoai = cmbLocTheLoai.SelectedValue.ToString();
+
+            if (maTheLoai.Equals("DTO.TheLoai"))
+                return;
+
+            if (_maNXB == 0)
+            {
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTheoTheLoai(int.Parse(maTheLoai)));
+            }
+            else
+            {
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTongHop(int.Parse(maTheLoai), _maNXB));
+            }
+
+            _maTheLoai = int.Parse(maTheLoai);
+        }
+
+        private void cmbLocNhaXuatBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maNXB = cmbLocNhaXuatBan.SelectedValue.ToString();
+
+            if (maNXB.Equals("DTO.NhaXuatBan"))
+                return;
+
+            if (_maTheLoai == 0)
+            {
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTheoNhaXuatBan(int.Parse(maNXB)));
+            }
+            else
+            {
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTongHop(_maTheLoai, int.Parse(maNXB)));
+            }
+
+            _maNXB = int.Parse(maNXB);
         }
     }
 }

@@ -28,14 +28,42 @@ namespace DAL
             return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai).ToList();
         }
 
+        /// <summary>
+        /// Về cơ bản, trong view_DSDauSach không có chứa mã thể loại mà chỉ có tên thể loại
+        /// nên bắt buộc phải tái sử dụng lại GetDSDauSachTheoTheLoai
+        /// Phần return có thể hiểu như là một câu truy vấn trong SQL như sau:
+        /// -> select * from view_DSDauSach where MaSach in (lst)
+        /// </summary>
+        /// <param name="maTheLoai">Mã thể loại</param>
+        /// <returns>
+        /// Danh sách view_DSDauSach thuộc mã thể loại đó
+        /// </returns>
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoTheLoai(int maTheLoai)
+        {
+            List<DauSach> lst = GetDSDauSachTheoTheLoai(maTheLoai);
+            return db.view_DSDauSaches.Where(t => lst.Select(y => y.MaSach).Contains(t.MaSach)).ToList();
+        }
+
         public List<DauSach> GetDSDauSachTheoNhaXuatBan(int maNXB)
         {
             return db.DauSaches.Where(t => t.MaNXB == maNXB).ToList();
         }
 
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoNhaXuatBan(int maNXB)
+        {
+            List<DauSach> lst = GetDSDauSachTheoNhaXuatBan(maNXB);
+            return db.view_DSDauSaches.Where(t => lst.Select(y => y.MaSach).Contains(t.MaSach)).ToList();
+        }
+
         public List<DauSach> GetDSDauSachTongHop(int maTheLoai, int maNXB)
         {
             return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai && t.MaNXB == maNXB).ToList();
+        }
+
+        public List<view_DSDauSach> GetDSView_DSDauSachTongHop(int maTheLoai, int maNXB)
+        {
+            List<DauSach> lst = GetDSDauSachTongHop(maTheLoai, maNXB);
+            return db.view_DSDauSaches.Where(t => lst.Select(y => y.MaSach).Contains(t.MaSach)).ToList();
         }
 
         public DauSach GetDLDauSachTheoMa(int maSach)

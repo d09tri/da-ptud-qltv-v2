@@ -29,14 +29,29 @@ namespace BLL
             return dsDAL.GetDSDauSachTheoTheLoai(maTheLoai);
         }
 
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoTheLoai(int maTheLoai)
+        {
+            return dsDAL.GetDSView_DSDauSachTheoTheLoai(maTheLoai);
+        }
+
         public List<DauSach> GetDSDauSachTheoNhaXuatBan(int maNXB)
         {
             return dsDAL.GetDSDauSachTheoNhaXuatBan(maNXB);
         }
 
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoNhaXuatBan(int maNXB)
+        {
+            return dsDAL.GetDSView_DSDauSachTheoNhaXuatBan(maNXB);
+        }
+
         public List<DauSach> GetDSDauSachTongHop(int maTheLoai, int maNXB)
         {
             return dsDAL.GetDSDauSachTongHop(maTheLoai, maNXB);
+        }
+
+        public List<view_DSDauSach> GetDSView_DSDauSachTongHop(int maTheLoai, int maNXB)
+        {
+            return dsDAL.GetDSView_DSDauSachTongHop(maTheLoai, maNXB);
         }
 
         public DauSach GetDLDauSachTheoMa(int maSach)

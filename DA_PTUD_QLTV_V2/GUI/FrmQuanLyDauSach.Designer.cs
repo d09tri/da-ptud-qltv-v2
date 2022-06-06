@@ -33,11 +33,17 @@
             this.picAnhBia = new System.Windows.Forms.PictureBox();
             this.grbDSDauSach = new System.Windows.Forms.GroupBox();
             this.grbLocDauSach = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbLocNhaXuatBan = new System.Windows.Forms.ComboBox();
+            this.cmbLocTheLoai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvDSDauSach = new System.Windows.Forms.DataGridView();
+            this.colMaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhaXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNamXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTDauSach = new System.Windows.Forms.GroupBox();
             this.lblNamXB = new System.Windows.Forms.Label();
             this.lblNhaXB = new System.Windows.Forms.Label();
@@ -65,12 +71,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.colMaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhaXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNamXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHinhAnh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
             this.grbDSDauSach.SuspendLayout();
@@ -116,8 +116,8 @@
             // 
             this.grbLocDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grbLocDauSach.Controls.Add(this.comboBox1);
-            this.grbLocDauSach.Controls.Add(this.comboBox2);
+            this.grbLocDauSach.Controls.Add(this.cmbLocNhaXuatBan);
+            this.grbLocDauSach.Controls.Add(this.cmbLocTheLoai);
             this.grbLocDauSach.Controls.Add(this.label3);
             this.grbLocDauSach.Controls.Add(this.label4);
             this.grbLocDauSach.Location = new System.Drawing.Point(6, 19);
@@ -126,25 +126,27 @@
             this.grbLocDauSach.TabIndex = 3;
             this.grbLocDauSach.TabStop = false;
             // 
-            // comboBox1
+            // cmbLocNhaXuatBan
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbLocNhaXuatBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(418, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cmbLocNhaXuatBan.FormattingEnabled = true;
+            this.cmbLocNhaXuatBan.Location = new System.Drawing.Point(83, 58);
+            this.cmbLocNhaXuatBan.Name = "cmbLocNhaXuatBan";
+            this.cmbLocNhaXuatBan.Size = new System.Drawing.Size(418, 21);
+            this.cmbLocNhaXuatBan.TabIndex = 3;
+            this.cmbLocNhaXuatBan.SelectedIndexChanged += new System.EventHandler(this.cmbLocNhaXuatBan_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cmbLocTheLoai
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbLocTheLoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(83, 31);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(418, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cmbLocTheLoai.FormattingEnabled = true;
+            this.cmbLocTheLoai.Location = new System.Drawing.Point(83, 31);
+            this.cmbLocTheLoai.Name = "cmbLocTheLoai";
+            this.cmbLocTheLoai.Size = new System.Drawing.Size(418, 21);
+            this.cmbLocTheLoai.TabIndex = 2;
+            this.cmbLocTheLoai.SelectedIndexChanged += new System.EventHandler(this.cmbLocTheLoai_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -185,6 +187,48 @@
             this.dgvDSDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSDauSach.Size = new System.Drawing.Size(507, 393);
             this.dgvDSDauSach.TabIndex = 2;
+            // 
+            // colMaSach
+            // 
+            this.colMaSach.DataPropertyName = "MaSach";
+            this.colMaSach.HeaderText = "Mã sách";
+            this.colMaSach.Name = "colMaSach";
+            this.colMaSach.ReadOnly = true;
+            // 
+            // colTenSach
+            // 
+            this.colTenSach.DataPropertyName = "TenSach";
+            this.colTenSach.HeaderText = "Tên sách";
+            this.colTenSach.Name = "colTenSach";
+            this.colTenSach.ReadOnly = true;
+            // 
+            // colTacGia
+            // 
+            this.colTacGia.DataPropertyName = "TacGia";
+            this.colTacGia.HeaderText = "Tác giả";
+            this.colTacGia.Name = "colTacGia";
+            this.colTacGia.ReadOnly = true;
+            // 
+            // colTheLoai
+            // 
+            this.colTheLoai.DataPropertyName = "TenTheLoai";
+            this.colTheLoai.HeaderText = "Thể loại";
+            this.colTheLoai.Name = "colTheLoai";
+            this.colTheLoai.ReadOnly = true;
+            // 
+            // colNhaXB
+            // 
+            this.colNhaXB.DataPropertyName = "TenNXB";
+            this.colNhaXB.HeaderText = "Nhà xuất bản";
+            this.colNhaXB.Name = "colNhaXB";
+            this.colNhaXB.ReadOnly = true;
+            // 
+            // colNamXB
+            // 
+            this.colNamXB.DataPropertyName = "NamXB";
+            this.colNamXB.HeaderText = "Năm xuất bản";
+            this.colNamXB.Name = "colNamXB";
+            this.colNamXB.ReadOnly = true;
             // 
             // grbTTDauSach
             // 
@@ -439,48 +483,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên sách";
             // 
-            // colMaSach
-            // 
-            this.colMaSach.DataPropertyName = "MaSach";
-            this.colMaSach.HeaderText = "Mã sách";
-            this.colMaSach.Name = "colMaSach";
-            this.colMaSach.ReadOnly = true;
-            // 
-            // colTenSach
-            // 
-            this.colTenSach.DataPropertyName = "TenSach";
-            this.colTenSach.HeaderText = "Tên sách";
-            this.colTenSach.Name = "colTenSach";
-            this.colTenSach.ReadOnly = true;
-            // 
-            // colTacGia
-            // 
-            this.colTacGia.DataPropertyName = "TacGia";
-            this.colTacGia.HeaderText = "Tác giả";
-            this.colTacGia.Name = "colTacGia";
-            this.colTacGia.ReadOnly = true;
-            // 
-            // colTheLoai
-            // 
-            this.colTheLoai.DataPropertyName = "TenTheLoai";
-            this.colTheLoai.HeaderText = "Thể loại";
-            this.colTheLoai.Name = "colTheLoai";
-            this.colTheLoai.ReadOnly = true;
-            // 
-            // colNhaXB
-            // 
-            this.colNhaXB.DataPropertyName = "TenNXB";
-            this.colNhaXB.HeaderText = "Nhà xuất bản";
-            this.colNhaXB.Name = "colNhaXB";
-            this.colNhaXB.ReadOnly = true;
-            // 
-            // colNamXB
-            // 
-            this.colNamXB.DataPropertyName = "NamXB";
-            this.colNamXB.HeaderText = "Năm xuất bản";
-            this.colNamXB.Name = "colNamXB";
-            this.colNamXB.ReadOnly = true;
-            // 
             // FrmQuanLyDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,8 +540,8 @@
         private System.Windows.Forms.Label lblTheLoai;
         private System.Windows.Forms.DataGridView dgvDSDauSach;
         private System.Windows.Forms.GroupBox grbLocDauSach;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbLocNhaXuatBan;
+        private System.Windows.Forms.ComboBox cmbLocTheLoai;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox grbTimKiemDauSach;
