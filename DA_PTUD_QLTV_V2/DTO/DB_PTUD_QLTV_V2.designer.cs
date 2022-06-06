@@ -182,6 +182,14 @@ namespace DTO
 				return this.GetTable<TheThuVien>();
 			}
 		}
+		
+		public System.Data.Linq.Table<view_DSDauSach> view_DSDauSaches
+		{
+			get
+			{
+				return this.GetTable<view_DSDauSach>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BanIn")]
@@ -2624,6 +2632,141 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.TheThuVien = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.view_DSDauSach")]
+	public partial class view_DSDauSach
+	{
+		
+		private int _MaSach;
+		
+		private string _TenSach;
+		
+		private string _BiaSach;
+		
+		private string _TacGia;
+		
+		private string _TenTheLoai;
+		
+		private string _TenNXB;
+		
+		private System.Nullable<System.DateTime> _NamXB;
+		
+		public view_DSDauSach()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach", DbType="Int NOT NULL")]
+		public int MaSach
+		{
+			get
+			{
+				return this._MaSach;
+			}
+			set
+			{
+				if ((this._MaSach != value))
+				{
+					this._MaSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSach", DbType="NVarChar(200)")]
+		public string TenSach
+		{
+			get
+			{
+				return this._TenSach;
+			}
+			set
+			{
+				if ((this._TenSach != value))
+				{
+					this._TenSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BiaSach", DbType="NVarChar(200)")]
+		public string BiaSach
+		{
+			get
+			{
+				return this._BiaSach;
+			}
+			set
+			{
+				if ((this._BiaSach != value))
+				{
+					this._BiaSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TacGia", DbType="NVarChar(100)")]
+		public string TacGia
+		{
+			get
+			{
+				return this._TacGia;
+			}
+			set
+			{
+				if ((this._TacGia != value))
+				{
+					this._TacGia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTheLoai", DbType="NVarChar(100)")]
+		public string TenTheLoai
+		{
+			get
+			{
+				return this._TenTheLoai;
+			}
+			set
+			{
+				if ((this._TenTheLoai != value))
+				{
+					this._TenTheLoai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNXB", DbType="NVarChar(100)")]
+		public string TenNXB
+		{
+			get
+			{
+				return this._TenNXB;
+			}
+			set
+			{
+				if ((this._TenNXB != value))
+				{
+					this._TenNXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamXB", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NamXB
+		{
+			get
+			{
+				return this._NamXB;
+			}
+			set
+			{
+				if ((this._NamXB != value))
+				{
+					this._NamXB = value;
+				}
+			}
 		}
 	}
 }

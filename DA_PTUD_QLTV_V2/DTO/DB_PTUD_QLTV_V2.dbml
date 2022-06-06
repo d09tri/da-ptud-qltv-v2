@@ -117,4 +117,15 @@
       <Association Name="DocGia_TheThuVien" Member="DocGia" ThisKey="MaDocGia" OtherKey="MaDocGia" Type="DocGia" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.view_DSDauSach" Member="view_DSDauSaches">
+    <Type Name="view_DSDauSach">
+      <Column Name="MaSach" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="BiaSach" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTheLoai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenNXB" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NamXB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

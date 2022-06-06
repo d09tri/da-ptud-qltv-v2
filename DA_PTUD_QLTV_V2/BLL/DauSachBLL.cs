@@ -19,6 +19,11 @@ namespace BLL
             return dsDAL.GetDSDauSach();
         }
 
+        public List<view_DSDauSach> GetDSView_DSDauSach()
+        {
+            return dsDAL.GetDSView_DSDauSach();
+        }
+
         public List<DauSach> GetDSDauSachTheoTheLoai(int maTheLoai)
         {
             return dsDAL.GetDSDauSachTheoTheLoai(maTheLoai);

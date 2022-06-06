@@ -18,6 +18,11 @@ namespace DAL
             return db.DauSaches.ToList();
         }
 
+        public List<view_DSDauSach> GetDSView_DSDauSach()
+        {
+            return db.view_DSDauSaches.ToList();
+        }
+
         public List<DauSach> GetDSDauSachTheoTheLoai(int maTheLoai)
         {
             return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai).ToList();
