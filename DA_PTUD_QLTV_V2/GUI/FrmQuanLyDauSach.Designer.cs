@@ -55,10 +55,30 @@
             this.lblTheLoai = new System.Windows.Forms.Label();
             this.lblNhaXB = new System.Windows.Forms.Label();
             this.lblNamXB = new System.Windows.Forms.Label();
+            this.dgvDSDauSach = new System.Windows.Forms.DataGridView();
+            this.colMaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhaXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNamXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbLocDauSach = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.grbTimKiemDauSach = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlHinhAnh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
+            this.grbDSDauSach.SuspendLayout();
             this.grbTTDauSach.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).BeginInit();
+            this.grbLocDauSach.SuspendLayout();
+            this.grbTimKiemDauSach.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHinhAnh
@@ -81,6 +101,8 @@
             // 
             // grbDSDauSach
             // 
+            this.grbDSDauSach.Controls.Add(this.grbLocDauSach);
+            this.grbDSDauSach.Controls.Add(this.dgvDSDauSach);
             this.grbDSDauSach.Location = new System.Drawing.Point(12, 12);
             this.grbDSDauSach.Name = "grbDSDauSach";
             this.grbDSDauSach.Size = new System.Drawing.Size(519, 526);
@@ -107,7 +129,7 @@
             this.grbTTDauSach.Controls.Add(this.lblMaSach_z);
             this.grbTTDauSach.Controls.Add(this.toolStripChucNang);
             this.grbTTDauSach.Controls.Add(this.pnlHinhAnh);
-            this.grbTTDauSach.Location = new System.Drawing.Point(537, 12);
+            this.grbTTDauSach.Location = new System.Drawing.Point(537, 137);
             this.grbTTDauSach.Name = "grbTTDauSach";
             this.grbTTDauSach.Size = new System.Drawing.Size(440, 231);
             this.grbTTDauSach.TabIndex = 2;
@@ -302,21 +324,179 @@
             this.lblNamXB.TabIndex = 40;
             this.lblNamXB.Text = "Năm XB:";
             // 
+            // dgvDSDauSach
+            // 
+            this.dgvDSDauSach.AllowUserToAddRows = false;
+            this.dgvDSDauSach.AllowUserToDeleteRows = false;
+            this.dgvDSDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDSDauSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDSDauSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSDauSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaSach,
+            this.colTenSach,
+            this.colTacGia,
+            this.colTheLoai,
+            this.colNhaXB,
+            this.colNamXB});
+            this.dgvDSDauSach.Location = new System.Drawing.Point(6, 125);
+            this.dgvDSDauSach.MultiSelect = false;
+            this.dgvDSDauSach.Name = "dgvDSDauSach";
+            this.dgvDSDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDSDauSach.Size = new System.Drawing.Size(507, 393);
+            this.dgvDSDauSach.TabIndex = 2;
+            // 
+            // colMaSach
+            // 
+            this.colMaSach.DataPropertyName = "MaSach";
+            this.colMaSach.HeaderText = "Mã sách";
+            this.colMaSach.Name = "colMaSach";
+            this.colMaSach.ReadOnly = true;
+            // 
+            // colTenSach
+            // 
+            this.colTenSach.DataPropertyName = "TenSach";
+            this.colTenSach.HeaderText = "Tên sách";
+            this.colTenSach.Name = "colTenSach";
+            this.colTenSach.ReadOnly = true;
+            // 
+            // colTacGia
+            // 
+            this.colTacGia.HeaderText = "Tác giả";
+            this.colTacGia.Name = "colTacGia";
+            this.colTacGia.ReadOnly = true;
+            // 
+            // colTheLoai
+            // 
+            this.colTheLoai.HeaderText = "Thể loại";
+            this.colTheLoai.Name = "colTheLoai";
+            this.colTheLoai.ReadOnly = true;
+            // 
+            // colNhaXB
+            // 
+            this.colNhaXB.HeaderText = "Nhà xuất bản";
+            this.colNhaXB.Name = "colNhaXB";
+            this.colNhaXB.ReadOnly = true;
+            // 
+            // colNamXB
+            // 
+            this.colNamXB.HeaderText = "Năm xuất bản";
+            this.colNamXB.Name = "colNamXB";
+            this.colNamXB.ReadOnly = true;
+            // 
+            // grbLocDauSach
+            // 
+            this.grbLocDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbLocDauSach.Controls.Add(this.comboBox1);
+            this.grbLocDauSach.Controls.Add(this.comboBox2);
+            this.grbLocDauSach.Controls.Add(this.label3);
+            this.grbLocDauSach.Controls.Add(this.label4);
+            this.grbLocDauSach.Location = new System.Drawing.Point(6, 19);
+            this.grbLocDauSach.Name = "grbLocDauSach";
+            this.grbLocDauSach.Size = new System.Drawing.Size(507, 100);
+            this.grbLocDauSach.TabIndex = 3;
+            this.grbLocDauSach.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(83, 58);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(418, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(83, 31);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(418, 21);
+            this.comboBox2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Nhà xuất bản";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Thể loại";
+            // 
+            // grbTimKiemDauSach
+            // 
+            this.grbTimKiemDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbTimKiemDauSach.Controls.Add(this.button1);
+            this.grbTimKiemDauSach.Controls.Add(this.textBox1);
+            this.grbTimKiemDauSach.Controls.Add(this.label2);
+            this.grbTimKiemDauSach.Location = new System.Drawing.Point(537, 12);
+            this.grbTimKiemDauSach.Name = "grbTimKiemDauSach";
+            this.grbTimKiemDauSach.Size = new System.Drawing.Size(440, 119);
+            this.grbTimKiemDauSach.TabIndex = 4;
+            this.grbTimKiemDauSach.TabStop = false;
+            this.grbTimKiemDauSach.Text = "Tìm kiếm đầu sách";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tên sách";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(64, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(370, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(64, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmQuanLyDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.grbTimKiemDauSach);
             this.Controls.Add(this.grbTTDauSach);
             this.Controls.Add(this.grbDSDauSach);
             this.Name = "FrmQuanLyDauSach";
             this.Text = "Quản lý đầu sách";
             this.pnlHinhAnh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).EndInit();
+            this.grbDSDauSach.ResumeLayout(false);
             this.grbTTDauSach.ResumeLayout(false);
             this.grbTTDauSach.PerformLayout();
             this.toolStripChucNang.ResumeLayout(false);
             this.toolStripChucNang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).EndInit();
+            this.grbLocDauSach.ResumeLayout(false);
+            this.grbLocDauSach.PerformLayout();
+            this.grbTimKiemDauSach.ResumeLayout(false);
+            this.grbTimKiemDauSach.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +529,21 @@
         private System.Windows.Forms.Label lblNamXB;
         private System.Windows.Forms.Label lblNhaXB;
         private System.Windows.Forms.Label lblTheLoai;
+        private System.Windows.Forms.DataGridView dgvDSDauSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTacGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTheLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNhaXB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNamXB;
+        private System.Windows.Forms.GroupBox grbLocDauSach;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox grbTimKiemDauSach;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
