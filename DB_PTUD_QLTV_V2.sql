@@ -5,7 +5,6 @@ use DB_PTUD_QLTV_V2
 /*	======================================
 	Bảng thực thể
 	======================================	*/
-
 create table TheLoai
 (
 	MaTheLoai int identity(1,1),
@@ -222,7 +221,7 @@ insert into DauSach values
 (N'Tuyển tập Triệu Kim Vân', N'Tuyen-tap-trieu-kim-van.jpg', N'Triệu Kim Vân', 8, 11, '2015-1-1')
 
 /*	======================================
-	Tạo view ở đây và tạo view bằng script
+	TạGo view ở đây và tạo view bằng script
 	Lưu ý ghi chú lại view dùng để làm gì
 	======================================	*/
 
@@ -230,8 +229,52 @@ insert into DauSach values
 	Các chỉnh sửa
 	======================================	*/
 
+-- Thêm cột NgayHenTra và GhiChu vào bảng ChiTietPhieuMuon
+alter table ChiTietPhieuMuon drop column NgayTra, DaTra
+
+alter table ChiTietPhieuMuon add 
+NgayHenTra datetime,
+NgayTra datetime,
+GhiChu nvarchar(100)
+
+-- Thêm bảng PhieuTra và ChiTietPhieuTra
+create table PhieuTra
+(
+	MaPhieuTra int identity(1,1),
+	MaPhieuMuon int,
+	MaNhanVien int,
+	MaThe int,
+	NgayTra datetime,
+	constraint PK_PhieuTra primary key (MaPhieuTra)
+)
+
+alter table PhieuTra add
+constraint FK_PhieuTra_PhieuMuon foreign key (MaPhieuMuon) references PhieuMuon(MaPhieuMuon),
+constraint FK_PhieuTra_DocGia foreign key (MaNhanVien) references NhanVien(MaNhanVien),
+constraint FK_PhieuTra_TheThuVien foreign key (MaThe) references TheThuVien(MaThe)
+
+create table ChiTietPhieuTra
+(
+	MaPhieuTra int,
+	MaBanIn int,
+	DaTra bit,
+	constraint PK_ChiTietPhieuTra primary key (MaPhieuTra, MaBanIn)
+)
+
+alter table ChiTietPhieuTra add
+constraint FK_CTPT_PhieuTra foreign key (MaPhieuTra) references PhieuTra(MaPhieuTra),
+constraint FK_CTPT_BanIn foreign key (MaBanIn) references BanIn(MaBanIn)
+
+-- Rename khóa chính của bảng ChiTietPhieuMuon
+sp_rename @objname = N'[ChiTietPhieuMuon].[PK_ChiTietMuonTra]', @newname = N'PK_ChiTietPhieuMuon'
+
 /*	======================================
 	Bãi thử
 	======================================	*/
+create view view_DSDauSach as
+SELECT dbo.DauSach.MaSach, dbo.DauSach.TenSach, dbo.DauSach.BiaSach, dbo.DauSach.TacGia, dbo.TheLoai.TenTheLoai, dbo.NhaXuatBan.TenNXB, dbo.DauSach.NamXB
+FROM dbo.DauSach INNER JOIN
+dbo.NhaXuatBan ON dbo.DauSach.MaNXB = dbo.NhaXuatBan.MaNXB INNER JOIN
+dbo.TheLoai ON dbo.DauSach.MaTheLoai = dbo.TheLoai.MaTheLoai
 
-select * from BanIn
+select * from view_DSDauSach
