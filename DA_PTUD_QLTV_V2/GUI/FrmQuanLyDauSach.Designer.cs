@@ -48,7 +48,6 @@
             this.lblNamXB = new System.Windows.Forms.Label();
             this.lblNhaXB = new System.Windows.Forms.Label();
             this.lblTheLoai = new System.Windows.Forms.Label();
-            this.txtNamXuatBan = new System.Windows.Forms.TextBox();
             this.cmbNhaXuatBan = new System.Windows.Forms.ComboBox();
             this.cmbTheLoai = new System.Windows.Forms.ComboBox();
             this.txtTacGia = new System.Windows.Forms.TextBox();
@@ -71,6 +70,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtpNamXuatBan = new System.Windows.Forms.DateTimePicker();
             this.pnlHinhAnh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
             this.grbDSDauSach.SuspendLayout();
@@ -187,6 +187,7 @@
             this.dgvDSDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSDauSach.Size = new System.Drawing.Size(507, 393);
             this.dgvDSDauSach.TabIndex = 2;
+            this.dgvDSDauSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDauSach_CellClick);
             // 
             // colMaSach
             // 
@@ -233,10 +234,10 @@
             // grbTTDauSach
             // 
             this.grbTTDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbTTDauSach.Controls.Add(this.dtpNamXuatBan);
             this.grbTTDauSach.Controls.Add(this.lblNamXB);
             this.grbTTDauSach.Controls.Add(this.lblNhaXB);
             this.grbTTDauSach.Controls.Add(this.lblTheLoai);
-            this.grbTTDauSach.Controls.Add(this.txtNamXuatBan);
             this.grbTTDauSach.Controls.Add(this.cmbNhaXuatBan);
             this.grbTTDauSach.Controls.Add(this.cmbTheLoai);
             this.grbTTDauSach.Controls.Add(this.txtTacGia);
@@ -283,13 +284,6 @@
             this.lblTheLoai.Size = new System.Drawing.Size(48, 13);
             this.lblTheLoai.TabIndex = 38;
             this.lblTheLoai.Text = "Thể loại:";
-            // 
-            // txtNamXuatBan
-            // 
-            this.txtNamXuatBan.Location = new System.Drawing.Point(224, 203);
-            this.txtNamXuatBan.Name = "txtNamXuatBan";
-            this.txtNamXuatBan.Size = new System.Drawing.Size(210, 20);
-            this.txtNamXuatBan.TabIndex = 37;
             // 
             // cmbNhaXuatBan
             // 
@@ -483,6 +477,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên sách";
             // 
+            // dtpNamXuatBan
+            // 
+            this.dtpNamXuatBan.CustomFormat = "dd/MM/yyyy";
+            this.dtpNamXuatBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNamXuatBan.Location = new System.Drawing.Point(224, 203);
+            this.dtpNamXuatBan.Name = "dtpNamXuatBan";
+            this.dtpNamXuatBan.Size = new System.Drawing.Size(210, 20);
+            this.dtpNamXuatBan.TabIndex = 41;
+            // 
             // FrmQuanLyDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,7 +537,6 @@
         private System.Windows.Forms.Label lblTacGia;
         private System.Windows.Forms.ComboBox cmbTheLoai;
         private System.Windows.Forms.ComboBox cmbNhaXuatBan;
-        private System.Windows.Forms.TextBox txtNamXuatBan;
         private System.Windows.Forms.Label lblNamXB;
         private System.Windows.Forms.Label lblNhaXB;
         private System.Windows.Forms.Label lblTheLoai;
@@ -554,5 +556,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNhaXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNamXB;
+        private System.Windows.Forms.DateTimePicker dtpNamXuatBan;
     }
 }

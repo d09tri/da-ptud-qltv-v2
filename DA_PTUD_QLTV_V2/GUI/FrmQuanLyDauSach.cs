@@ -103,5 +103,29 @@ namespace GUI
 
             _maNXB = int.Parse(maNXB);
         }
+
+        private void dgvDSDauSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            int rowIndex = dgvDSDauSach.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgvDSDauSach.Rows[rowIndex];  
+
+            int maSach = int.Parse(selectedRow.Cells[0].Value.ToString());
+            DauSach ds = dsBLL.GetDLDauSachTheoMa(maSach);
+
+            lblMaSach.Text = ds.MaSach.ToString();
+            txtTenSach.Text = ds.TenSach;
+            txtAnhBia.Text = ds.BiaSach;
+            txtTacGia.Text = ds.TacGia;
+            cmbTheLoai.Text = selectedRow.Cells[3].Value.ToString();
+            cmbNhaXuatBan.Text = selectedRow.Cells[4].Value.ToString();
+            dtpNamXuatBan.Value = (DateTime)ds.NamXB;
+
+            string duongDan = helper.LayDuongDanAnhBia() + ds.BiaSach;
+            Image anhBia = helper.LayAnhBiaDauSach(duongDan, picAnhBia.Width, picAnhBia.Height);
+            picAnhBia.Image = anhBia;
+        }
     }
 }
