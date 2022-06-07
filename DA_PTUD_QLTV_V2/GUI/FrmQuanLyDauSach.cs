@@ -19,10 +19,9 @@ namespace GUI
         DauSachBLL dsBLL = new DauSachBLL();
         Helper helper = new Helper();
 
-        List<view_DSDauSach> dsLst = new List<view_DSDauSach>();
-
         int _maNXB = 0;
         int _maTheLoai = 0;
+        string loaiThucThi = string.Empty;
 
         public FrmQuanLyDauSach()
         {
@@ -32,8 +31,7 @@ namespace GUI
 
         private void LoadDuLieuDauSach(List<view_DSDauSach> dl)
         {
-            dsLst = dl;
-            dgvDSDauSach.DataSource = dsLst;
+            dgvDSDauSach.DataSource = dl;
         }
 
         private void LoadDuLieu()
@@ -61,9 +59,20 @@ namespace GUI
             picAnhBia.Image = anhBia;
         }
 
+        private void LoadControlChucNang()
+        {
+            btnThem.Enabled = true;
+            btnXoa.Enabled = btnSua.Enabled = btnLuu.Enabled = btnHuy.Enabled = false;
+            txtTenSach.ReadOnly = txtTacGia.ReadOnly = true;
+            btnChonAnh.Enabled = false;
+            cmbNhaXuatBan.Enabled = cmbTheLoai.Enabled = false;
+            dtpNamXuatBan.Enabled = false;
+        }
+
         private void FrmQuanLyDauSach_Load(object sender, EventArgs e)
         {
             LoadDuLieu();
+            LoadControlChucNang();
         }
 
         private void cmbLocTheLoai_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,6 +135,37 @@ namespace GUI
             string duongDan = helper.LayDuongDanAnhBia() + ds.BiaSach;
             Image anhBia = helper.LayAnhBiaDauSach(duongDan, picAnhBia.Width, picAnhBia.Height);
             picAnhBia.Image = anhBia;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            _maNXB = _maTheLoai = cmbLocNhaXuatBan.SelectedIndex = cmbLocTheLoai.SelectedIndex = 0;
+            LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());            
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            loaiThucThi = "Them";
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            loaiThucThi = "Sua";
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,6 +45,7 @@
             this.colNhaXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNamXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTDauSach = new System.Windows.Forms.GroupBox();
+            this.dtpNamXuatBan = new System.Windows.Forms.DateTimePicker();
             this.lblNamXB = new System.Windows.Forms.Label();
             this.lblNhaXB = new System.Windows.Forms.Label();
             this.lblTheLoai = new System.Windows.Forms.Label();
@@ -67,10 +68,9 @@
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.grbTimKiemDauSach = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtTimKiemDauSach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpNamXuatBan = new System.Windows.Forms.DateTimePicker();
             this.pnlHinhAnh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
             this.grbDSDauSach.SuspendLayout();
@@ -258,6 +258,15 @@
             this.grbTTDauSach.TabStop = false;
             this.grbTTDauSach.Text = "Thông tin đầu sách";
             // 
+            // dtpNamXuatBan
+            // 
+            this.dtpNamXuatBan.CustomFormat = "dd/MM/yyyy";
+            this.dtpNamXuatBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNamXuatBan.Location = new System.Drawing.Point(224, 203);
+            this.dtpNamXuatBan.Name = "dtpNamXuatBan";
+            this.dtpNamXuatBan.Size = new System.Drawing.Size(210, 20);
+            this.dtpNamXuatBan.TabIndex = 41;
+            // 
             // lblNamXB
             // 
             this.lblNamXB.AutoSize = true;
@@ -401,6 +410,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(57, 22);
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -409,6 +419,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(47, 22);
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -417,6 +428,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(46, 22);
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // separator
             // 
@@ -430,6 +442,7 @@
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(47, 22);
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -438,12 +451,13 @@
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(49, 22);
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // grbTimKiemDauSach
             // 
             this.grbTimKiemDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grbTimKiemDauSach.Controls.Add(this.button1);
-            this.grbTimKiemDauSach.Controls.Add(this.textBox1);
+            this.grbTimKiemDauSach.Controls.Add(this.btnRefresh);
+            this.grbTimKiemDauSach.Controls.Add(this.txtTimKiemDauSach);
             this.grbTimKiemDauSach.Controls.Add(this.label2);
             this.grbTimKiemDauSach.Location = new System.Drawing.Point(537, 12);
             this.grbTimKiemDauSach.Name = "grbTimKiemDauSach";
@@ -452,21 +466,22 @@
             this.grbTimKiemDauSach.TabStop = false;
             this.grbTimKiemDauSach.Text = "Tìm kiếm đầu sách";
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.Location = new System.Drawing.Point(64, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(64, 57);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // textBox1
+            // txtTimKiemDauSach
             // 
-            this.textBox1.Location = new System.Drawing.Point(64, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(370, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtTimKiemDauSach.Location = new System.Drawing.Point(64, 31);
+            this.txtTimKiemDauSach.Name = "txtTimKiemDauSach";
+            this.txtTimKiemDauSach.Size = new System.Drawing.Size(370, 20);
+            this.txtTimKiemDauSach.TabIndex = 1;
             // 
             // label2
             // 
@@ -476,15 +491,6 @@
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên sách";
-            // 
-            // dtpNamXuatBan
-            // 
-            this.dtpNamXuatBan.CustomFormat = "dd/MM/yyyy";
-            this.dtpNamXuatBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNamXuatBan.Location = new System.Drawing.Point(224, 203);
-            this.dtpNamXuatBan.Name = "dtpNamXuatBan";
-            this.dtpNamXuatBan.Size = new System.Drawing.Size(210, 20);
-            this.dtpNamXuatBan.TabIndex = 41;
             // 
             // FrmQuanLyDauSach
             // 
@@ -547,9 +553,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox grbTimKiemDauSach;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTimKiemDauSach;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTacGia;
