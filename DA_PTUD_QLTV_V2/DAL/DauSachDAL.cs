@@ -74,5 +74,64 @@ namespace DAL
             return db.view_DSDauSaches.Where(t => lst.Select(y => y.MaSach).Contains(t.MaSach)).ToList();
         }
         #endregion
+
+        #region XuLyNghiepVu
+
+        public bool ThemDauSach(DauSach ds)
+        {
+            try
+            {
+                db.DauSaches.InsertOnSubmit(ds);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+                throw;
+            }
+        }
+
+
+        public bool XoaDauSach(int mads)
+        {
+            try
+            {
+                DauSach ds = db.DauSaches.Where(t => t.MaSach == mads).FirstOrDefault();
+                db.DauSaches.DeleteOnSubmit(ds);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+                throw;
+            }
+        }
+
+        public bool SuaDauSach(DauSach  ds)
+        {
+            try
+            {
+                DauSach dsSua = db.DauSaches.Where(t => t.MaSach == ds.MaSach).FirstOrDefault();
+                dsSua.TenSach = ds.TenSach;
+                dsSua.BiaSach = ds.BiaSach;
+                dsSua.TacGia = ds.TacGia;
+                dsSua.MaTheLoai = ds.MaTheLoai;
+                dsSua.MaNXB = ds.MaNXB;
+                dsSua.NamXB = ds.NamXB;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+                throw;
+            }
+        }
+        #endregion 
     }
 }

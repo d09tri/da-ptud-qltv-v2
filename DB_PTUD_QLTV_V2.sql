@@ -261,6 +261,7 @@ create table ChiTietPhieuTra
 	constraint PK_ChiTietPhieuTra primary key (MaPhieuTra, MaBanIn)
 )
 
+
 alter table ChiTietPhieuTra add
 constraint FK_CTPT_PhieuTra foreign key (MaPhieuTra) references PhieuTra(MaPhieuTra),
 constraint FK_CTPT_BanIn foreign key (MaBanIn) references BanIn(MaBanIn)
@@ -278,5 +279,7 @@ dbo.NhaXuatBan ON dbo.DauSach.MaNXB = dbo.NhaXuatBan.MaNXB INNER JOIN
 dbo.TheLoai ON dbo.DauSach.MaTheLoai = dbo.TheLoai.MaTheLoai
 
 select * from view_DSDauSach
+
+select * from DauSach
 
 SELECT IDENT_CURRENT('BanIn')

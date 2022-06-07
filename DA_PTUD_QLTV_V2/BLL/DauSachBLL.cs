@@ -60,5 +60,22 @@ namespace BLL
             return dsDAL.GetDSView_DSDauSachTongHop(maTheLoai, maNXB);
         }
         #endregion
+
+        #region XuLyNghiepVu
+          public bool ThemDauSach(DauSach ds)
+          {
+              return dsDAL.ThemDauSach(ds);
+          }
+
+          public bool XoaDauSach(int mads)
+          {
+              return dsDAL.XoaDauSach(mads);
+          }
+             
+          public bool SuaDauSach(DauSach  ds)
+          {
+              return dsDAL.SuaDauSach(ds);
+          }
+        #endregion 
     }
 }

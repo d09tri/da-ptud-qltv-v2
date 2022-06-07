@@ -123,7 +123,7 @@ namespace GUI
                 return;
 
             int rowIndex = dgvDSDauSach.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dgvDSDauSach.Rows[rowIndex];  
+            DataGridViewRow selectedRow = dgvDSDauSach.Rows[rowIndex];
 
             int maSach = int.Parse(selectedRow.Cells[0].Value.ToString());
             DauSach ds = dsBLL.GetDLDauSachTheoMa(maSach);
@@ -143,20 +143,92 @@ namespace GUI
             btnXoa.Enabled = btnSua.Enabled = true;
         }
 
+        private void ThemDauSach()
+        {
+            if (grbTTDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).Any(t => String.IsNullOrEmpty(t.Text)))
+            {
+                MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DauSach ds = new DauSach();
+            {
+                ds.TenSach = txtTenSach.Text;
+                ds.BiaSach = "";
+                ds.TacGia = txtTacGia.Text;
+                ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
+                ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
+                ds.NamXB = dtpNamXuatBan.Value;
+            }
+
+            if(dsBLL.ThemDauSach(ds))
+            {
+                LoadControlChucNang();
+                loaiThucThi = string.Empty;              
+            }
+            else
+            {
+                MessageBox.Show("Thêm đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void XoaDauSach(int maDauSach)
+        {
+            if(dsBLL.XoaDauSach(maDauSach))
+            {
+                LoadControlChucNang();
+            }
+            else
+            {
+                MessageBox.Show("Xóa đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SuaDauSach()
+        {
+            if(grbTTDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).Any(t => String.IsNullOrEmpty(t.Text)))
+            {
+                MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DauSach ds = new DauSach();
+            {
+                ds.TenSach = txtTenSach.Text;
+                ds.BiaSach = "";
+                ds.TacGia = txtTacGia.Text;
+                ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
+                ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
+                ds.NamXB = dtpNamXuatBan.Value;
+            }
+            if(dsBLL.SuaDauSach(ds))
+            {
+                LoadControlChucNang();
+                loaiThucThi = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Sửa đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             _maNXB = _maTheLoai = cmbLocNhaXuatBan.SelectedIndex = cmbLocTheLoai.SelectedIndex = 0;
-            LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());            
+            LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             loaiThucThi = "Them";
+            grbDSDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).ToList().ForEach(t => t.Enabled = true);
+            txtTenSach.ReadOnly = txtTacGia.ReadOnly = false;
+            cmbTheLoai.Enabled = cmbNhaXuatBan.Enabled = dtpNamXuatBan.Enabled = true;
             btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
             btnLuu.Enabled = btnHuy.Enabled = true;
 
             dgvDSDauSach.ClearSelection();
-            cmbNhaXuatBan.SelectedIndex = cmbLocTheLoai.SelectedIndex = 0;
+            cmbNhaXuatBan.SelectedIndex = cmbTheLoai.SelectedIndex = 0;
             dtpNamXuatBan.Value = DateTime.Now;
         }
 
@@ -166,6 +238,7 @@ namespace GUI
             if (rs == DialogResult.Yes)
             {
                 // Thực hiện chức năng xóa TẠI ĐÂY
+                XoaDauSach(int.Parse(lblMaSach.Text));
             }
             else
             {
@@ -176,11 +249,27 @@ namespace GUI
         private void btnSua_Click(object sender, EventArgs e)
         {
             loaiThucThi = "Sua";
+            grbDSDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).ToList().ForEach(t => t.Enabled = true);
+            txtTenSach.ReadOnly = txtTacGia.ReadOnly = false;
+            cmbTheLoai.Enabled = cmbNhaXuatBan.Enabled = dtpNamXuatBan.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
+            btnLuu.Enabled = btnHuy.Enabled = true;
+
+            dgvDSDauSach.ClearSelection();
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            switch (loaiThucThi)
+            {
+                case "Them":
+                    ThemDauSach();
+                    break;
+                case "Sua":
+                    SuaDauSach();
+                    break;
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
