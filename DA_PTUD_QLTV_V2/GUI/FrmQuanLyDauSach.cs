@@ -53,10 +53,6 @@ namespace GUI
             cmbLocNhaXuatBan.ValueMember = "MaNXB";
 
             LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
-
-            string duongDan = helper.LayDuongDanAnhBia() + "page-not-found.png";
-            Image anhBia = helper.LayAnhBiaDauSach(duongDan, picAnhBia.Width, picAnhBia.Height);
-            picAnhBia.Image = anhBia;
         }
 
         private void LoadControlChucNang()
@@ -67,6 +63,14 @@ namespace GUI
             btnChonAnh.Enabled = false;
             cmbNhaXuatBan.Enabled = cmbTheLoai.Enabled = false;
             dtpNamXuatBan.Enabled = false;
+
+            lblMaSach.Text = txtTenSach.Text = txtAnhBia.Text = txtTacGia.Text = string.Empty;
+            cmbNhaXuatBan.SelectedIndex = cmbTheLoai.SelectedIndex = 0;
+            dtpNamXuatBan.Value = DateTime.Now;
+
+            string duongDan = helper.LayDuongDanAnhBia() + "page-not-found.png";
+            Image anhBia = helper.LayAnhBiaDauSach(duongDan, picAnhBia.Width, picAnhBia.Height);
+            picAnhBia.Image = anhBia;
         }
 
         private void FrmQuanLyDauSach_Load(object sender, EventArgs e)
@@ -135,6 +139,8 @@ namespace GUI
             string duongDan = helper.LayDuongDanAnhBia() + ds.BiaSach;
             Image anhBia = helper.LayAnhBiaDauSach(duongDan, picAnhBia.Width, picAnhBia.Height);
             picAnhBia.Image = anhBia;
+
+            btnXoa.Enabled = btnSua.Enabled = true;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -146,11 +152,25 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             loaiThucThi = "Them";
+            btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
+            btnLuu.Enabled = btnHuy.Enabled = true;
+
+            dgvDSDauSach.ClearSelection();
+            cmbNhaXuatBan.SelectedIndex = cmbLocTheLoai.SelectedIndex = 0;
+            dtpNamXuatBan.Value = DateTime.Now;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            DialogResult rs = MessageBox.Show(string.Format("Xác nhận xóa đầu sách: {0}?", txtTenSach.Text), "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                // Thực hiện chức năng xóa TẠI ĐÂY
+            }
+            else
+            {
+                LoadControlChucNang();
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
