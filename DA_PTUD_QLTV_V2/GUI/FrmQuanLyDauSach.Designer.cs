@@ -71,6 +71,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtTimKiemDauSach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pnlHinhAnh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
             this.grbDSDauSach.SuspendLayout();
@@ -334,6 +335,7 @@
             this.btnChonAnh.TabIndex = 32;
             this.btnChonAnh.Text = "...";
             this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // txtAnhBia
             // 
@@ -563,5 +565,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNhaXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNamXB;
         private System.Windows.Forms.DateTimePicker dtpNamXuatBan;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

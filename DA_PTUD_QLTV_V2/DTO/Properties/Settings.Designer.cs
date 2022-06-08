@@ -26,8 +26,8 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9B9I6V6\\SQLEXPRESS;Initial Catalog=DB_PTUD_QLTV_V2;Persist Se" +
-            "curity Info=True;User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANGTRI-LAPTOP\\SQLEXPRESS;Initial Catalog=DB_PTUD_QLTV_V2;Persist Sec" +
+            "urity Info=True;User ID=sa;Password=123")]
         public string DB_PTUD_QLTV_V2ConnectionString {
             get {
                 return ((string)(this["DB_PTUD_QLTV_V2ConnectionString"]));

@@ -110,7 +110,7 @@
         <classShapeMoniker Id="ac575772-616c-4e0c-b07d-4c15ba4f5507" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.69314697265625); (3.5 : 4.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 4.69314697265625); (3.19791666666667 : 4.69314697265625 : JumpStart); (3.36458333333333 : 4.69314697265625 : JumpEnd); (3.5 : 4.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DB_PTUD_QLTV_V2DataContext/NhanVien/NhanVien_PhieuMuon" />
       <nodes>
         <classShapeMoniker Id="7c0e8408-738a-4982-899d-45666a94f245" />
@@ -145,14 +145,14 @@
         <classShapeMoniker Id="f17dd926-0a6d-4b06-bf3c-584cd3bcdd27" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.26567260742187); (3.04166666666667 : 2.26567260742187 : JumpStart); (3.36458333333333 : 2.26567260742187 : JumpEnd); (4.41666666666667 : 2.26567260742187 : JumpStart); (4.58333333333333 : 2.26567260742187 : JumpEnd); (6.25 : 2.26567260742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.26567260742187); (3.04166666666667 : 2.26567260742187 : JumpStart); (3.36458333333333 : 2.26567260742187 : JumpEnd); (3.88541416666667 : 2.26567260742187 : JumpStart); (4.05208083333333 : 2.26567260742187 : JumpEnd); (4.41666666666667 : 2.26567260742187 : JumpStart); (4.58333333333333 : 2.26567260742187 : JumpEnd); (6.25 : 2.26567260742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DB_PTUD_QLTV_V2DataContext/TheThuVien/TheThuVien_PhieuTra" />
       <nodes>
         <classShapeMoniker Id="7621a16e-6d2b-4549-b823-2eefcbac1e6f" />
         <classShapeMoniker Id="9afc79c3-c653-45bb-a5df-24e2de3afa31" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.28125 : 7); (3.28125 : 1.9818080061849); (3.20833333333333 : 1.9818080061849 : JumpStart); (3.04166666666667 : 1.9818080061849 : JumpEnd); (2.75 : 1.9818080061849)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.28125 : 7); (3.28125 : 1.9818080061849); (2.75 : 1.9818080061849)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DB_PTUD_QLTV_V2DataContext/DocGia/DocGia_TheThuVien" />
       <nodes>
         <classShapeMoniker Id="234d270e-8cf1-47f4-9eac-6e9ff0edd929" />

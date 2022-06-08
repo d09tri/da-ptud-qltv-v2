@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using System.IO;
 
 namespace GUI
 {
@@ -71,6 +72,8 @@ namespace GUI
             string duongDan = helper.LayDuongDanAnhBia() + "page-not-found.png";
             Image anhBia = helper.LayAnhBiaDauSach(duongDan, picAnhBia.Width, picAnhBia.Height);
             picAnhBia.Image = anhBia;
+
+            dgvDSDauSach.Enabled = true;
         }
 
         private void FrmQuanLyDauSach_Load(object sender, EventArgs e)
@@ -145,37 +148,54 @@ namespace GUI
 
         private void ThemDauSach()
         {
-            if (grbTTDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).Any(t => String.IsNullOrEmpty(t.Text)))
+            if (txtTenSach.Text == string.Empty || txtTacGia.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DauSach ds = new DauSach();
-            {
-                ds.TenSach = txtTenSach.Text;
-                ds.BiaSach = "";
-                ds.TacGia = txtTacGia.Text;
-                ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
-                ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
-                ds.NamXB = dtpNamXuatBan.Value;
-            }
-
-            if(dsBLL.ThemDauSach(ds))
-            {
-                LoadControlChucNang();
-                loaiThucThi = string.Empty;              
             }
             else
             {
-                MessageBox.Show("Thêm đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string fileName = openFileDialog.FileName;
+                if (fileName == "")
+                {
+                    MessageBox.Show("Vui lòng chọn ảnh bìa sách", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DauSach ds = new DauSach();
+                    {
+                        ds.TenSach = txtTenSach.Text;
+                        ds.BiaSach = openFileDialog.SafeFileName.ToString();
+                        ds.TacGia = txtTacGia.Text;
+                        ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
+                        ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
+                        ds.NamXB = dtpNamXuatBan.Value;
+                    }
+
+                    if (dsBLL.ThemDauSach(ds))
+                    {
+                        string str = helper.LayDuongDanAnhBia().Substring(0, helper.LayDuongDanAnhBia().Length - 1) + "\\" + openFileDialog.SafeFileName.ToString();
+                        if (str != fileName)
+                        {
+                            File.Copy(fileName, Path.Combine(helper.LayDuongDanAnhBia(), Path.GetFileName(fileName)), true);
+                        }
+
+                        LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
+                        LoadControlChucNang();
+                        loaiThucThi = string.Empty;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
         private void XoaDauSach(int maDauSach)
         {
-            if(dsBLL.XoaDauSach(maDauSach))
+            if (dsBLL.XoaDauSach(maDauSach))
             {
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
                 LoadControlChucNang();
             }
             else
@@ -186,32 +206,51 @@ namespace GUI
 
         private void SuaDauSach()
         {
-            if(grbTTDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).Any(t => String.IsNullOrEmpty(t.Text)))
+            if (txtTenSach.Text == string.Empty || txtTacGia.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            DauSach ds = new DauSach();
-            {
-                ds.TenSach = txtTenSach.Text;
-                ds.BiaSach = "";
-                ds.TacGia = txtTacGia.Text;
-                ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
-                ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
-                ds.NamXB = dtpNamXuatBan.Value;
-            }
-            if(dsBLL.SuaDauSach(ds))
-            {
-                LoadControlChucNang();
-                loaiThucThi = string.Empty;
             }
             else
             {
-                MessageBox.Show("Sửa đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                string fileName = openFileDialog.FileName;
+                if (fileName == "")
+                {
+                    MessageBox.Show("Vui lòng chọn ảnh bìa sách", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DauSach ds = new DauSach();
+                    {
+                        ds.MaSach = int.Parse(lblMaSach.Text);
+                        ds.TenSach = txtTenSach.Text;
+                        ds.BiaSach = openFileDialog.SafeFileName.ToString();
+                        ds.TacGia = txtTacGia.Text;
+                        ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
+                        ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
+                        ds.NamXB = dtpNamXuatBan.Value;
+                    }
+
+                    if (dsBLL.SuaDauSach(ds))
+                    {
+                        string str = helper.LayDuongDanAnhBia().Substring(0, helper.LayDuongDanAnhBia().Length - 1) + "\\" + openFileDialog.SafeFileName.ToString();
+                        if (str != fileName)
+                        {
+                            File.Copy(fileName, Path.Combine(helper.LayDuongDanAnhBia(), Path.GetFileName(fileName)), true);
+                        }
+
+                        LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
+                        LoadControlChucNang();
+                        loaiThucThi = string.Empty;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
             }
         }
+        
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             _maNXB = _maTheLoai = cmbLocNhaXuatBan.SelectedIndex = cmbLocTheLoai.SelectedIndex = 0;
@@ -220,12 +259,12 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            LoadControlChucNang();
             loaiThucThi = "Them";
-            grbDSDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).ToList().ForEach(t => t.Enabled = true);
             txtTenSach.ReadOnly = txtTacGia.ReadOnly = false;
             cmbTheLoai.Enabled = cmbNhaXuatBan.Enabled = dtpNamXuatBan.Enabled = true;
-            btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
-            btnLuu.Enabled = btnHuy.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
+            btnChonAnh.Enabled = btnLuu.Enabled = btnHuy.Enabled = true;
 
             dgvDSDauSach.ClearSelection();
             cmbNhaXuatBan.SelectedIndex = cmbTheLoai.SelectedIndex = 0;
@@ -237,7 +276,6 @@ namespace GUI
             DialogResult rs = MessageBox.Show(string.Format("Xác nhận xóa đầu sách: {0}?", txtTenSach.Text), "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                // Thực hiện chức năng xóa TẠI ĐÂY
                 XoaDauSach(int.Parse(lblMaSach.Text));
             }
             else
@@ -249,14 +287,12 @@ namespace GUI
         private void btnSua_Click(object sender, EventArgs e)
         {
             loaiThucThi = "Sua";
-            grbDSDauSach.Controls.OfType<TextBox>().Where(t => t != txtAnhBia).ToList().ForEach(t => t.Enabled = true);
             txtTenSach.ReadOnly = txtTacGia.ReadOnly = false;
             cmbTheLoai.Enabled = cmbNhaXuatBan.Enabled = dtpNamXuatBan.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
-            btnLuu.Enabled = btnHuy.Enabled = true;
+            btnChonAnh.Enabled = btnLuu.Enabled = btnHuy.Enabled = true;
 
             dgvDSDauSach.ClearSelection();
-
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -274,7 +310,19 @@ namespace GUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            loaiThucThi = string.Empty;
+            LoadControlChucNang();
+        }
 
+        private void btnChonAnh_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp, *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png ";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Image i = Image.FromFile(openFileDialog.FileName);
+                picAnhBia.Image = new Bitmap(i, new Size(picAnhBia.Width, picAnhBia.Height));
+                txtAnhBia.Text = openFileDialog.SafeFileName;
+            }
         }
     }
 }
