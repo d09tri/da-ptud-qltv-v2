@@ -18,6 +18,8 @@ namespace GUI
     {
         FilterInfoCollection filter = new FilterInfoCollection(FilterCategory.VideoInputDevice);
         VideoCaptureDevice video;
+        DauSachBLL dsBLL = new DauSachBLL();
+        List<int> lstMaBanIn = new List<int>();
 
         public FrmQuetDauSach()
         {
@@ -35,14 +37,29 @@ namespace GUI
         {
             Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
             BarcodeReader reader = new BarcodeReader();
-            var rs = reader.Decode(bitmap);
+            var result = reader.Decode(bitmap);
 
-            if (rs != null)
+            if (result != null)
             {
                 cmbDauSach.Invoke(new MethodInvoker(delegate()
                 {
-                    cmbDauSach.Items.Add(rs.ToString());
-                    cmbDauSach.SelectedIndex = 0;
+                    int maBanIn = int.Parse(result.ToString());
+                    if (lstMaBanIn.Contains(maBanIn))
+                        maBanIn = 0;
+                    else
+                    {
+                        lstMaBanIn.Add(maBanIn);
+                        DauSach ds = dsBLL.GetThongTinDauSachTheoMaBanIn(maBanIn);
+                        if (ds != null)
+                        {
+                            cmbDauSach.Items.Add(ds.TenSach);
+                            cmbDauSach.SelectedIndex = lstMaBanIn.Count - 1;
+                        }
+                        else
+                        {
+                            lstMaBanIn.Remove(maBanIn);
+                        }
+                    }
                 }));
             }
 
@@ -51,9 +68,16 @@ namespace GUI
 
         private void FrmQuetDauSach_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (video != null)
-                if (video.IsRunning)
-                    video.Stop();
+            video.Stop();
+        }
+
+        private void btnHoanTat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmTest frm = new FrmTest();
+            frm.Closed += (s, args) => this.Close();
+            frm.GanDuLieu(lstMaBanIn);
+            frm.Show();
         }
     }
 }

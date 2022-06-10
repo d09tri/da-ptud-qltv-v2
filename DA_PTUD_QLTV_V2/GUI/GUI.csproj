@@ -89,6 +89,12 @@
     <Compile Include="FrmQuetDauSach.Designer.cs">
       <DependentUpon>FrmQuetDauSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest.Designer.cs">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuetDauSach.resx">
       <DependentUpon>FrmQuetDauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTest.resx">
+      <DependentUpon>FrmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>

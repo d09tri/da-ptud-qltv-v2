@@ -61,21 +61,33 @@ namespace BLL
         }
         #endregion
 
-        #region XuLyNghiepVu
-          public bool ThemDauSach(DauSach ds)
-          {
-              return dsDAL.ThemDauSach(ds);
-          }
+        #region Xử lý thêm xóa sửa cơ bản
+        public bool ThemDauSach(DauSach ds)
+        {
+            return dsDAL.ThemDauSach(ds);
+        }
 
-          public bool XoaDauSach(int mads)
-          {
-              return dsDAL.XoaDauSach(mads);
-          }
-             
-          public bool SuaDauSach(DauSach  ds)
-          {
-              return dsDAL.SuaDauSach(ds);
-          }
-        #endregion 
+        public bool XoaDauSach(int mads)
+        {
+            return dsDAL.XoaDauSach(mads);
+        }
+
+        public bool SuaDauSach(DauSach ds)
+        {
+            return dsDAL.SuaDauSach(ds);
+        }
+        #endregion
+
+        public DauSach GetThongTinDauSachTheoMaBanIn(int maBanIn)
+        {
+            try
+            {
+                return dsDAL.GetThongTinDauSachTheoMaBanIn(maBanIn);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace DAL
     public class DauSachDAL
     {
         DB_PTUD_QLTV_V2DataContext db = new DB_PTUD_QLTV_V2DataContext();
+        BanInDAL biDAL = new BanInDAL();
 
         public DauSachDAL() { }
 
@@ -75,7 +76,7 @@ namespace DAL
         }
         #endregion
 
-        #region XuLyNghiepVu
+        #region Xử lý thêm xóa sửa cơ bản
 
         public bool ThemDauSach(DauSach ds)
         {
@@ -133,5 +134,13 @@ namespace DAL
             }
         }
         #endregion 
+
+        public DauSach GetThongTinDauSachTheoMaBanIn(int maBanIn)
+        {
+            BanIn bi = biDAL.GetThongTinBanInTheoMaBanIn(maBanIn);
+            if (bi == null)
+                return null;
+            return db.DauSaches.First(t => t.MaSach == bi.MaSach);
+        }
     }
 }

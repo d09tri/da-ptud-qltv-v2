@@ -106,5 +106,17 @@ namespace DAL
                 return false;
             }
         }
+
+        public BanIn GetThongTinBanInTheoMaBanIn(int maBanIn)
+        {
+            try
+            {
+                return db.BanIns.First(t => t.MaBanIn == maBanIn);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

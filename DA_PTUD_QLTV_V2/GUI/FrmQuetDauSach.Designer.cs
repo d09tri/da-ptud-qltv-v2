@@ -69,6 +69,7 @@
             this.btnHoanTat.TabIndex = 3;
             this.btnHoanTat.Text = "Hoàn tất";
             this.btnHoanTat.UseVisualStyleBackColor = true;
+            this.btnHoanTat.Click += new System.EventHandler(this.btnHoanTat_Click);
             // 
             // FrmQuetDauSach
             // 
