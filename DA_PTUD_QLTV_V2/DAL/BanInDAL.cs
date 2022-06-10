@@ -66,7 +66,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// 
+        /// Thay đổi cho phù hợp với yêu cầu xóa khác
         /// </summary>
         /// <param name="maBanIn"></param>
         /// <returns>
