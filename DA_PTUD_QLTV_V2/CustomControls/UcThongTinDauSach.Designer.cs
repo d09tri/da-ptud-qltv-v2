@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTenSach = new System.Windows.Forms.Label();
+            this.lblMaBanIn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAnhBia)).BeginInit();
             this.pnlHinhAnh.SuspendLayout();
             this.pnlThongTin.SuspendLayout();
@@ -67,6 +68,7 @@
             // pnlThongTin
             // 
             this.pnlThongTin.BackColor = System.Drawing.Color.White;
+            this.pnlThongTin.Controls.Add(this.lblMaBanIn);
             this.pnlThongTin.Controls.Add(this.lblNamXuatBan);
             this.pnlThongTin.Controls.Add(this.lblNhaXuatBan);
             this.pnlThongTin.Controls.Add(this.lblTacGia);
@@ -168,6 +170,16 @@
             this.lblTenSach.TabIndex = 20;
             this.lblTenSach.Text = "lblTenSach";
             // 
+            // lblMaBanIn
+            // 
+            this.lblMaBanIn.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblMaBanIn.Location = new System.Drawing.Point(300, 143);
+            this.lblMaBanIn.Name = "lblMaBanIn";
+            this.lblMaBanIn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblMaBanIn.Size = new System.Drawing.Size(76, 13);
+            this.lblMaBanIn.TabIndex = 29;
+            this.lblMaBanIn.Text = "lblMaBanIn";
+            // 
             // UcThongTinDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +210,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTenSach;
+        private System.Windows.Forms.Label lblMaBanIn;
 
     }
 }

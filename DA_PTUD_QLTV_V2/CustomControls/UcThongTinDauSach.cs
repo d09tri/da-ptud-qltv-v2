@@ -15,6 +15,7 @@ namespace CustomControls
         public UcThongTinDauSach()
         {
             InitializeComponent();
+            lblMaBanIn.Visible = false;
         }
 
         private string _tenSach;
@@ -22,6 +23,7 @@ namespace CustomControls
         private string _tacGia;
         private string _nhaXuatBan;
         private string _namXuatBan;
+        private string _maBanIn;
         private Image _anhBia;
 
         #region Properties
@@ -65,6 +67,17 @@ namespace CustomControls
         {
             get { return _anhBia; }
             set { _anhBia = value; }
+        }
+
+        [Category("Custom Props")]
+        public string MaBanIn
+        {
+            get { return _maBanIn; }
+            set 
+            {
+                lblMaBanIn.Visible = true;
+                _maBanIn = value;
+            }
         }
         #endregion
 
