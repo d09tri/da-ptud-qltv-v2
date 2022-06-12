@@ -16,11 +16,10 @@ namespace GUI
 {
     public partial class FrmQuetDauSach : Form
     {
-        FilterInfoCollection filter = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+        FilterInfoCollection filter;
         VideoCaptureDevice video;
         DauSachBLL dsBLL = new DauSachBLL();
         static List<int> lstMaBanIn = new List<int>();
-        Helper helper = new Helper();
 
         public FrmQuetDauSach()
         {
@@ -29,6 +28,7 @@ namespace GUI
 
         private void FrmQuetDauSach_Load(object sender, EventArgs e)
         {
+            filter = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             video = new VideoCaptureDevice(filter[0].MonikerString);
             video.NewFrame += video_NewFrame;
             video.Start();
@@ -53,7 +53,7 @@ namespace GUI
                         DauSach ds = dsBLL.GetThongTinDauSachTheoMaBanIn(maBanIn);
                         if (ds != null)
                         {
-                            cmbDauSach.Items.Add(ds.TenSach);
+                            cmbDauSach.Items.Add(string.Format("{0} - {1}", ds.TenSach, maBanIn));
                             cmbDauSach.SelectedIndex = lstMaBanIn.Count - 1;
                         }
                         else

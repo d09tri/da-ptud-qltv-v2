@@ -8,11 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
 namespace GUI
 {
     public partial class FrmChucNangMuonSach : Form
     {
+        DauSachBLL dsBLL = new DauSachBLL();
+        TheLoaiBLL tlBLL = new TheLoaiBLL();
+        NhaXuatBanBLL nxbBLL = new NhaXuatBanBLL();
+        Helper helper = new Helper();
+
         public FrmChucNangMuonSach()
         {
             InitializeComponent();
@@ -33,13 +40,34 @@ namespace GUI
 
         private void btnLoadDauSach_Click(object sender, EventArgs e)
         {
+            if (lstMaBanIn.Count <= 0)
+            {
+                MessageBox.Show("Chưa có đầu sách nào được mượn, vui lòng quét đầu sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             foreach (int maBanIn in lstMaBanIn)
             {
-                UcThongTinDauSach uc = new UcThongTinDauSach();
-                uc.Width = fpnlDSDauSachMuon.Width - 20;
+                DauSach ds = dsBLL.GetThongTinDauSachTheoMaBanIn(maBanIn);
+
+                string duongDan = helper.LayDuongDanAnhBia() + ds.BiaSach;
+                Image anhBia = helper.LayAnhBiaDauSach(duongDan);
+
+                UcThongTinDauSach uc = new UcThongTinDauSach()
+                {
+                    TenSach = ds.TenSach,
+                    TheLoai = tlBLL.GetTenTheLoaiTuMa((int)ds.MaTheLoai),
+                    TacGia = ds.TacGia,
+                    NhaXuatBan = nxbBLL.GetTenNhaXuatBanTuMa((int)ds.MaNXB),
+                    NamXuatBan = ds.NamXB.Value.ToShortDateString(),
+                    AnhBia = anhBia,
+                    MaBanIn = maBanIn.ToString()
+                };
+
+                uc.LoadAnhBia();
+
+                uc.Width = fpnlDSDauSachMuon.Width - 10;
                 uc.Left = (fpnlDSDauSachMuon.ClientSize.Width - uc.Width) / 2;
                 uc.Top = (fpnlDSDauSachMuon.ClientSize.Height - uc.Height) / 2;
-                uc.TenSach = maBanIn.ToString();
                 fpnlDSDauSachMuon.Controls.Add(uc);
                 uc.Anchor = AnchorStyles.None;
             }

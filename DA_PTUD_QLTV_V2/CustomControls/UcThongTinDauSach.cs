@@ -31,35 +31,55 @@ namespace CustomControls
         public string TenSach
         {
             get { return _tenSach; }
-            set { _tenSach = value; lblTenSach.Text = value; }
+            set
+            {
+                _tenSach = value;
+                lblTenSach.Text = value;
+            }
         }
 
         [Category("Custom Props")]
         public string TheLoai
         {
             get { return _theLoai; }
-            set { _theLoai = value; lblTheLoai.Text = value; }
+            set
+            {
+                _theLoai = value;
+                lblTheLoai.Text = value;
+            }
         }
 
         [Category("Custom Props")]
         public string TacGia
         {
             get { return _tacGia; }
-            set { _tacGia = value; lblTacGia.Text = value; }
+            set
+            {
+                _tacGia = value;
+                lblTacGia.Text = value;
+            }
         }
 
         [Category("Custom Props")]
         public string NhaXuatBan
         {
             get { return _nhaXuatBan; }
-            set { _nhaXuatBan = value; lblNhaXuatBan.Text = value; }
+            set
+            {
+                _nhaXuatBan = value;
+                lblNhaXuatBan.Text = value;
+            }
         }
 
         [Category("Custom Props")]
         public string NamXuatBan
         {
             get { return _namXuatBan; }
-            set { _namXuatBan = value; lblNamXuatBan.Text = value; }
+            set
+            {
+                _namXuatBan = value;
+                lblNamXuatBan.Text = value;
+            }
         }
 
         [Category("Custom Props")]
@@ -73,10 +93,11 @@ namespace CustomControls
         public string MaBanIn
         {
             get { return _maBanIn; }
-            set 
+            set
             {
-                lblMaBanIn.Visible = true;
                 _maBanIn = value;
+                lblMaBanIn.Visible = true;
+                lblMaBanIn.Text = string.Format("#{0}", value);
             }
         }
         #endregion

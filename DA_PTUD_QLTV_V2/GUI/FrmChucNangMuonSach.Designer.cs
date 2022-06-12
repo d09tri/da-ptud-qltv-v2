@@ -91,7 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbTTPhieuMuon.Location = new System.Drawing.Point(12, 12);
             this.grbTTPhieuMuon.Name = "grbTTPhieuMuon";
-            this.grbTTPhieuMuon.Size = new System.Drawing.Size(261, 171);
+            this.grbTTPhieuMuon.Size = new System.Drawing.Size(261, 526);
             this.grbTTPhieuMuon.TabIndex = 1;
             this.grbTTPhieuMuon.TabStop = false;
             this.grbTTPhieuMuon.Text = "Thông tin phiếu mượn";
