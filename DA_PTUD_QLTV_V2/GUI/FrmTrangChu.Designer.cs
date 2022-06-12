@@ -46,6 +46,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnBanIn = new System.Windows.Forms.Button();
             this.pnlSideMenu.SuspendLayout();
             this.pnlHeThongSubMenu.SuspendLayout();
             this.pnlChucNangSubMenu.SuspendLayout();
@@ -79,7 +80,7 @@
             this.pnlHeThongSubMenu.Controls.Add(this.btnRestore);
             this.pnlHeThongSubMenu.Controls.Add(this.btnBackup);
             this.pnlHeThongSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeThongSubMenu.Location = new System.Drawing.Point(0, 355);
+            this.pnlHeThongSubMenu.Location = new System.Drawing.Point(0, 395);
             this.pnlHeThongSubMenu.Name = "pnlHeThongSubMenu";
             this.pnlHeThongSubMenu.Size = new System.Drawing.Size(214, 120);
             this.pnlHeThongSubMenu.TabIndex = 11;
@@ -145,7 +146,7 @@
             this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeThong.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnHeThong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 310);
+            this.btnHeThong.Location = new System.Drawing.Point(0, 350);
             this.btnHeThong.Name = "btnHeThong";
             this.btnHeThong.Padding = new System.Windows.Forms.Padding(9, 0, 21, 0);
             this.btnHeThong.Size = new System.Drawing.Size(214, 45);
@@ -162,7 +163,7 @@
             this.pnlChucNangSubMenu.Controls.Add(this.btnTraSach);
             this.pnlChucNangSubMenu.Controls.Add(this.btnMuonSach);
             this.pnlChucNangSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChucNangSubMenu.Location = new System.Drawing.Point(0, 230);
+            this.pnlChucNangSubMenu.Location = new System.Drawing.Point(0, 270);
             this.pnlChucNangSubMenu.Name = "pnlChucNangSubMenu";
             this.pnlChucNangSubMenu.Size = new System.Drawing.Size(214, 80);
             this.pnlChucNangSubMenu.TabIndex = 9;
@@ -210,7 +211,7 @@
             this.btnChucNang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChucNang.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnChucNang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChucNang.Location = new System.Drawing.Point(0, 185);
+            this.btnChucNang.Location = new System.Drawing.Point(0, 225);
             this.btnChucNang.Name = "btnChucNang";
             this.btnChucNang.Padding = new System.Windows.Forms.Padding(9, 0, 21, 0);
             this.btnChucNang.Size = new System.Drawing.Size(214, 45);
@@ -241,11 +242,12 @@
             // pnlQuanLySubMenu
             // 
             this.pnlQuanLySubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlQuanLySubMenu.Controls.Add(this.btnBanIn);
             this.pnlQuanLySubMenu.Controls.Add(this.btnDauSach);
             this.pnlQuanLySubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuanLySubMenu.Location = new System.Drawing.Point(0, 145);
             this.pnlQuanLySubMenu.Name = "pnlQuanLySubMenu";
-            this.pnlQuanLySubMenu.Size = new System.Drawing.Size(214, 40);
+            this.pnlQuanLySubMenu.Size = new System.Drawing.Size(214, 80);
             this.pnlQuanLySubMenu.TabIndex = 5;
             // 
             // btnDauSach
@@ -322,6 +324,24 @@
             this.pnlMain.Size = new System.Drawing.Size(972, 681);
             this.pnlMain.TabIndex = 5;
             // 
+            // btnBanIn
+            // 
+            this.btnBanIn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBanIn.FlatAppearance.BorderSize = 0;
+            this.btnBanIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBanIn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnBanIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBanIn.Location = new System.Drawing.Point(0, 40);
+            this.btnBanIn.Name = "btnBanIn";
+            this.btnBanIn.Padding = new System.Windows.Forms.Padding(30, 0, 23, 0);
+            this.btnBanIn.Size = new System.Drawing.Size(214, 40);
+            this.btnBanIn.TabIndex = 3;
+            this.btnBanIn.Text = "Bản in";
+            this.btnBanIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBanIn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBanIn.UseVisualStyleBackColor = true;
+            this.btnBanIn.Click += new System.EventHandler(this.btnBanIn_Click);
+            // 
             // FrmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +352,7 @@
             this.Name = "FrmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
+            this.Load += new System.EventHandler(this.FrmTrangChu_Load);
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlHeThongSubMenu.ResumeLayout(false);
             this.pnlChucNangSubMenu.ResumeLayout(false);
@@ -361,6 +382,7 @@
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblTaiKhoan;
-        private System.Windows.Forms.Panel pnlMain;
+        public System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Button btnBanIn;
     }
 }

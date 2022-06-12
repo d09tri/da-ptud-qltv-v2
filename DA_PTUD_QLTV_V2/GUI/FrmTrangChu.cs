@@ -12,9 +12,15 @@ namespace GUI
 {
     public partial class FrmTrangChu : Form
     {
+        Helper helper = new Helper();
         public FrmTrangChu()
         {
             InitializeComponent();
+        }
+
+        private void FrmTrangChu_Load(object sender, EventArgs e)
+        {
+            HideSubMenu();
         }
 
         #region Sub menu functions
@@ -62,6 +68,15 @@ namespace GUI
         #region Sub menu Quản lý
         private void btnDauSach_Click(object sender, EventArgs e)
         {
+            FrmQuanLyDauSach frm = new FrmQuanLyDauSach();
+            helper.LoadChildForm(frm, pnlMain);
+            HideSubMenu();
+        }
+
+        private void btnBanIn_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyBanIn frm = new FrmQuanLyBanIn();
+            helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
         #endregion
@@ -69,6 +84,8 @@ namespace GUI
         #region Sub menu Chức năng
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
+            FrmChucNangMuonSach frm = new FrmChucNangMuonSach();
+            helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 
@@ -94,5 +111,6 @@ namespace GUI
             HideSubMenu();
         }
         #endregion
+
     }
 }

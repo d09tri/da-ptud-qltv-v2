@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using BLL;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -59,6 +60,20 @@ namespace GUI
         public int LayMaCuoiCungVuaThemVao(string tenBang)
         {
             return helperBLL.LayMaCuoiCungVuaThemVao(tenBang);
+        }
+
+        public void LoadChildForm(Form frm, Panel pnl)
+        {
+            pnl.Controls.Clear();
+
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            pnl.Controls.Add(frm);
+            pnl.Tag = frm;
+
+            frm.Show();
         }
     }
 }

@@ -19,23 +19,23 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            // this.Hide();
             FrmQuetDauSach frm = new FrmQuetDauSach();
-            frm.Closed += (s, args) => this.Close();
-            frm.Show();
+            // frm.Closed += (s, args) => this.Close();
+            frm.ShowDialog();
         }
 
-        List<int> lst = new List<int>();
+        static List<int> lstS = new List<int>();
 
-        public void GanDuLieu(List<int> lst)
+        public static void GanDuLieu(List<int> lst)
         {
-            this.lst = lst;
+            lstS = lst;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string r = "";
-            lst.ForEach(t => r += " " + t.ToString());
+            lstS.ForEach(t => r += " " + t.ToString());
             MessageBox.Show(r);
         }
     }

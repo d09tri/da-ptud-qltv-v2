@@ -19,7 +19,8 @@ namespace GUI
         FilterInfoCollection filter = new FilterInfoCollection(FilterCategory.VideoInputDevice);
         VideoCaptureDevice video;
         DauSachBLL dsBLL = new DauSachBLL();
-        List<int> lstMaBanIn = new List<int>();
+        static List<int> lstMaBanIn = new List<int>();
+        Helper helper = new Helper();
 
         public FrmQuetDauSach()
         {
@@ -73,11 +74,8 @@ namespace GUI
 
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmTest frm = new FrmTest();
-            frm.Closed += (s, args) => this.Close();
-            frm.GanDuLieu(lstMaBanIn);
-            frm.Show();
+            FrmChucNangMuonSach.GanDuLieuDSMaBanIn(lstMaBanIn);
+            this.Close();
         }
     }
 }
