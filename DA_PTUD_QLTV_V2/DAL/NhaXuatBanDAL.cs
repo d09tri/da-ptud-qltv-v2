@@ -18,9 +18,9 @@ namespace DAL
             return db.NhaXuatBans.ToList();
         }
 
-        public string GetTenNhaXuatBanTuMa(int maNXB)
+        public NhaXuatBan GetNhaXuatBanTheoMa(int maNXB)
         {
-            return db.NhaXuatBans.First(t => t.MaNXB == maNXB).TenNXB;
+            return db.NhaXuatBans.First(t => t.MaNXB == maNXB);
         }
     }
 }

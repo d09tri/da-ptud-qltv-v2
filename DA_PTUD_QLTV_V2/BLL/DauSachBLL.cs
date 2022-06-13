@@ -19,14 +19,14 @@ namespace BLL
             return dsDAL.GetDSDauSach();
         }
 
-        public List<DauSach> GetDSDauSachTheoTheLoai(int maTheLoai)
+        public List<DauSach> GetDSDauSachTheoMaTheLoai(int maTheLoai)
         {
-            return dsDAL.GetDSDauSachTheoTheLoai(maTheLoai);
+            return dsDAL.GetDSDauSachTheoMaTheLoai(maTheLoai);
         }
 
-        public List<DauSach> GetDSDauSachTheoNhaXuatBan(int maNXB)
+        public List<DauSach> GetDSDauSachTheoMaNXB(int maNXB)
         {
-            return dsDAL.GetDSDauSachTheoNhaXuatBan(maNXB);
+            return dsDAL.GetDSDauSachTheoMaNXB(maNXB);
         }
 
         public List<DauSach> GetDSDauSachTongHop(int maTheLoai, int maNXB)
@@ -34,9 +34,9 @@ namespace BLL
             return dsDAL.GetDSDauSachTongHop(maTheLoai, maNXB);
         }
 
-        public DauSach GetDLDauSachTheoMa(int maSach)
+        public DauSach GetDauSachTheoMa(int maSach)
         {
-            return dsDAL.GetDLDauSachTheoMa(maSach);
+            return dsDAL.GetDauSachTheoMa(maSach);
         }
 
         #region view_DSDauSach
@@ -45,14 +45,14 @@ namespace BLL
             return dsDAL.GetDSView_DSDauSach();
         }
 
-        public List<view_DSDauSach> GetDSView_DSDauSachTheoTheLoai(int maTheLoai)
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoMaTheLoai(int maTheLoai)
         {
-            return dsDAL.GetDSView_DSDauSachTheoTheLoai(maTheLoai);
+            return dsDAL.GetDSView_DSDauSachTheoMaTheLoai(maTheLoai);
         }
 
-        public List<view_DSDauSach> GetDSView_DSDauSachTheoNhaXuatBan(int maNXB)
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoMaNhaXuatBan(int maNXB)
         {
-            return dsDAL.GetDSView_DSDauSachTheoNhaXuatBan(maNXB);
+            return dsDAL.GetDSView_DSDauSachTheoMaNhaXuatBan(maNXB);
         }
 
         public List<view_DSDauSach> GetDSView_DSDauSachTongHop(int maTheLoai, int maNXB)
@@ -61,7 +61,7 @@ namespace BLL
         }
         #endregion
 
-        #region Xử lý thêm xóa sửa cơ bản
+        #region Xử lý thêm, xóa và sửa cơ bản
         public bool ThemDauSach(DauSach ds)
         {
             return dsDAL.ThemDauSach(ds);
@@ -78,11 +78,11 @@ namespace BLL
         }
         #endregion
 
-        public DauSach GetThongTinDauSachTheoMaBanIn(int maBanIn)
+        public DauSach GetDauSachTheoMaBanIn(int maBanIn)
         {
             try
             {
-                return dsDAL.GetThongTinDauSachTheoMaBanIn(maBanIn);
+                return dsDAL.GetDauSachTheoMaBanIn(maBanIn);
             }
             catch (Exception)
             {

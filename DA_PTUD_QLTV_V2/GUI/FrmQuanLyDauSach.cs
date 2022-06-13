@@ -91,7 +91,7 @@ namespace GUI
 
             if (_maNXB == 0)
             {
-                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTheoTheLoai(int.Parse(maTheLoai)));
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTheoMaTheLoai(int.Parse(maTheLoai)));
             }
             else
             {
@@ -110,7 +110,7 @@ namespace GUI
 
             if (_maTheLoai == 0)
             {
-                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTheoNhaXuatBan(int.Parse(maNXB)));
+                LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSachTheoMaNhaXuatBan(int.Parse(maNXB)));
             }
             else
             {
@@ -129,7 +129,7 @@ namespace GUI
             DataGridViewRow selectedRow = dgvDSDauSach.Rows[rowIndex];
 
             int maSach = int.Parse(selectedRow.Cells[0].Value.ToString());
-            DauSach ds = dsBLL.GetDLDauSachTheoMa(maSach);
+            DauSach ds = dsBLL.GetDauSachTheoMa(maSach);
 
             lblMaSach.Text = ds.MaSach.ToString();
             txtTenSach.Text = ds.TenSach;

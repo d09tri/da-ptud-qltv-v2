@@ -19,12 +19,12 @@ namespace DAL
             return db.DauSaches.ToList();
         }
 
-        public List<DauSach> GetDSDauSachTheoTheLoai(int maTheLoai)
+        public List<DauSach> GetDSDauSachTheoMaTheLoai(int maTheLoai)
         {
             return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai).ToList();
         }
 
-        public List<DauSach> GetDSDauSachTheoNhaXuatBan(int maNXB)
+        public List<DauSach> GetDSDauSachTheoMaNXB(int maNXB)
         {
             return db.DauSaches.Where(t => t.MaNXB == maNXB).ToList();
         }
@@ -34,9 +34,17 @@ namespace DAL
             return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai && t.MaNXB == maNXB).ToList();
         }
 
-        public DauSach GetDLDauSachTheoMa(int maSach)
+        public DauSach GetDauSachTheoMa(int maSach)
         {
             return db.DauSaches.First(t => t.MaSach == maSach);
+        }
+
+        public DauSach GetDauSachTheoMaBanIn(int maBanIn)
+        {
+            BanIn bi = biDAL.GetBanInTheoMa(maBanIn);
+            if (bi == null)
+                return null;
+            return db.DauSaches.First(t => t.MaSach == bi.MaSach);
         }
 
         #region view_DSDauSach
@@ -57,15 +65,15 @@ namespace DAL
         /// <returns>
         /// Danh sách view_DSDauSach thuộc mã thể loại đó
         /// </returns>
-        public List<view_DSDauSach> GetDSView_DSDauSachTheoTheLoai(int maTheLoai)
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoMaTheLoai(int maTheLoai)
         {
-            List<DauSach> lst = GetDSDauSachTheoTheLoai(maTheLoai);
+            List<DauSach> lst = GetDSDauSachTheoMaTheLoai(maTheLoai);
             return db.view_DSDauSaches.Where(t => lst.Select(y => y.MaSach).Contains(t.MaSach)).ToList();
         }
 
-        public List<view_DSDauSach> GetDSView_DSDauSachTheoNhaXuatBan(int maNXB)
+        public List<view_DSDauSach> GetDSView_DSDauSachTheoMaNhaXuatBan(int maNXB)
         {
-            List<DauSach> lst = GetDSDauSachTheoNhaXuatBan(maNXB);
+            List<DauSach> lst = GetDSDauSachTheoMaNXB(maNXB);
             return db.view_DSDauSaches.Where(t => lst.Select(y => y.MaSach).Contains(t.MaSach)).ToList();
         }
 
@@ -76,7 +84,7 @@ namespace DAL
         }
         #endregion
 
-        #region Xử lý thêm xóa sửa cơ bản
+        #region Xử lý thêm, xóa và sửa cơ bản
 
         public bool ThemDauSach(DauSach ds)
         {
@@ -88,9 +96,7 @@ namespace DAL
             }
             catch (Exception)
             {
-
                 return false;
-                throw;
             }
         }
 
@@ -99,20 +105,18 @@ namespace DAL
         {
             try
             {
-                DauSach ds = db.DauSaches.Where(t => t.MaSach == mads).FirstOrDefault();
-                db.DauSaches.DeleteOnSubmit(ds);
+                DauSach dsXoa = db.DauSaches.Where(t => t.MaSach == mads).FirstOrDefault();
+                db.DauSaches.DeleteOnSubmit(dsXoa);
                 db.SubmitChanges();
                 return true;
             }
             catch (Exception)
             {
-
                 return false;
-                throw;
             }
         }
 
-        public bool SuaDauSach(DauSach  ds)
+        public bool SuaDauSach(DauSach ds)
         {
             try
             {
@@ -128,19 +132,9 @@ namespace DAL
             }
             catch (Exception)
             {
-
                 return false;
-                throw;
             }
         }
-        #endregion 
-
-        public DauSach GetThongTinDauSachTheoMaBanIn(int maBanIn)
-        {
-            BanIn bi = biDAL.GetThongTinBanInTheoMaBanIn(maBanIn);
-            if (bi == null)
-                return null;
-            return db.DauSaches.First(t => t.MaSach == bi.MaSach);
-        }
+        #endregion
     }
 }

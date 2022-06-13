@@ -81,7 +81,7 @@ namespace GUI
 
             if (_maNXB == 0)
             {
-                LoadDuLieuDauSach(dsBLL.GetDSDauSachTheoTheLoai(int.Parse(maTheLoai)));
+                LoadDuLieuDauSach(dsBLL.GetDSDauSachTheoMaTheLoai(int.Parse(maTheLoai)));
             }
             else
             {
@@ -100,7 +100,7 @@ namespace GUI
 
             if (_maTheLoai == 0)
             {
-                LoadDuLieuDauSach(dsBLL.GetDSDauSachTheoNhaXuatBan(int.Parse(maNXB)));
+                LoadDuLieuDauSach(dsBLL.GetDSDauSachTheoMaNXB(int.Parse(maNXB)));
             }
             else
             {
@@ -116,13 +116,13 @@ namespace GUI
                 return;
 
             _maSach = int.Parse(dgvDSDauSach.CurrentRow.Cells[0].Value.ToString());
-            ds = dsBLL.GetDLDauSachTheoMa(_maSach);
+            ds = dsBLL.GetDauSachTheoMa(_maSach);
             LoadDuLieuBanIn(biBLL.GetDSBanIn(_maSach));
 
             ucThongTinDauSach.TenSach = ds.TenSach;
-            ucThongTinDauSach.TheLoai = tlBLL.GetTenTheLoaiTuMa((int)ds.MaTheLoai);
+            ucThongTinDauSach.TheLoai = tlBLL.GetTheLoaiTheoMa((int)ds.MaTheLoai).TenTheLoai;
             ucThongTinDauSach.TacGia = ds.TacGia;
-            ucThongTinDauSach.NhaXuatBan = nxbBLL.GetTenNhaXuatBanTuMa((int)ds.MaNXB);
+            ucThongTinDauSach.NhaXuatBan = nxbBLL.GetNhaXuatBanTheoMa((int)ds.MaNXB).TenNXB;
             ucThongTinDauSach.NamXuatBan = ds.NamXB.Value.ToShortDateString();
 
             string duongDan = helper.LayDuongDanAnhBia() + ds.BiaSach;

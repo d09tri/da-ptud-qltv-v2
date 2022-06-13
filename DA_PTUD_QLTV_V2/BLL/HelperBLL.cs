@@ -12,9 +12,9 @@ namespace BLL
     {
         HelperDAL helperDAL = new HelperDAL();
 
-        public int LayMaCuoiCungVuaThemVao(string tenBang)
+        public int LayThongTinMaVuaThem(string tenBang)
         {
-            return helperDAL.LayMaCuoiCungVuaThemVao(tenBang);
+            return helperDAL.LayThongTinMaVuaThem(tenBang);
         }
     }
 }

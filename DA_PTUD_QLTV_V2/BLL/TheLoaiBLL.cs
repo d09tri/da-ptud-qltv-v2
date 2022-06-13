@@ -19,9 +19,9 @@ namespace BLL
             return tlDAL.GetDSTheLoai();
         }
 
-        public string GetTenTheLoaiTuMa(int maTheLoai)
+        public TheLoai GetTheLoaiTheoMa(int maTheLoai)
         {
-            return tlDAL.GetTenTheLoaiTuMa(maTheLoai);
+            return tlDAL.GetTheLoaiTheoMa(maTheLoai);
         }
     }
 }

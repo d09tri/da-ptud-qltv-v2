@@ -78,7 +78,6 @@ namespace DAL
         {
             if (KiemTraKhoaNgoaiBanIn(maBanIn))
                 return -1;
-
             try
             {
                 BanIn bi = db.BanIns.First(t => t.MaBanIn == maBanIn);
@@ -107,7 +106,7 @@ namespace DAL
             }
         }
 
-        public BanIn GetThongTinBanInTheoMaBanIn(int maBanIn)
+        public BanIn GetBanInTheoMa(int maBanIn)
         {
             try
             {

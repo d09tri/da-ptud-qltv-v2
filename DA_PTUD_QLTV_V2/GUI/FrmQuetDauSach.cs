@@ -50,7 +50,7 @@ namespace GUI
                     else
                     {
                         lstMaBanIn.Add(maBanIn);
-                        DauSach ds = dsBLL.GetThongTinDauSachTheoMaBanIn(maBanIn);
+                        DauSach ds = dsBLL.GetDauSachTheoMaBanIn(maBanIn);
                         if (ds != null)
                         {
                             cmbDauSach.Items.Add(string.Format("{0} - {1}", ds.TenSach, maBanIn));

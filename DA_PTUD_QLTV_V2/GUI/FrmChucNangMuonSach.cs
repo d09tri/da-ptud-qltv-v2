@@ -47,7 +47,7 @@ namespace GUI
             }
             foreach (int maBanIn in lstMaBanIn)
             {
-                DauSach ds = dsBLL.GetThongTinDauSachTheoMaBanIn(maBanIn);
+                DauSach ds = dsBLL.GetDauSachTheoMaBanIn(maBanIn);
 
                 string duongDan = helper.LayDuongDanAnhBia() + ds.BiaSach;
                 Image anhBia = helper.LayAnhBiaDauSach(duongDan);
@@ -55,9 +55,9 @@ namespace GUI
                 UcThongTinDauSach uc = new UcThongTinDauSach()
                 {
                     TenSach = ds.TenSach,
-                    TheLoai = tlBLL.GetTenTheLoaiTuMa((int)ds.MaTheLoai),
+                    TheLoai = tlBLL.GetTheLoaiTheoMa((int)ds.MaTheLoai).TenTheLoai,
                     TacGia = ds.TacGia,
-                    NhaXuatBan = nxbBLL.GetTenNhaXuatBanTuMa((int)ds.MaNXB),
+                    NhaXuatBan = nxbBLL.GetNhaXuatBanTheoMa((int)ds.MaNXB).TenNXB,
                     NamXuatBan = ds.NamXB.Value.ToShortDateString(),
                     AnhBia = anhBia,
                     MaBanIn = maBanIn.ToString()

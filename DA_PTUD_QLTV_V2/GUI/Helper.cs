@@ -59,7 +59,7 @@ namespace GUI
         /// <returns>Mã cuối cùng</returns>
         public int LayMaCuoiCungVuaThemVao(string tenBang)
         {
-            return helperBLL.LayMaCuoiCungVuaThemVao(tenBang);
+            return helperBLL.LayThongTinMaVuaThem(tenBang);
         }
 
         public void LoadChildForm(Form frm, Panel pnl)
