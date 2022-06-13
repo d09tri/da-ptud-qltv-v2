@@ -269,6 +269,33 @@ constraint FK_CTPT_BanIn foreign key (MaBanIn) references BanIn(MaBanIn)
 -- Rename khóa chính của bảng ChiTietPhieuMuon
 sp_rename @objname = N'[ChiTietPhieuMuon].[PK_ChiTietMuonTra]', @newname = N'PK_ChiTietPhieuMuon'
 
+-- Thêm dữ liệu bảng DocGia, TheThuVien và NhanVien
+set dateformat DMY
+insert into DocGia values
+(N'Nguyễn Văn A', '22/11/2001', 'CMND-001'),
+(N'Nguyễn Văn B', '15/1/1998', 'CMND-002'),
+(N'Nguyễn Văn C', '28/3/2000', 'CMND-003'),
+(N'Nguyễn Văn D', '1/12/1999', 'CMND-004'),
+(N'Nguyễn Thị E', '6/6/1999', 'CMND-005'),
+(N'Nguyễn Thị F', '21/12/2003', 'CMND-006'),
+(N'Nguyễn Thị G', '3/5/2000', 'CMND-007'),
+(N'Nguyễn Thị H', '5/7/1998', 'CMND-008')
+
+set dateformat DMY
+insert into TheThuVien values
+(1, '20/5/2022', '20/11/2022', N'Đang hoạt động', 1),
+(2, '10/5/2022', '10/11/2022', N'Đang hoạt động', 1),
+(3, '1/1/2022', '1/7/2022', N'Đang hoạt động', 1),
+(4, '15/12/2021', '15/5/2022', N'Hết hạn', 0),
+(5, '20/1/2022', '20/7/2022', N'Đang hoạt động', 1),
+(6, '20/5/2022', '20/11/2022', N'Đang hoạt động', 1),
+(7, '3/3/2021', '3/9/2021', N'Hết hạn', 0),
+(8, '12/6/2022', '12/12/2022', N'Đang hoạt động', 1)
+
+set dateformat DMY
+insert into NhanVien values
+(N'Trí Em', '3/9/2001'),
+(N'Lộc Ú', '29/12/2001')
 /*	======================================
 	Bãi thử
 	======================================	*/
