@@ -48,7 +48,8 @@
             // 
             // grbDSSachMuon
             // 
-            this.grbDSSachMuon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grbDSSachMuon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDSSachMuon.Controls.Add(this.label5);
             this.grbDSSachMuon.Controls.Add(this.btnLoadDauSach);
@@ -68,15 +69,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnlDSDauSachMuon.AutoScroll = true;
             this.fpnlDSDauSachMuon.BackColor = System.Drawing.Color.White;
-            this.fpnlDSDauSachMuon.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.fpnlDSDauSachMuon.Location = new System.Drawing.Point(3, 48);
             this.fpnlDSDauSachMuon.Name = "fpnlDSDauSachMuon";
             this.fpnlDSDauSachMuon.Size = new System.Drawing.Size(692, 475);
             this.fpnlDSDauSachMuon.TabIndex = 0;
-            this.fpnlDSDauSachMuon.WrapContents = false;
             // 
             // btnQuetDauSach
             // 
+            this.btnQuetDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuetDauSach.ForeColor = System.Drawing.Color.Black;
             this.btnQuetDauSach.Location = new System.Drawing.Point(498, 19);
             this.btnQuetDauSach.Name = "btnQuetDauSach";
@@ -88,6 +88,7 @@
             // 
             // btnLoadDauSach
             // 
+            this.btnLoadDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadDauSach.ForeColor = System.Drawing.Color.Black;
             this.btnLoadDauSach.Location = new System.Drawing.Point(598, 19);
             this.btnLoadDauSach.Name = "btnLoadDauSach";
@@ -99,9 +100,8 @@
             // 
             // grbTTPhieuMuon
             // 
-            this.grbTTPhieuMuon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbTTPhieuMuon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.grbTTPhieuMuon.Controls.Add(this.dateTimePicker1);
             this.grbTTPhieuMuon.Controls.Add(this.label4);
             this.grbTTPhieuMuon.Controls.Add(this.label3);
@@ -119,8 +119,6 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(82, 103);
@@ -148,8 +146,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(82, 77);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(173, 20);
@@ -166,8 +162,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(82, 50);
             this.comboBox1.Name = "comboBox1";
@@ -176,8 +170,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(82, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(173, 20);

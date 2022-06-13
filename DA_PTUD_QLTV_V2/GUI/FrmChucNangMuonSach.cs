@@ -45,6 +45,9 @@ namespace GUI
                 MessageBox.Show("Chưa có đầu sách mượn, vui lòng quét đầu sách trước tiên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
+            fpnlDSDauSachMuon.Controls.Clear();
+
             foreach (int maBanIn in lstMaBanIn)
             {
                 DauSach ds = dsBLL.GetDauSachTheoMaBanIn(maBanIn);
