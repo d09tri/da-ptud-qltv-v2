@@ -33,15 +33,16 @@
             this.btnQuetDauSach = new System.Windows.Forms.Button();
             this.btnLoadDauSach = new System.Windows.Forms.Button();
             this.grbTTPhieuMuon = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTheThuVien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbDocGia = new System.Windows.Forms.ComboBox();
+            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.grbDSSachMuon.SuspendLayout();
             this.grbTTPhieuMuon.SuspendLayout();
             this.SuspendLayout();
@@ -102,13 +103,14 @@
             // 
             this.grbTTPhieuMuon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.grbTTPhieuMuon.Controls.Add(this.dateTimePicker1);
+            this.grbTTPhieuMuon.Controls.Add(this.button1);
+            this.grbTTPhieuMuon.Controls.Add(this.dtpNgayMuon);
             this.grbTTPhieuMuon.Controls.Add(this.label4);
             this.grbTTPhieuMuon.Controls.Add(this.label3);
-            this.grbTTPhieuMuon.Controls.Add(this.textBox2);
+            this.grbTTPhieuMuon.Controls.Add(this.txtTheThuVien);
             this.grbTTPhieuMuon.Controls.Add(this.label2);
-            this.grbTTPhieuMuon.Controls.Add(this.comboBox1);
-            this.grbTTPhieuMuon.Controls.Add(this.textBox1);
+            this.grbTTPhieuMuon.Controls.Add(this.cmbDocGia);
+            this.grbTTPhieuMuon.Controls.Add(this.txtNhanVien);
             this.grbTTPhieuMuon.Controls.Add(this.label1);
             this.grbTTPhieuMuon.Location = new System.Drawing.Point(12, 12);
             this.grbTTPhieuMuon.Name = "grbTTPhieuMuon";
@@ -117,14 +119,14 @@
             this.grbTTPhieuMuon.TabStop = false;
             this.grbTTPhieuMuon.Text = "Thông tin phiếu mượn";
             // 
-            // dateTimePicker1
+            // dtpNgayMuon
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(82, 103);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(173, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpNgayMuon.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayMuon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayMuon.Location = new System.Drawing.Point(82, 103);
+            this.dtpNgayMuon.Name = "dtpNgayMuon";
+            this.dtpNgayMuon.Size = new System.Drawing.Size(173, 20);
+            this.dtpNgayMuon.TabIndex = 7;
             // 
             // label4
             // 
@@ -144,12 +146,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Thẻ thư viện:";
             // 
-            // textBox2
+            // txtTheThuVien
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtTheThuVien.Location = new System.Drawing.Point(82, 77);
+            this.txtTheThuVien.Name = "txtTheThuVien";
+            this.txtTheThuVien.Size = new System.Drawing.Size(173, 20);
+            this.txtTheThuVien.TabIndex = 4;
             // 
             // label2
             // 
@@ -158,22 +160,23 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Đọc giả:";
+            this.label2.Text = "Độc giả:";
             // 
-            // comboBox1
+            // cmbDocGia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cmbDocGia.FormattingEnabled = true;
+            this.cmbDocGia.Location = new System.Drawing.Point(82, 50);
+            this.cmbDocGia.Name = "cmbDocGia";
+            this.cmbDocGia.Size = new System.Drawing.Size(173, 21);
+            this.cmbDocGia.TabIndex = 2;
+            this.cmbDocGia.SelectedIndexChanged += new System.EventHandler(this.cmbDocGia_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtNhanVien
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNhanVien.Location = new System.Drawing.Point(82, 24);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Size = new System.Drawing.Size(173, 20);
+            this.txtNhanVien.TabIndex = 1;
             // 
             // label1
             // 
@@ -190,9 +193,19 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(6, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(378, 13);
+            this.label5.Size = new System.Drawing.Size(357, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Lưu ý: Nhấn chọn \"Load đầu sách\" sau khi đã quét xong đầu sách cho mượn";
+            this.label5.Text = "Lưu ý: Nhấn chọn \"Load đầu sách\" sau khi đã quét xong đầu sách mượn";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(9, 497);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(246, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Lập phiếu mượn";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmChucNangMuonSach
             // 
@@ -203,6 +216,7 @@
             this.Controls.Add(this.grbDSSachMuon);
             this.Name = "FrmChucNangMuonSach";
             this.Text = "Mượn sách";
+            this.Load += new System.EventHandler(this.FrmChucNangMuonSach_Load);
             this.grbDSSachMuon.ResumeLayout(false);
             this.grbDSSachMuon.PerformLayout();
             this.grbTTPhieuMuon.ResumeLayout(false);
@@ -219,13 +233,14 @@
         private System.Windows.Forms.Button btnQuetDauSach;
         private System.Windows.Forms.GroupBox grbTTPhieuMuon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNhanVien;
+        private System.Windows.Forms.ComboBox cmbDocGia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTheThuVien;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNgayMuon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

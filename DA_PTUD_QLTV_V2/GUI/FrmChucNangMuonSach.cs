@@ -18,14 +18,31 @@ namespace GUI
         DauSachBLL dsBLL = new DauSachBLL();
         TheLoaiBLL tlBLL = new TheLoaiBLL();
         NhaXuatBanBLL nxbBLL = new NhaXuatBanBLL();
+        DocGiaBLL dgBLL = new DocGiaBLL();
+        TheThuVienBLL ttvBLL = new TheThuVienBLL();
+
         Helper helper = new Helper();
+        static List<int> lstMaBanIn = new List<int>();
 
         public FrmChucNangMuonSach()
         {
             InitializeComponent();
         }
 
-        static List<int> lstMaBanIn = new List<int>();
+        private void FrmChucNangMuonSach_Load(object sender, EventArgs e)
+        {
+            LoadDuLieu();
+            dtpNgayMuon.MinDate = dtpNgayMuon.MaxDate = DateTime.Now;
+            cmbDocGia.SelectedIndex = 0;
+            cmbDocGia_SelectedIndexChanged(sender, e);
+        }
+
+        private void LoadDuLieu()
+        {
+            cmbDocGia.DataSource = dgBLL.GetDSDocGia();
+            cmbDocGia.DisplayMember = "TenDocGia";
+            cmbDocGia.ValueMember = "MaDocGia";
+        }
 
         public static void GanDuLieuDSMaBanIn(List<int> lst)
         {
@@ -74,6 +91,16 @@ namespace GUI
                 fpnlDSDauSachMuon.Controls.Add(uc);
                 uc.Anchor = AnchorStyles.None;
             }
+        }
+
+        private void cmbDocGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maDocGia = cmbDocGia.SelectedValue.ToString();
+            if (maDocGia.Equals("DTO.DocGia"))
+                return;
+
+            TheThuVien ttv = ttvBLL.GetTheThuVienTheoMaDocGia(int.Parse(maDocGia));
+            txtTheThuVien.Text = ttv.MaThe.ToString();
         }
     }
 }

@@ -44,10 +44,12 @@
     <Compile Include="CTPhieuMuonDAL.cs" />
     <Compile Include="DauSachDAL.cs" />
     <Compile Include="HelperDAL.cs" />
+    <Compile Include="DocGiaDAL.cs" />
     <Compile Include="NhaXuatBanDAL.cs" />
     <Compile Include="PhieuMuonDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TheLoaiDAL.cs" />
+    <Compile Include="TheThuVienDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
