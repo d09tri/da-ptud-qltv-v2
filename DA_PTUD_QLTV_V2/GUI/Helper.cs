@@ -57,7 +57,7 @@ namespace GUI
         /// </summary>
         /// <param name="tenBang">Tên bảng cần lấy mã cuối cùng</param>
         /// <returns>Mã cuối cùng</returns>
-        public int LayMaCuoiCungVuaThemVao(string tenBang)
+        public int LayThongTinMaVuaThem(string tenBang)
         {
             return helperBLL.LayThongTinMaVuaThem(tenBang);
         }

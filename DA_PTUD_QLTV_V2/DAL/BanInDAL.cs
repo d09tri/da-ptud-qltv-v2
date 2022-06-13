@@ -13,7 +13,7 @@ namespace DAL
 
         public BanInDAL() { }
 
-        public List<BanIn> GetDSBanIn(int maSach)
+        public List<BanIn> GetDSBanInTheoMaSach(int maSach)
         {
             return db.BanIns.Where(t => t.MaSach == maSach).ToList();
         }

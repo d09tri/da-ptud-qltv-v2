@@ -14,9 +14,9 @@ namespace BLL
 
         public BanInBLL() { }
 
-        public List<BanIn> GetDSBanIn(int maSach)
+        public List<BanIn> GetDSBanInTheoMaSach(int maSach)
         {
-            return biDAL.GetDSBanIn(maSach);
+            return biDAL.GetDSBanInTheoMaSach(maSach);
         }
 
         public bool ThemBanIn(BanIn bi)

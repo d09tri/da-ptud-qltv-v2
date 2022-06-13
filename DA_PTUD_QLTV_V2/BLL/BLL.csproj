@@ -40,9 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanInBLL.cs" />
+    <Compile Include="CTPhieuMuonBLL.cs" />
     <Compile Include="DauSachBLL.cs" />
     <Compile Include="HelperBLL.cs" />
     <Compile Include="NhaXuatBanBLL.cs" />
+    <Compile Include="PhieuMuonBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TheLoaiBLL.cs" />
   </ItemGroup>

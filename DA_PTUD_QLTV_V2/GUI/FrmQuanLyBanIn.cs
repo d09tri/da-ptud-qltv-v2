@@ -117,7 +117,7 @@ namespace GUI
 
             _maSach = int.Parse(dgvDSDauSach.CurrentRow.Cells[0].Value.ToString());
             ds = dsBLL.GetDauSachTheoMa(_maSach);
-            LoadDuLieuBanIn(biBLL.GetDSBanIn(_maSach));
+            LoadDuLieuBanIn(biBLL.GetDSBanInTheoMaSach(_maSach));
 
             ucThongTinDauSach.TenSach = ds.TenSach;
             ucThongTinDauSach.TheLoai = tlBLL.GetTheLoaiTheoMa((int)ds.MaTheLoai).TenTheLoai;
@@ -153,7 +153,7 @@ namespace GUI
             bi.TrangThai = false;
             if (biBLL.ThemBanIn(bi))
             {
-                LoadDuLieuBanIn(biBLL.GetDSBanIn(_maSach));
+                LoadDuLieuBanIn(biBLL.GetDSBanInTheoMaSach(_maSach));
             }
             else
             {
@@ -185,7 +185,7 @@ namespace GUI
             }
             else
             {
-                LoadDuLieuBanIn(biBLL.GetDSBanIn(_maSach));
+                LoadDuLieuBanIn(biBLL.GetDSBanInTheoMaSach(_maSach));
             }
 
             _maBanIn = 0;
@@ -205,7 +205,7 @@ namespace GUI
 
             if (biBLL.SuaBanIn(bi))
             {
-                LoadDuLieuBanIn(biBLL.GetDSBanIn(_maSach));
+                LoadDuLieuBanIn(biBLL.GetDSBanInTheoMaSach(_maSach));
             }
             else
             {

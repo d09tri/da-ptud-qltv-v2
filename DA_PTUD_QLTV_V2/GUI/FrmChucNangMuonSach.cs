@@ -42,7 +42,7 @@ namespace GUI
         {
             if (lstMaBanIn.Count <= 0)
             {
-                MessageBox.Show("Chưa có đầu sách nào được mượn, vui lòng quét đầu sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa có đầu sách mượn, vui lòng quét đầu sách trước tiên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             foreach (int maBanIn in lstMaBanIn)
