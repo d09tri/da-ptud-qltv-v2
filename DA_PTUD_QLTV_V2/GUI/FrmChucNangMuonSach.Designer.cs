@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.grbDSSachMuon = new System.Windows.Forms.GroupBox();
-            this.fpnlDSDauSachMuon = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnQuetDauSach = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnLoadDauSach = new System.Windows.Forms.Button();
+            this.btnQuetDauSach = new System.Windows.Forms.Button();
+            this.fpnlDSDauSachMuon = new System.Windows.Forms.FlowLayoutPanel();
             this.grbTTPhieuMuon = new System.Windows.Forms.GroupBox();
+            this.btnLapPhieu = new System.Windows.Forms.Button();
             this.dtpNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.cmbDocGia = new System.Windows.Forms.ComboBox();
             this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.grbDSSachMuon.SuspendLayout();
             this.grbTTPhieuMuon.SuspendLayout();
             this.SuspendLayout();
@@ -63,29 +63,15 @@
             this.grbDSSachMuon.TabStop = false;
             this.grbDSSachMuon.Text = "Danh sách đầu sách mượn";
             // 
-            // fpnlDSDauSachMuon
+            // label5
             // 
-            this.fpnlDSDauSachMuon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fpnlDSDauSachMuon.AutoScroll = true;
-            this.fpnlDSDauSachMuon.BackColor = System.Drawing.Color.White;
-            this.fpnlDSDauSachMuon.Location = new System.Drawing.Point(3, 48);
-            this.fpnlDSDauSachMuon.Name = "fpnlDSDauSachMuon";
-            this.fpnlDSDauSachMuon.Size = new System.Drawing.Size(692, 475);
-            this.fpnlDSDauSachMuon.TabIndex = 0;
-            // 
-            // btnQuetDauSach
-            // 
-            this.btnQuetDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuetDauSach.ForeColor = System.Drawing.Color.Black;
-            this.btnQuetDauSach.Location = new System.Drawing.Point(498, 19);
-            this.btnQuetDauSach.Name = "btnQuetDauSach";
-            this.btnQuetDauSach.Size = new System.Drawing.Size(94, 23);
-            this.btnQuetDauSach.TabIndex = 0;
-            this.btnQuetDauSach.Text = "Quét đầu sách";
-            this.btnQuetDauSach.UseVisualStyleBackColor = true;
-            this.btnQuetDauSach.Click += new System.EventHandler(this.btnQuetDauSach_Click);
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(6, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(357, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Lưu ý: Nhấn chọn \"Load đầu sách\" sau khi đã quét xong đầu sách mượn";
             // 
             // btnLoadDauSach
             // 
@@ -99,11 +85,35 @@
             this.btnLoadDauSach.UseVisualStyleBackColor = true;
             this.btnLoadDauSach.Click += new System.EventHandler(this.btnLoadDauSach_Click);
             // 
+            // btnQuetDauSach
+            // 
+            this.btnQuetDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuetDauSach.ForeColor = System.Drawing.Color.Black;
+            this.btnQuetDauSach.Location = new System.Drawing.Point(498, 19);
+            this.btnQuetDauSach.Name = "btnQuetDauSach";
+            this.btnQuetDauSach.Size = new System.Drawing.Size(94, 23);
+            this.btnQuetDauSach.TabIndex = 0;
+            this.btnQuetDauSach.Text = "Quét đầu sách";
+            this.btnQuetDauSach.UseVisualStyleBackColor = true;
+            this.btnQuetDauSach.Click += new System.EventHandler(this.btnQuetDauSach_Click);
+            // 
+            // fpnlDSDauSachMuon
+            // 
+            this.fpnlDSDauSachMuon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fpnlDSDauSachMuon.AutoScroll = true;
+            this.fpnlDSDauSachMuon.BackColor = System.Drawing.Color.White;
+            this.fpnlDSDauSachMuon.Location = new System.Drawing.Point(3, 48);
+            this.fpnlDSDauSachMuon.Name = "fpnlDSDauSachMuon";
+            this.fpnlDSDauSachMuon.Size = new System.Drawing.Size(692, 475);
+            this.fpnlDSDauSachMuon.TabIndex = 0;
+            // 
             // grbTTPhieuMuon
             // 
             this.grbTTPhieuMuon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.grbTTPhieuMuon.Controls.Add(this.button1);
+            this.grbTTPhieuMuon.Controls.Add(this.btnLapPhieu);
             this.grbTTPhieuMuon.Controls.Add(this.dtpNgayMuon);
             this.grbTTPhieuMuon.Controls.Add(this.label4);
             this.grbTTPhieuMuon.Controls.Add(this.label3);
@@ -118,6 +128,17 @@
             this.grbTTPhieuMuon.TabIndex = 1;
             this.grbTTPhieuMuon.TabStop = false;
             this.grbTTPhieuMuon.Text = "Thông tin phiếu mượn";
+            // 
+            // btnLapPhieu
+            // 
+            this.btnLapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLapPhieu.Location = new System.Drawing.Point(9, 497);
+            this.btnLapPhieu.Name = "btnLapPhieu";
+            this.btnLapPhieu.Size = new System.Drawing.Size(246, 23);
+            this.btnLapPhieu.TabIndex = 8;
+            this.btnLapPhieu.Text = "Lập phiếu mượn";
+            this.btnLapPhieu.UseVisualStyleBackColor = true;
+            this.btnLapPhieu.Click += new System.EventHandler(this.btnLapPhieu_Click);
             // 
             // dtpNgayMuon
             // 
@@ -150,6 +171,7 @@
             // 
             this.txtTheThuVien.Location = new System.Drawing.Point(82, 77);
             this.txtTheThuVien.Name = "txtTheThuVien";
+            this.txtTheThuVien.ReadOnly = true;
             this.txtTheThuVien.Size = new System.Drawing.Size(173, 20);
             this.txtTheThuVien.TabIndex = 4;
             // 
@@ -175,6 +197,7 @@
             // 
             this.txtNhanVien.Location = new System.Drawing.Point(82, 24);
             this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.ReadOnly = true;
             this.txtNhanVien.Size = new System.Drawing.Size(173, 20);
             this.txtNhanVien.TabIndex = 1;
             // 
@@ -187,26 +210,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhân viên:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(6, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(357, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Lưu ý: Nhấn chọn \"Load đầu sách\" sau khi đã quét xong đầu sách mượn";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(9, 497);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Lập phiếu mượn";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmChucNangMuonSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +218,6 @@
             this.Controls.Add(this.grbTTPhieuMuon);
             this.Controls.Add(this.grbDSSachMuon);
             this.Name = "FrmChucNangMuonSach";
-            this.Text = "Mượn sách";
             this.Load += new System.EventHandler(this.FrmChucNangMuonSach_Load);
             this.grbDSSachMuon.ResumeLayout(false);
             this.grbDSSachMuon.PerformLayout();
@@ -241,6 +243,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgayMuon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLapPhieu;
     }
 }

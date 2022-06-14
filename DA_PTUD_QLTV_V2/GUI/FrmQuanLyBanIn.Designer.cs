@@ -58,7 +58,8 @@
             // 
             // grbDSBanIn
             // 
-            this.grbDSBanIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbDSBanIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDSBanIn.Controls.Add(this.toolStripChucNang);
             this.grbDSBanIn.Controls.Add(this.dgvDSBanIn);
             this.grbDSBanIn.Location = new System.Drawing.Point(440, 185);
@@ -111,6 +112,8 @@
             // 
             this.dgvDSBanIn.AllowUserToAddRows = false;
             this.dgvDSBanIn.AllowUserToDeleteRows = false;
+            this.dgvDSBanIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvDSBanIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSBanIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSBanIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -147,7 +150,8 @@
             // 
             // grbDSDauSach
             // 
-            this.grbDSDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grbDSDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDSDauSach.Controls.Add(this.dgvDSDauSach);
             this.grbDSDauSach.Controls.Add(this.grbLocDauSach);
@@ -162,7 +166,8 @@
             // 
             this.dgvDSDauSach.AllowUserToAddRows = false;
             this.dgvDSDauSach.AllowUserToDeleteRows = false;
-            this.dgvDSDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvDSDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSDauSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSDauSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -250,6 +255,7 @@
             this.ucThongTinDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ucThongTinDauSach.AnhBia = null;
             this.ucThongTinDauSach.Location = new System.Drawing.Point(440, 12);
+            this.ucThongTinDauSach.MaBanIn = null;
             this.ucThongTinDauSach.Name = "ucThongTinDauSach";
             this.ucThongTinDauSach.NamXuatBan = null;
             this.ucThongTinDauSach.NhaXuatBan = null;

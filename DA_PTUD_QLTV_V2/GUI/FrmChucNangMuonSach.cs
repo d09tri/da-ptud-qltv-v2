@@ -20,6 +20,9 @@ namespace GUI
         NhaXuatBanBLL nxbBLL = new NhaXuatBanBLL();
         DocGiaBLL dgBLL = new DocGiaBLL();
         TheThuVienBLL ttvBLL = new TheThuVienBLL();
+        PhieuMuonBLL pmBLL = new PhieuMuonBLL();
+        CTPhieuMuonBLL ctpmBLL = new CTPhieuMuonBLL();
+        BanInBLL biBLL = new BanInBLL();
 
         Helper helper = new Helper();
         static List<int> lstMaBanIn = new List<int>();
@@ -101,6 +104,63 @@ namespace GUI
 
             TheThuVien ttv = ttvBLL.GetTheThuVienTheoMaDocGia(int.Parse(maDocGia));
             txtTheThuVien.Text = ttv.MaThe.ToString();
+        }
+
+        private void btnLapPhieu_Click(object sender, EventArgs e)
+        {
+            if (lstMaBanIn.Count <= 0)
+            {
+                MessageBox.Show("Chưa có đầu sách mượn, vui lòng quét đầu sách trước tiên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            PhieuMuon pm = new PhieuMuon()
+            {
+                MaNhanVien = int.Parse(txtNhanVien.Text),
+                MaThe = int.Parse(txtTheThuVien.Text),
+                NgayMuon = dtpNgayMuon.Value,
+                TinhTrang = false
+            };
+
+            if (pmBLL.TaoPhieuMuon(pm))
+            {
+                int maPM = helper.LayThongTinMaVuaThem("PhieuMuon");
+                foreach (int maBanIn in lstMaBanIn)
+                {
+                    ChiTietPhieuMuon ctpm = new ChiTietPhieuMuon()
+                    {
+                        MaPhieuMuon = maPM,
+                        MaBanIn = maBanIn,
+                        NgayHenTra = dtpNgayMuon.Value.AddDays(7),
+                        NgayTra = null,
+                        GhiChu = "Đang mượn"
+                    };
+
+                    if (ctpmBLL.ThemCTPhieuMuon(ctpm))
+                    {
+                        BanIn bi = new BanIn()
+                        {
+                            MaBanIn = maBanIn,
+                            TrangThai = true
+                        };
+                        biBLL.SuaBanIn(bi);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi trong quá trình thêm chi tiết phiếu mượn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tạo phiếu mượn thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            cmbDocGia.SelectedIndex = 0;
+            cmbDocGia_SelectedIndexChanged(sender, e);
+            fpnlDSDauSachMuon.Controls.Clear();
         }
     }
 }
