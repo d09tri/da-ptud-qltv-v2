@@ -221,8 +221,20 @@ insert into DauSach values
 (N'Tuyển tập Triệu Kim Vân', N'Tuyen-tap-trieu-kim-van.jpg', N'Triệu Kim Vân', 8, 11, '2015-1-1')
 
 /*	======================================
-	TạGo view ở đây và tạo view bằng script
+	Tạo view ở đây và tạo view bằng script
 	Lưu ý ghi chú lại view dùng để làm gì
+	======================================	*/
+
+create view view_DSDauSach as
+SELECT dbo.DauSach.MaSach, dbo.DauSach.TenSach, dbo.DauSach.BiaSach, dbo.DauSach.TacGia, dbo.TheLoai.TenTheLoai, dbo.NhaXuatBan.TenNXB, dbo.DauSach.NamXB
+FROM dbo.DauSach INNER JOIN
+dbo.NhaXuatBan ON dbo.DauSach.MaNXB = dbo.NhaXuatBan.MaNXB INNER JOIN
+dbo.TheLoai ON dbo.DauSach.MaTheLoai = dbo.TheLoai.MaTheLoai
+
+select * from view_DSDauSach
+
+/*	======================================
+	Trigger
 	======================================	*/
 
 /*	======================================
@@ -296,17 +308,9 @@ set dateformat DMY
 insert into NhanVien values
 (N'Trí Em', '3/9/2001'),
 (N'Lộc Ú', '29/12/2001')
+
 /*	======================================
 	Bãi thử
 	======================================	*/
-create view view_DSDauSach as
-SELECT dbo.DauSach.MaSach, dbo.DauSach.TenSach, dbo.DauSach.BiaSach, dbo.DauSach.TacGia, dbo.TheLoai.TenTheLoai, dbo.NhaXuatBan.TenNXB, dbo.DauSach.NamXB
-FROM dbo.DauSach INNER JOIN
-dbo.NhaXuatBan ON dbo.DauSach.MaNXB = dbo.NhaXuatBan.MaNXB INNER JOIN
-dbo.TheLoai ON dbo.DauSach.MaTheLoai = dbo.TheLoai.MaTheLoai
-
-select * from view_DSDauSach
-
-select * from DauSach
 
 SELECT IDENT_CURRENT('BanIn')

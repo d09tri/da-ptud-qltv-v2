@@ -22,7 +22,8 @@ namespace GUI
 
         int _maNXB = 0;
         int _maTheLoai = 0;
-        string loaiThucThi = string.Empty;
+        string _loaiThucThi = string.Empty;
+        string _hinhAnh = string.Empty;
 
         public FrmQuanLyDauSach()
         {
@@ -181,7 +182,7 @@ namespace GUI
 
                         LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
                         LoadControlChucNang();
-                        loaiThucThi = string.Empty;
+                        _loaiThucThi = string.Empty;
                     }
                     else
                     {
@@ -212,45 +213,48 @@ namespace GUI
             }
             else
             {
-                string fileName = openFileDialog.FileName;
-                if (fileName == "")
+                DauSach ds = new DauSach();
                 {
-                    MessageBox.Show("Vui lòng chọn ảnh bìa sách", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ds.MaSach = int.Parse(lblMaSach.Text);
+                    ds.TenSach = txtTenSach.Text;
+                    ds.TacGia = txtTacGia.Text;
+                    ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
+                    ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
+                    ds.NamXB = dtpNamXuatBan.Value;
+                }
+
+                if (_hinhAnh.Equals(txtAnhBia.Text))
+                {
+                    ds.BiaSach = txtAnhBia.Text;
                 }
                 else
                 {
-                    DauSach ds = new DauSach();
+                    string fileName = openFileDialog.FileName;
+                    if (fileName != "")
                     {
-                        ds.MaSach = int.Parse(lblMaSach.Text);
-                        ds.TenSach = txtTenSach.Text;
                         ds.BiaSach = openFileDialog.SafeFileName.ToString();
-                        ds.TacGia = txtTacGia.Text;
-                        ds.MaTheLoai = int.Parse(cmbTheLoai.SelectedValue.ToString());
-                        ds.MaNXB = int.Parse(cmbNhaXuatBan.SelectedValue.ToString());
-                        ds.NamXB = dtpNamXuatBan.Value;
-                    }
-
-                    if (dsBLL.SuaDauSach(ds))
-                    {
                         string str = helper.LayDuongDanAnhBia().Substring(0, helper.LayDuongDanAnhBia().Length - 1) + "\\" + openFileDialog.SafeFileName.ToString();
                         if (str != fileName)
                         {
                             File.Copy(fileName, Path.Combine(helper.LayDuongDanAnhBia(), Path.GetFileName(fileName)), true);
                         }
+                    }
+                }
 
-                        LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
-                        LoadControlChucNang();
-                        loaiThucThi = string.Empty;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sửa đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                if (dsBLL.SuaDauSach(ds))
+                {
+                    LoadDuLieuDauSach(dsBLL.GetDSView_DSDauSach());
+                    LoadControlChucNang();
+                    _loaiThucThi = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Sửa đầu sách thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
-        
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             _maNXB = _maTheLoai = cmbLocNhaXuatBan.SelectedIndex = cmbLocTheLoai.SelectedIndex = 0;
@@ -260,7 +264,7 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             LoadControlChucNang();
-            loaiThucThi = "Them";
+            _loaiThucThi = "Them";
             txtTenSach.ReadOnly = txtTacGia.ReadOnly = false;
             cmbTheLoai.Enabled = cmbNhaXuatBan.Enabled = dtpNamXuatBan.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
@@ -286,18 +290,19 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            loaiThucThi = "Sua";
+            _loaiThucThi = "Sua";
             txtTenSach.ReadOnly = txtTacGia.ReadOnly = false;
             cmbTheLoai.Enabled = cmbNhaXuatBan.Enabled = dtpNamXuatBan.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDSDauSach.Enabled = false;
             btnChonAnh.Enabled = btnLuu.Enabled = btnHuy.Enabled = true;
 
             dgvDSDauSach.ClearSelection();
+            _hinhAnh = txtAnhBia.Text;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            switch (loaiThucThi)
+            switch (_loaiThucThi)
             {
                 case "Them":
                     ThemDauSach();
@@ -310,7 +315,7 @@ namespace GUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            loaiThucThi = string.Empty;
+            _loaiThucThi = string.Empty;
             LoadControlChucNang();
         }
 
