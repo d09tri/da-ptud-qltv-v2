@@ -190,6 +190,14 @@ namespace DTO
 				return this.GetTable<view_DSDauSach>();
 			}
 		}
+		
+		public System.Data.Linq.Table<view_DSPhieuMuon> view_DSPhieuMuons
+		{
+			get
+			{
+				return this.GetTable<view_DSPhieuMuon>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BanIn")]
@@ -2765,6 +2773,123 @@ namespace DTO
 				if ((this._NamXB != value))
 				{
 					this._NamXB = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.view_DSPhieuMuon")]
+	public partial class view_DSPhieuMuon
+	{
+		
+		private int _MaPhieuMuon;
+		
+		private string _TenNhanVien;
+		
+		private int _MaThe;
+		
+		private string _TenDocGia;
+		
+		private System.Nullable<System.DateTime> _NgayMuon;
+		
+		private System.Nullable<bool> _TinhTrang;
+		
+		public view_DSPhieuMuon()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhieuMuon", DbType="Int NOT NULL")]
+		public int MaPhieuMuon
+		{
+			get
+			{
+				return this._MaPhieuMuon;
+			}
+			set
+			{
+				if ((this._MaPhieuMuon != value))
+				{
+					this._MaPhieuMuon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNhanVien", DbType="NVarChar(100)")]
+		public string TenNhanVien
+		{
+			get
+			{
+				return this._TenNhanVien;
+			}
+			set
+			{
+				if ((this._TenNhanVien != value))
+				{
+					this._TenNhanVien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaThe", DbType="Int NOT NULL")]
+		public int MaThe
+		{
+			get
+			{
+				return this._MaThe;
+			}
+			set
+			{
+				if ((this._MaThe != value))
+				{
+					this._MaThe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDocGia", DbType="NVarChar(100)")]
+		public string TenDocGia
+		{
+			get
+			{
+				return this._TenDocGia;
+			}
+			set
+			{
+				if ((this._TenDocGia != value))
+				{
+					this._TenDocGia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayMuon", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayMuon
+		{
+			get
+			{
+				return this._NgayMuon;
+			}
+			set
+			{
+				if ((this._NgayMuon != value))
+				{
+					this._NgayMuon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TinhTrang", DbType="Bit")]
+		public System.Nullable<bool> TinhTrang
+		{
+			get
+			{
+				return this._TinhTrang;
+			}
+			set
+			{
+				if ((this._TinhTrang != value))
+				{
+					this._TinhTrang = value;
 				}
 			}
 		}

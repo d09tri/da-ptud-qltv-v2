@@ -71,6 +71,12 @@
     <Compile Include="FrmChucNangMuonSach.Designer.cs">
       <DependentUpon>FrmChucNangMuonSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChucNangTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChucNangTraSach.Designer.cs">
+      <DependentUpon>FrmChucNangTraSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQuanLyBanIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmChucNangMuonSach.resx">
       <DependentUpon>FrmChucNangMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChucNangTraSach.resx">
+      <DependentUpon>FrmChucNangTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyBanIn.resx">
       <DependentUpon>FrmQuanLyBanIn.cs</DependentUpon>

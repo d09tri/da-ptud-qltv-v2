@@ -19,6 +19,16 @@ namespace DAL
             return db.PhieuMuons.ToList();
         }
 
+        public List<view_DSPhieuMuon> GetDSView_DSPhieuMuonTheoTinhTrang(bool tinhTrang)
+        {
+            return db.view_DSPhieuMuons.Where(t => t.TinhTrang == tinhTrang).ToList();
+        }
+
+        public view_DSPhieuMuon GetView_DSPhieuMuonTheoMa(int maPhieuMuon)
+        {
+            return db.view_DSPhieuMuons.First(t => t.MaPhieuMuon == maPhieuMuon);
+        }
+
         public bool TaoPhieuMuon(PhieuMuon pm)
         {
             try

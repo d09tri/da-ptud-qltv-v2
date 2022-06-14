@@ -91,6 +91,8 @@ namespace GUI
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
+            FrmChucNangTraSach frm = new FrmChucNangTraSach();
+            helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
         #endregion

@@ -233,6 +233,15 @@ dbo.TheLoai ON dbo.DauSach.MaTheLoai = dbo.TheLoai.MaTheLoai
 
 select * from view_DSDauSach
 
+create view view_DSPhieuMuon as
+SELECT dbo.PhieuMuon.MaPhieuMuon, dbo.NhanVien.TenNhanVien, dbo.TheThuVien.MaThe, dbo.DocGia.TenDocGia, dbo.PhieuMuon.NgayMuon, dbo.PhieuMuon.TinhTrang
+FROM dbo.PhieuMuon INNER JOIN
+dbo.NhanVien ON dbo.PhieuMuon.MaNhanVien = dbo.NhanVien.MaNhanVien INNER JOIN
+dbo.TheThuVien ON dbo.PhieuMuon.MaThe = dbo.TheThuVien.MaThe INNER JOIN
+dbo.DocGia ON dbo.TheThuVien.MaDocGia = dbo.DocGia.MaDocGia
+
+select * from view_DSDauSach
+
 /*	======================================
 	Trigger
 	======================================	*/
@@ -272,7 +281,6 @@ create table ChiTietPhieuTra
 	DaTra bit,
 	constraint PK_ChiTietPhieuTra primary key (MaPhieuTra, MaBanIn)
 )
-
 
 alter table ChiTietPhieuTra add
 constraint FK_CTPT_PhieuTra foreign key (MaPhieuTra) references PhieuTra(MaPhieuTra),
@@ -314,3 +322,8 @@ insert into NhanVien values
 	======================================	*/
 
 SELECT IDENT_CURRENT('BanIn')
+
+select * from PhieuMuon where MaPhieuMuon = 1
+select * from ChiTietPhieuMuon where MaPhieuMuon = 1
+select * from BanIn where TrangThai = 1 
+
