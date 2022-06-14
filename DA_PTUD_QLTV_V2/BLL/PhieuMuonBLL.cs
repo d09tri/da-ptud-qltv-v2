@@ -33,5 +33,10 @@ namespace BLL
         {
             return pmDAL.TaoPhieuMuon(pm);
         }
+
+        public bool SuaTinhTrangPhieuMuon(int maPhieuMuon, bool tinhTrang)
+        {
+            return pmDAL.SuaTinhTrangPhieuMuon(maPhieuMuon, tinhTrang);
+        }
     }
 }

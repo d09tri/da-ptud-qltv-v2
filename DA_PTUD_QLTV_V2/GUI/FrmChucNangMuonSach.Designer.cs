@@ -131,8 +131,7 @@
             // 
             // btnLapPhieu
             // 
-            this.btnLapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLapPhieu.Location = new System.Drawing.Point(9, 497);
+            this.btnLapPhieu.Location = new System.Drawing.Point(9, 129);
             this.btnLapPhieu.Name = "btnLapPhieu";
             this.btnLapPhieu.Size = new System.Drawing.Size(246, 23);
             this.btnLapPhieu.TabIndex = 8;
@@ -197,7 +196,6 @@
             // 
             this.txtNhanVien.Location = new System.Drawing.Point(82, 24);
             this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.ReadOnly = true;
             this.txtNhanVien.Size = new System.Drawing.Size(173, 20);
             this.txtNhanVien.TabIndex = 1;
             // 

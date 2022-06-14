@@ -31,6 +31,7 @@
             this.pcbAnhBia = new System.Windows.Forms.PictureBox();
             this.pnlHinhAnh = new System.Windows.Forms.Panel();
             this.pnlThongTin = new System.Windows.Forms.Panel();
+            this.lblMaBanIn = new System.Windows.Forms.Label();
             this.lblNamXuatBan = new System.Windows.Forms.Label();
             this.lblNhaXuatBan = new System.Windows.Forms.Label();
             this.lblTacGia = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTenSach = new System.Windows.Forms.Label();
-            this.lblMaBanIn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAnhBia)).BeginInit();
             this.pnlHinhAnh.SuspendLayout();
             this.pnlThongTin.SuspendLayout();
@@ -48,6 +48,9 @@
             // 
             // pcbAnhBia
             // 
+            this.pcbAnhBia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbAnhBia.BackColor = System.Drawing.Color.White;
             this.pcbAnhBia.Location = new System.Drawing.Point(7, 7);
             this.pcbAnhBia.Name = "pcbAnhBia";
@@ -84,6 +87,17 @@
             this.pnlThongTin.Size = new System.Drawing.Size(395, 167);
             this.pnlThongTin.TabIndex = 21;
             // 
+            // lblMaBanIn
+            // 
+            this.lblMaBanIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMaBanIn.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblMaBanIn.Location = new System.Drawing.Point(300, 143);
+            this.lblMaBanIn.Name = "lblMaBanIn";
+            this.lblMaBanIn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblMaBanIn.Size = new System.Drawing.Size(76, 13);
+            this.lblMaBanIn.TabIndex = 29;
+            this.lblMaBanIn.Text = "lblMaBanIn";
+            // 
             // lblNamXuatBan
             // 
             this.lblNamXuatBan.AutoSize = true;
@@ -106,6 +120,7 @@
             // 
             // lblTacGia
             // 
+            this.lblTacGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTacGia.AutoSize = true;
             this.lblTacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTacGia.Location = new System.Drawing.Point(275, 71);
@@ -145,6 +160,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(223, 71);
             this.label2.Name = "label2";
@@ -169,16 +185,6 @@
             this.lblTenSach.Size = new System.Drawing.Size(357, 53);
             this.lblTenSach.TabIndex = 20;
             this.lblTenSach.Text = "lblTenSach";
-            // 
-            // lblMaBanIn
-            // 
-            this.lblMaBanIn.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblMaBanIn.Location = new System.Drawing.Point(300, 143);
-            this.lblMaBanIn.Name = "lblMaBanIn";
-            this.lblMaBanIn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblMaBanIn.Size = new System.Drawing.Size(76, 13);
-            this.lblMaBanIn.TabIndex = 29;
-            this.lblMaBanIn.Text = "lblMaBanIn";
             // 
             // UcThongTinDauSach
             // 

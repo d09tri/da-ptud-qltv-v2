@@ -42,5 +42,20 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool SuaTinhTrangPhieuMuon(int maPhieuMuon, bool tinhTrang)
+        {
+            try
+            {
+                PhieuMuon pmSua = db.PhieuMuons.First(t => t.MaPhieuMuon == maPhieuMuon);
+                pmSua.TinhTrang = tinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;   
+            }
+        }
     }
 }

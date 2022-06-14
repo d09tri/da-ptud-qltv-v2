@@ -18,11 +18,37 @@ namespace DAL
             return db.ChiTietPhieuMuons.ToList();
         }
 
+        public List<ChiTietPhieuMuon> GetDSCTPhieuMuonTheoMa(int maPhieuMuon)
+        {
+            return db.ChiTietPhieuMuons.Where(t => t.MaPhieuMuon == maPhieuMuon && t.NgayTra == null).ToList();
+        }
+
+        public ChiTietPhieuMuon GetCTPhieuMuonTheoMaPhieuMuonVaMaBanIn(int maPhieuMuon, int maBanIn)
+        {
+            return db.ChiTietPhieuMuons.First(t => t.MaPhieuMuon == maPhieuMuon && t.MaBanIn == maBanIn);
+        }
+
         public bool ThemCTPhieuMuon(ChiTietPhieuMuon ctpm)
         {
             try
             {
                 db.ChiTietPhieuMuons.InsertOnSubmit(ctpm);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool SuaCTPhieuMuon(ChiTietPhieuMuon ctpm)
+        {
+            try
+            {
+                ChiTietPhieuMuon ctpmSua = db.ChiTietPhieuMuons.First(t => t.MaPhieuMuon == ctpm.MaPhieuMuon && t.MaBanIn == ctpm.MaBanIn);
+                ctpmSua.NgayTra = ctpm.NgayTra;
+                ctpmSua.GhiChu = ctpm.GhiChu;
                 db.SubmitChanges();
                 return true;
             }
