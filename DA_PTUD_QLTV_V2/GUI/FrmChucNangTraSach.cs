@@ -43,6 +43,7 @@ namespace GUI
         private void LoadDefault(object sender, EventArgs e)
         {
             LoadDuLieu();
+            
             if (cmbPhieuMuon.Items.Count > 0)
             {
                 cmbPhieuMuon.SelectedIndex = 0;
@@ -51,6 +52,7 @@ namespace GUI
             else
             {
                 grbTTPhieuMuon.Text = "Không có phiếu mượn chưa trả";
+                cmbPhieuMuon.DataSource = null;
             }
 
             lstCTPhieuTra = new List<ChiTietPhieuTra>();
@@ -275,7 +277,7 @@ namespace GUI
             }
 
             MessageBox.Show("Lập phiếu trả thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            LoadDefault(sender, e);
         }
     }
 }
