@@ -278,6 +278,7 @@ namespace GUI
 
             MessageBox.Show("Lập phiếu trả thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             cmbPhieuMuon.Items.Clear();
+            cmbPhieuMuon.ResetText();
             LoadDefault(sender, e);
         }
     }
