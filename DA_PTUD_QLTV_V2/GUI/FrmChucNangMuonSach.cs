@@ -25,11 +25,12 @@ namespace GUI
         BanInBLL biBLL = new BanInBLL();
 
         Helper helper = new Helper();
-        static List<int> lstMaBanIn = new List<int>();
+        static List<int> lstMaBanIn;
 
         public FrmChucNangMuonSach()
         {
             InitializeComponent();
+            lstMaBanIn = new List<int>();
         }
 
         private void FrmChucNangMuonSach_Load(object sender, EventArgs e)
@@ -160,6 +161,7 @@ namespace GUI
                 return;
             }
 
+            lstMaBanIn = new List<int>();
             cmbDocGia.SelectedIndex = 0;
             cmbDocGia_SelectedIndexChanged(sender, e);
             fpnlDSDauSachMuon.Controls.Clear();
