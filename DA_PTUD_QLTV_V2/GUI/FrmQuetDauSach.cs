@@ -54,6 +54,7 @@ namespace GUI
                         if (ds != null)
                         {
                             cmbDauSach.Items.Add(string.Format("{0} - {1}", ds.TenSach, maBanIn));
+                            cmbDauSach.SelectedIndex = cmbDauSach.Items.Count - 1;
                         }
                         else
                         {
