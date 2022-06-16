@@ -18,6 +18,11 @@ namespace DAL
             return db.TheThuViens.ToList();
         }
 
+        public List<view_DSTheThuVien> GetDSView_DSTheThuVien()
+        {
+            return db.view_DSTheThuViens.Select(t => t).ToList<view_DSTheThuVien>();
+        }
+
         public TheThuVien GetTheThuVienTheoMaDocGia(int maDocGia)
         {
             try
@@ -29,5 +34,58 @@ namespace DAL
                 return null;
             }
         }
+
+       
+
+        #region Xử lý thêm, xóa và sửa cơ bản
+        public bool ThemTheThuVien(TheThuVien ttv)
+        {
+            try
+            {
+                db.TheThuViens.InsertOnSubmit(ttv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        public bool XoaTheThuVien(int mattv)
+        {
+            try
+            {
+                TheThuVien ttvXoa = db.TheThuViens.Where(t => t.MaThe == mattv).FirstOrDefault();
+                db.TheThuViens.DeleteOnSubmit(ttvXoa);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        //Sửa ngày lập, ngày hết hạn, ghi chú và tình trạng//
+        public bool SuaTheThuVien(TheThuVien ttv)
+        {
+            try
+            {
+                TheThuVien ttvSua = db.TheThuViens.Where(t => t.MaThe == ttv.MaThe).FirstOrDefault();               
+                ttvSua.NgayLap = ttv.NgayLap;
+                ttvSua.NgayHetHan = ttv.NgayHetHan;
+                ttvSua.GhiChu = ttv.GhiChu;
+                ttvSua.TinhTrang = ttv.TinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
     }
 }

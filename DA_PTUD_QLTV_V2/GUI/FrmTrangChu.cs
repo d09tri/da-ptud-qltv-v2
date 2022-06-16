@@ -79,6 +79,13 @@ namespace GUI
             helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
+
+        private void btnDocGia_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyDocGia frm = new FrmQuanLyDocGia();
+            helper.LoadChildForm(frm, pnlMain);
+            HideSubMenu();
+        }
         #endregion
 
         #region Sub menu Chức năng
@@ -113,6 +120,8 @@ namespace GUI
             HideSubMenu();
         }
         #endregion
+
+      
 
     }
 }

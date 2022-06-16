@@ -23,5 +23,25 @@ namespace BLL
         {
             return ttvDAL.GetTheThuVienTheoMaDocGia(maDocGia);
         }
+
+        public List<view_DSTheThuVien> GetDSView_DSTheThuVien()
+        {
+            return ttvDAL.GetDSView_DSTheThuVien();
+        }
+
+        public bool ThemTheThuVien(TheThuVien ttv)
+        {
+            return ttvDAL.ThemTheThuVien(ttv);
+        }
+
+        public bool XoaTheThuVien(int mattv)
+        {
+            return ttvDAL.XoaTheThuVien(mattv);
+        }
+
+        public bool SuaTheThuVien(TheThuVien ttv)
+        {
+            return ttvDAL.SuaTheThuVien(ttv);
+        }
     }
 }

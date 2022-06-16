@@ -242,6 +242,13 @@ dbo.DocGia ON dbo.TheThuVien.MaDocGia = dbo.DocGia.MaDocGia
 
 select * from view_DSDauSach
 
+
+create view view_DSTheThuVien as
+SELECT dbo.TheThuVien.MaThe, dbo.DocGia.TenDocGia, dbo.TheThuVien.NgayLap, dbo.TheThuVien.NgayHetHan, dbo.TheThuVien.GhiChu, dbo.TheThuVien.TinhTrang
+FROM   dbo.TheThuVien INNER JOIN
+             dbo.DocGia ON dbo.TheThuVien.MaDocGia = dbo.DocGia.MaDocGia
+
+select * from view_DSTheThuVien
 /*	======================================
 	Trigger
 	======================================	*/
@@ -327,3 +334,6 @@ select * from PhieuMuon where MaPhieuMuon = 1
 select * from ChiTietPhieuMuon where MaPhieuMuon = 1
 select * from BanIn where TrangThai = 1 
 
+
+
+select * from TheThuVien

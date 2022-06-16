@@ -329,5 +329,7 @@ namespace GUI
                 txtAnhBia.Text = openFileDialog.SafeFileName;
             }
         }
+
+       
     }
 }

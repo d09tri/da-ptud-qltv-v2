@@ -18,5 +18,30 @@ namespace BLL
         {
             return dgDAL.GetDSDocGia();
         }
+
+        public bool ThemDocGia(DocGia dg)
+        {
+            return dgDAL.ThemDocGia(dg);
+        }
+
+        public bool XoaDocGia(int madg)
+        {
+            return dgDAL.XoaDocGia(madg);
+        }
+
+        public bool SuaDocGia(DocGia dg)
+        {
+            return dgDAL.SuaDocGia(dg);
+        }
+
+        public List<DocGia> GetDSDocGiaTheoTen(string tendg)
+        {
+            return dgDAL.GetDSDocGiaTheoTen(tendg);
+        }
+
+        public List<DocGia> GetDSDocGiaChuaCoTheThuVien()
+        {
+            return dgDAL.GetDSDocGiaChuaCoTheThuVien();
+        }
     }
 }
