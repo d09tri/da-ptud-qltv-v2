@@ -402,11 +402,7 @@ select * from ChiTietPhieuMuon where MaPhieuMuon = 1
 select * from BanIn where TrangThai = 1 
 
 select * from TheThuVien
-
-<<<<<<< Updated upstream
-
 select * from NhanVien
-=======
 select * from PhieuMuon
 select * from PhieuTra
->>>>>>> Stashed changes
+

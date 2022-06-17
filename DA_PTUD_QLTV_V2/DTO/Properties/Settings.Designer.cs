@@ -33,5 +33,16 @@ namespace DTO.Properties {
                 return ((string)(this["DB_PTUD_QLTV_V2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANGTRI-LAPTOP\\SQLEXPRESS;Initial Catalog=DB_PTUD_QLTV_V2;Persist Sec" +
+            "urity Info=True;User ID=sa;Password=123")]
+        public string DB_PTUD_QLTV_V2ConnectionString1 {
+            get {
+                return ((string)(this["DB_PTUD_QLTV_V2ConnectionString1"]));
+            }
+        }
     }
 }
