@@ -83,12 +83,6 @@
     <Compile Include="FrmQuanLyBanIn.Designer.cs">
       <DependentUpon>FrmQuanLyBanIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDangNhap.Designer.cs">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQuanLyDauSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,9 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyBanIn.resx">
       <DependentUpon>FrmQuanLyBanIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDangNhap.resx">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyDauSach.resx">
       <DependentUpon>FrmQuanLyDauSach.cs</DependentUpon>

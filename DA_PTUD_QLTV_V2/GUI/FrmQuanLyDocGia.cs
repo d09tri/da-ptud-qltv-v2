@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+
 namespace GUI
 {
     public partial class FrmQuanLyDocGia : Form
     {
-        DocGiaBLL docgiabll = new DocGiaBLL();
+        DocGiaBLL dgBLL = new DocGiaBLL();
         string _loaithucthi = string.Empty;
+
         public FrmQuanLyDocGia()
         {
             InitializeComponent();
@@ -23,51 +25,51 @@ namespace GUI
         private void FrmQuanLyDocGia_Load(object sender, EventArgs e)
         {
             LoadDSDocGia();
-            LoadChucNang();
+            LoadControlChucNang();
         }
 
-        private void LoadChucNang()
+        private void LoadControlChucNang()
         {
-            btnLuu.Enabled = btnHuy.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
+            btnThem.Enabled = dgvDanhSachDocGia.Enabled = true;
+
+            btnSua.Enabled = btnXoa.Enabled = btnLuu.Enabled = btnHuy.Enabled = false;
             txtCMND.Enabled = txtTenDocGia.Enabled = dtpNgaySinh.Enabled = false;
+
+            lblMaDocGia.Text = txtTenDocGia.Text = txtCMND.Text = txtTimKiemDocGia.Text = string.Empty;
+            dtpNgaySinh.Value = DateTime.Now;
         }
+
         private void LoadDSDocGia()
         {
-            dgvDanhSachDocGia.DataSource = docgiabll.GetDSDocGia();
+            dgvDanhSachDocGia.DataSource = dgBLL.GetDSDocGia();
         }
 
-        public void Them()
+        public void ThemDocGia()
         {
-            if(txtTenDocGia.Text == string.Empty || txtCMND.Text == string.Empty)
+
+            DocGia dg = new DocGia();
+            dg.TenDocGia = txtTenDocGia.Text;
+            dg.NgaySinh = dtpNgaySinh.Value;
+            dg.CMND = txtCMND.Text;
+
+            if (dgBLL.ThemDocGia(dg))
             {
-                MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadDSDocGia();
+                LoadControlChucNang();
+                _loaithucthi = string.Empty;
             }
             else
             {
-                DocGia dg = new DocGia();
-                dg.TenDocGia = txtTenDocGia.Text;
-                dg.NgaySinh = dtpNgaySinh.Value;
-                dg.CMND = txtCMND.Text;
-
-                if(docgiabll.ThemDocGia(dg))
-                {
-                    LoadDSDocGia();
-                    LoadChucNang();
-                    _loaithucthi = string.Empty;
-                }
-                else
-                {
-                    MessageBox.Show("Thêm độc giả thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Thêm độc giả thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void Xoa(int madg)
+        private void XoaDocGia(int maDocGia)
         {
-            if(docgiabll.XoaDocGia(madg))
+            if (dgBLL.XoaDocGia(maDocGia))
             {
                 LoadDSDocGia();
-                LoadChucNang();
+                LoadControlChucNang();
                 _loaithucthi = string.Empty;
             }
             else
@@ -76,93 +78,95 @@ namespace GUI
             }
         }
 
-        private void Sua()
+        private void SuaDocGia()
         {
-            if (txtTenDocGia.Text == string.Empty || txtCMND.Text == string.Empty)
+            DocGia dg = new DocGia();
+            dg.MaDocGia = int.Parse(lblMaDocGia.Text);
+            dg.TenDocGia = txtTenDocGia.Text;
+            dg.NgaySinh = dtpNgaySinh.Value;
+            dg.CMND = txtCMND.Text;
+
+            if (dgBLL.SuaDocGia(dg))
             {
-                MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadDSDocGia();
+                LoadControlChucNang();
+                _loaithucthi = string.Empty;
             }
             else
             {
-                DocGia dg = new DocGia();
-                dg.MaDocGia = int.Parse(lblMaDocGia.Text);
-                dg.TenDocGia = txtTenDocGia.Text;
-                dg.NgaySinh = dtpNgaySinh.Value;
-                dg.CMND = txtCMND.Text;
-
-                if (docgiabll.SuaDocGia(dg))
-                {
-                    LoadDSDocGia();
-                    LoadChucNang();
-                    _loaithucthi = string.Empty;
-                }
-                else
-                {
-                    MessageBox.Show("Thêm độc giả thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Sửa độc giả thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void dgvDanhSachDocGia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           if(e.RowIndex >= 0)
-           {
-               btnSua.Enabled = btnXoa.Enabled = true;
-               lblMaDocGia.Text = dgvDanhSachDocGia.CurrentRow.Cells[0].Value.ToString();
-               txtTenDocGia.Text = dgvDanhSachDocGia.CurrentRow.Cells[1].Value.ToString();
-               dtpNgaySinh.Text = dgvDanhSachDocGia.CurrentRow.Cells[2].Value.ToString();
-               txtCMND.Text = dgvDanhSachDocGia.CurrentRow.Cells[3].Value.ToString();
-           }
+            if (e.RowIndex >= 0)
+            {
+                btnSua.Enabled = btnXoa.Enabled = true;
+                lblMaDocGia.Text = dgvDanhSachDocGia.CurrentRow.Cells[0].Value.ToString();
+                txtTenDocGia.Text = dgvDanhSachDocGia.CurrentRow.Cells[1].Value.ToString();
+                dtpNgaySinh.Text = dgvDanhSachDocGia.CurrentRow.Cells[2].Value.ToString();
+                txtCMND.Text = dgvDanhSachDocGia.CurrentRow.Cells[3].Value.ToString();
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             btnLuu.Enabled = btnHuy.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDanhSachDocGia.Enabled = false;
+            lblMaDocGia.Text = txtCMND.Text = txtTenDocGia.Text = string.Empty;
+            dtpNgaySinh.Value = DateTime.Now;
             txtCMND.Enabled = txtTenDocGia.Enabled = dtpNgaySinh.Enabled = true;
             _loaithucthi = "Them";
         }
-   
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show(string.Format("Xác nhận xóa độc giả: {0} ?", lblMaDocGia.Text), "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult rs = MessageBox.Show(string.Format("Xác nhận xóa độc giả: {0}?", txtTenDocGia.Text), "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                Xoa(int.Parse(lblMaDocGia.Text));
+                XoaDocGia(int.Parse(lblMaDocGia.Text));
             }
             else
             {
-                LoadChucNang();
+                LoadControlChucNang();
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             btnLuu.Enabled = btnHuy.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDanhSachDocGia.Enabled = false;
             txtCMND.Enabled = txtTenDocGia.Enabled = dtpNgaySinh.Enabled = true;
             _loaithucthi = "Sua";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (txtTenDocGia.Text == string.Empty || txtCMND.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             switch (_loaithucthi)
             {
                 case "Them":
-                    Them();
+                    ThemDocGia();
                     break;
                 case "Sua":
-                    Sua();
+                    SuaDocGia();
                     break;
             }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show(string.Format("Bạn có muốn hủy thao tác ?"), "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult rs = MessageBox.Show("Bạn có muốn hủy thao tác?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
                 _loaithucthi = string.Empty;
-                LoadChucNang();
+                LoadControlChucNang();
             }
-           
         }
 
         private void txtTimKiemDocGia_TextChanged(object sender, EventArgs e)
@@ -171,14 +175,10 @@ namespace GUI
             {
                 LoadDSDocGia();
             }
-            else
-            {
-                dgvDanhSachDocGia.DataSource = null;
-                dgvDanhSachDocGia.ClearSelection();
-                dgvDanhSachDocGia.DataSource = docgiabll.GetDSDocGiaTheoTen(txtTimKiemDocGia.Text.ToString());
-            }
-        }
 
-        
+            dgvDanhSachDocGia.DataSource = null;
+            dgvDanhSachDocGia.ClearSelection();
+            dgvDanhSachDocGia.DataSource = dgBLL.GetDSDocGiaTheoTen(txtTimKiemDocGia.Text.ToString());
+        }
     }
 }

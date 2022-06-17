@@ -50,19 +50,18 @@
             this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grbDSDocGia = new System.Windows.Forms.GroupBox();
             this.grbTimKiem = new System.Windows.Forms.GroupBox();
             this.txtTimKiemDocGia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.grbTTDocGia.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDocGia)).BeginInit();
-            this.grbDSDocGia.SuspendLayout();
             this.grbTimKiem.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbTTDocGia
             // 
+            this.grbTTDocGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grbTTDocGia.Controls.Add(this.lblMaDocGia);
             this.grbTTDocGia.Controls.Add(this.label4);
             this.grbTTDocGia.Controls.Add(this.txtTenDocGia);
@@ -72,11 +71,11 @@
             this.grbTTDocGia.Controls.Add(this.label3);
             this.grbTTDocGia.Controls.Add(this.label2);
             this.grbTTDocGia.Controls.Add(this.label1);
-            this.grbTTDocGia.Location = new System.Drawing.Point(8, 8);
-            this.grbTTDocGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbTTDocGia.Location = new System.Drawing.Point(514, 11);
+            this.grbTTDocGia.Margin = new System.Windows.Forms.Padding(2);
             this.grbTTDocGia.Name = "grbTTDocGia";
-            this.grbTTDocGia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grbTTDocGia.Size = new System.Drawing.Size(323, 191);
+            this.grbTTDocGia.Padding = new System.Windows.Forms.Padding(2);
+            this.grbTTDocGia.Size = new System.Drawing.Size(464, 109);
             this.grbTTDocGia.TabIndex = 0;
             this.grbTTDocGia.TabStop = false;
             this.grbTTDocGia.Text = "Thông tin độc giả";
@@ -86,45 +85,44 @@
             this.lblMaDocGia.AutoSize = true;
             this.lblMaDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaDocGia.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblMaDocGia.Location = new System.Drawing.Point(110, 65);
+            this.lblMaDocGia.Location = new System.Drawing.Point(73, 48);
             this.lblMaDocGia.Name = "lblMaDocGia";
-            this.lblMaDocGia.Size = new System.Drawing.Size(68, 13);
+            this.lblMaDocGia.Size = new System.Drawing.Size(0, 13);
             this.lblMaDocGia.TabIndex = 27;
-            this.lblMaDocGia.Text = "lblMaDocGia";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 65);
+            this.label4.Location = new System.Drawing.Point(4, 48);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Mã độc giả";
+            this.label4.Text = "Mã độc giả:";
             // 
             // txtTenDocGia
             // 
-            this.txtTenDocGia.Location = new System.Drawing.Point(113, 94);
-            this.txtTenDocGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenDocGia.Location = new System.Drawing.Point(257, 45);
+            this.txtTenDocGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenDocGia.Name = "txtTenDocGia";
-            this.txtTenDocGia.Size = new System.Drawing.Size(167, 20);
+            this.txtTenDocGia.Size = new System.Drawing.Size(203, 20);
             this.txtTenDocGia.TabIndex = 11;
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(113, 155);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCMND.Location = new System.Drawing.Point(257, 69);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(2);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(167, 20);
+            this.txtCMND.Size = new System.Drawing.Size(203, 20);
             this.txtCMND.TabIndex = 10;
             // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(113, 125);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(76, 69);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(167, 20);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(93, 20);
             this.dtpNgaySinh.TabIndex = 9;
             // 
             // toolStripChucNang
@@ -138,7 +136,7 @@
             this.btnHuy});
             this.toolStripChucNang.Location = new System.Drawing.Point(2, 15);
             this.toolStripChucNang.Name = "toolStripChucNang";
-            this.toolStripChucNang.Size = new System.Drawing.Size(319, 25);
+            this.toolStripChucNang.Size = new System.Drawing.Size(460, 25);
             this.toolStripChucNang.TabIndex = 3;
             this.toolStripChucNang.Text = "toolStrip1";
             // 
@@ -195,32 +193,32 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 125);
+            this.label3.Location = new System.Drawing.Point(4, 72);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày sinh";
+            this.label3.Text = "Ngày sinh:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 157);
+            this.label2.Location = new System.Drawing.Point(185, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "CMND";
+            this.label2.Text = "CMND:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 97);
+            this.label1.Location = new System.Drawing.Point(185, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên độc giả";
+            this.label1.Text = "Tên độc giả:";
             // 
             // dgvDanhSachDocGia
             // 
@@ -228,6 +226,9 @@
             this.dgvDanhSachDocGia.AllowUserToDeleteRows = false;
             this.dgvDanhSachDocGia.AllowUserToResizeColumns = false;
             this.dgvDanhSachDocGia.AllowUserToResizeRows = false;
+            this.dgvDanhSachDocGia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachDocGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachDocGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -235,13 +236,14 @@
             this.TenDocGia,
             this.NgaySinh,
             this.CMND});
-            this.dgvDanhSachDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachDocGia.Location = new System.Drawing.Point(2, 15);
-            this.dgvDanhSachDocGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDanhSachDocGia.Location = new System.Drawing.Point(11, 76);
+            this.dgvDanhSachDocGia.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDanhSachDocGia.MultiSelect = false;
             this.dgvDanhSachDocGia.Name = "dgvDanhSachDocGia";
+            this.dgvDanhSachDocGia.ReadOnly = true;
             this.dgvDanhSachDocGia.RowTemplate.Height = 28;
             this.dgvDanhSachDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachDocGia.Size = new System.Drawing.Size(499, 174);
+            this.dgvDanhSachDocGia.Size = new System.Drawing.Size(499, 463);
             this.dgvDanhSachDocGia.TabIndex = 1;
             this.dgvDanhSachDocGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachDocGia_CellClick);
             // 
@@ -250,76 +252,72 @@
             this.MaDocGia.DataPropertyName = "MaDocGia";
             this.MaDocGia.HeaderText = "Mã độc giả";
             this.MaDocGia.Name = "MaDocGia";
+            this.MaDocGia.ReadOnly = true;
             // 
             // TenDocGia
             // 
             this.TenDocGia.DataPropertyName = "TenDocGia";
             this.TenDocGia.HeaderText = "Tên độc giả";
             this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.ReadOnly = true;
             // 
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
             // 
             // CMND
             // 
             this.CMND.DataPropertyName = "CMND";
             this.CMND.HeaderText = "CMND";
             this.CMND.Name = "CMND";
-            // 
-            // grbDSDocGia
-            // 
-            this.grbDSDocGia.Controls.Add(this.dgvDanhSachDocGia);
-            this.grbDSDocGia.Location = new System.Drawing.Point(357, 97);
-            this.grbDSDocGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grbDSDocGia.Name = "grbDSDocGia";
-            this.grbDSDocGia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grbDSDocGia.Size = new System.Drawing.Size(503, 191);
-            this.grbDSDocGia.TabIndex = 2;
-            this.grbDSDocGia.TabStop = false;
-            this.grbDSDocGia.Text = "Danh sách độc giả";
+            this.CMND.ReadOnly = true;
             // 
             // grbTimKiem
             // 
+            this.grbTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbTimKiem.Controls.Add(this.txtTimKiemDocGia);
             this.grbTimKiem.Controls.Add(this.label5);
-            this.grbTimKiem.Location = new System.Drawing.Point(357, 17);
-            this.grbTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbTimKiem.Location = new System.Drawing.Point(11, 11);
+            this.grbTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.grbTimKiem.Name = "grbTimKiem";
-            this.grbTimKiem.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grbTimKiem.Size = new System.Drawing.Size(501, 61);
+            this.grbTimKiem.Padding = new System.Windows.Forms.Padding(2);
+            this.grbTimKiem.Size = new System.Drawing.Size(499, 61);
             this.grbTimKiem.TabIndex = 3;
             this.grbTimKiem.TabStop = false;
             this.grbTimKiem.Text = "Tìm kiếm độc giả";
             // 
             // txtTimKiemDocGia
             // 
-            this.txtTimKiemDocGia.Location = new System.Drawing.Point(95, 22);
+            this.txtTimKiemDocGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTimKiemDocGia.Location = new System.Drawing.Point(80, 27);
             this.txtTimKiemDocGia.Name = "txtTimKiemDocGia";
-            this.txtTimKiemDocGia.Size = new System.Drawing.Size(370, 20);
+            this.txtTimKiemDocGia.Size = new System.Drawing.Size(414, 20);
             this.txtTimKiemDocGia.TabIndex = 3;
             this.txtTimKiemDocGia.TextChanged += new System.EventHandler(this.txtTimKiemDocGia_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 24);
+            this.label5.Location = new System.Drawing.Point(6, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Tên độc giả";
+            this.label5.Text = "Tên độc giả:";
             // 
             // FrmQuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 356);
+            this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.dgvDanhSachDocGia);
             this.Controls.Add(this.grbTimKiem);
-            this.Controls.Add(this.grbDSDocGia);
             this.Controls.Add(this.grbTTDocGia);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmQuanLyDocGia";
             this.Text = "Quản lý độc giả";
             this.Load += new System.EventHandler(this.FrmQuanLyDocGia_Load);
@@ -328,7 +326,6 @@
             this.toolStripChucNang.ResumeLayout(false);
             this.toolStripChucNang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDocGia)).EndInit();
-            this.grbDSDocGia.ResumeLayout(false);
             this.grbTimKiem.ResumeLayout(false);
             this.grbTimKiem.PerformLayout();
             this.ResumeLayout(false);
@@ -356,7 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.GroupBox grbDSDocGia;
         private System.Windows.Forms.GroupBox grbTimKiem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblMaDocGia;
