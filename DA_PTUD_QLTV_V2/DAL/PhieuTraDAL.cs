@@ -31,5 +31,10 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<view_DSPhieuTra> GetDSView_DSPhieuTra()
+        {
+            return db.view_DSPhieuTras.ToList();
+        }
     }
 }

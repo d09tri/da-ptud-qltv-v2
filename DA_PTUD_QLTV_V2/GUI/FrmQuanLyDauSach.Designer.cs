@@ -72,6 +72,8 @@
             this.txtTimKiemDauSach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.pnlTieuDe = new System.Windows.Forms.Panel();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.pnlHinhAnh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
             this.grbDSDauSach.SuspendLayout();
@@ -80,6 +82,7 @@
             this.grbTTDauSach.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             this.grbTimKiemDauSach.SuspendLayout();
+            this.pnlTieuDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHinhAnh
@@ -107,9 +110,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDSDauSach.Controls.Add(this.grbLocDauSach);
             this.grbDSDauSach.Controls.Add(this.dgvDSDauSach);
-            this.grbDSDauSach.Location = new System.Drawing.Point(12, 12);
+            this.grbDSDauSach.Location = new System.Drawing.Point(12, 62);
             this.grbDSDauSach.Name = "grbDSDauSach";
-            this.grbDSDauSach.Size = new System.Drawing.Size(519, 526);
+            this.grbDSDauSach.Size = new System.Drawing.Size(519, 476);
             this.grbDSDauSach.TabIndex = 1;
             this.grbDSDauSach.TabStop = false;
             this.grbDSDauSach.Text = "Danh sách đầu sách";
@@ -188,7 +191,7 @@
             this.dgvDSDauSach.MultiSelect = false;
             this.dgvDSDauSach.Name = "dgvDSDauSach";
             this.dgvDSDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSDauSach.Size = new System.Drawing.Size(507, 395);
+            this.dgvDSDauSach.Size = new System.Drawing.Size(507, 345);
             this.dgvDSDauSach.TabIndex = 2;
             this.dgvDSDauSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDauSach_CellClick);
             // 
@@ -254,7 +257,7 @@
             this.grbTTDauSach.Controls.Add(this.lblMaSach_z);
             this.grbTTDauSach.Controls.Add(this.toolStripChucNang);
             this.grbTTDauSach.Controls.Add(this.pnlHinhAnh);
-            this.grbTTDauSach.Location = new System.Drawing.Point(537, 137);
+            this.grbTTDauSach.Location = new System.Drawing.Point(537, 187);
             this.grbTTDauSach.Name = "grbTTDauSach";
             this.grbTTDauSach.Size = new System.Drawing.Size(440, 231);
             this.grbTTDauSach.TabIndex = 2;
@@ -463,7 +466,7 @@
             this.grbTimKiemDauSach.Controls.Add(this.btnRefresh);
             this.grbTimKiemDauSach.Controls.Add(this.txtTimKiemDauSach);
             this.grbTimKiemDauSach.Controls.Add(this.label2);
-            this.grbTimKiemDauSach.Location = new System.Drawing.Point(537, 12);
+            this.grbTimKiemDauSach.Location = new System.Drawing.Point(537, 62);
             this.grbTimKiemDauSach.Name = "grbTimKiemDauSach";
             this.grbTimKiemDauSach.Size = new System.Drawing.Size(440, 119);
             this.grbTimKiemDauSach.TabIndex = 4;
@@ -496,11 +499,35 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên sách";
             // 
+            // pnlTieuDe
+            // 
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.pnlTieuDe.TabIndex = 16;
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "QUẢN LÝ ĐẦU SÁCH";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmQuanLyDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.pnlTieuDe);
             this.Controls.Add(this.grbTimKiemDauSach);
             this.Controls.Add(this.grbTTDauSach);
             this.Controls.Add(this.grbDSDauSach);
@@ -519,6 +546,7 @@
             this.toolStripChucNang.PerformLayout();
             this.grbTimKiemDauSach.ResumeLayout(false);
             this.grbTimKiemDauSach.PerformLayout();
+            this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -568,5 +596,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNamXB;
         private System.Windows.Forms.DateTimePicker dtpNamXuatBan;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Panel pnlTieuDe;
+        private System.Windows.Forms.Label lblTieuDe;
     }
 }

@@ -191,5 +191,17 @@ namespace GUI
                 LoadDSTheThuVien();
             }
         }
+
+        private void txtTimKiemDocGia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTimKiemDocGia.Text.Length == 0)
+            {
+                LoadDSTheThuVien();
+            }
+
+            dgvDSTheThuVien.DataSource = null;
+            dgvDSTheThuVien.ClearSelection();
+            dgvDSTheThuVien.DataSource = ttvBLL.GetDSView_DSTheThuVienTheoTenDocGia(txtTimKiemDocGia.Text);
+        }
     }
 }

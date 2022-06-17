@@ -240,8 +240,15 @@ dbo.NhanVien ON dbo.PhieuMuon.MaNhanVien = dbo.NhanVien.MaNhanVien INNER JOIN
 dbo.TheThuVien ON dbo.PhieuMuon.MaThe = dbo.TheThuVien.MaThe INNER JOIN
 dbo.DocGia ON dbo.TheThuVien.MaDocGia = dbo.DocGia.MaDocGia
 
-select * from view_DSDauSach
+select * from view_DSPhieuMuon
+select * from view_DSPhieuTra
 
+create view view_DSPhieuTra as
+SELECT        dbo.PhieuTra.MaPhieuTra, dbo.PhieuTra.MaPhieuMuon, dbo.NhanVien.TenNhanVien, dbo.PhieuTra.MaThe, dbo.DocGia.TenDocGia, dbo.PhieuTra.NgayTra
+FROM            dbo.PhieuTra INNER JOIN
+                         dbo.NhanVien ON dbo.PhieuTra.MaNhanVien = dbo.NhanVien.MaNhanVien INNER JOIN
+                         dbo.TheThuVien ON dbo.PhieuTra.MaThe = dbo.TheThuVien.MaThe INNER JOIN
+                         dbo.DocGia ON dbo.TheThuVien.MaDocGia = dbo.DocGia.MaDocGia
 
 create view view_DSTheThuVien as
 SELECT dbo.TheThuVien.MaThe, dbo.DocGia.TenDocGia, dbo.TheThuVien.NgayLap, dbo.TheThuVien.NgayHetHan, dbo.TheThuVien.GhiChu, dbo.TheThuVien.TinhTrang
@@ -249,6 +256,7 @@ FROM   dbo.TheThuVien INNER JOIN
              dbo.DocGia ON dbo.TheThuVien.MaDocGia = dbo.DocGia.MaDocGia
 
 select * from view_DSTheThuVien
+
 /*	======================================
 	Trigger
 	======================================	*/
@@ -393,6 +401,12 @@ select * from PhieuMuon where MaPhieuMuon = 1
 select * from ChiTietPhieuMuon where MaPhieuMuon = 1
 select * from BanIn where TrangThai = 1 
 
+select * from TheThuVien
 
+<<<<<<< Updated upstream
 
 select * from NhanVien
+=======
+select * from PhieuMuon
+select * from PhieuTra
+>>>>>>> Stashed changes

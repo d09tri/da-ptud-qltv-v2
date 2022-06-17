@@ -35,6 +35,7 @@
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnHeThong = new System.Windows.Forms.Button();
             this.pnlChucNangSubMenu = new System.Windows.Forms.Panel();
+            this.btnThongKe = new System.Windows.Forms.Button();
             this.btnTraSach = new System.Windows.Forms.Button();
             this.btnMuonSach = new System.Windows.Forms.Button();
             this.btnChucNang = new System.Windows.Forms.Button();
@@ -82,7 +83,7 @@
             this.pnlHeThongSubMenu.Controls.Add(this.btnRestore);
             this.pnlHeThongSubMenu.Controls.Add(this.btnBackup);
             this.pnlHeThongSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeThongSubMenu.Location = new System.Drawing.Point(0, 475);
+            this.pnlHeThongSubMenu.Location = new System.Drawing.Point(0, 515);
             this.pnlHeThongSubMenu.Name = "pnlHeThongSubMenu";
             this.pnlHeThongSubMenu.Size = new System.Drawing.Size(214, 120);
             this.pnlHeThongSubMenu.TabIndex = 11;
@@ -148,7 +149,7 @@
             this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeThong.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnHeThong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 430);
+            this.btnHeThong.Location = new System.Drawing.Point(0, 470);
             this.btnHeThong.Name = "btnHeThong";
             this.btnHeThong.Padding = new System.Windows.Forms.Padding(9, 0, 21, 0);
             this.btnHeThong.Size = new System.Drawing.Size(214, 45);
@@ -162,13 +163,32 @@
             // pnlChucNangSubMenu
             // 
             this.pnlChucNangSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlChucNangSubMenu.Controls.Add(this.btnThongKe);
             this.pnlChucNangSubMenu.Controls.Add(this.btnTraSach);
             this.pnlChucNangSubMenu.Controls.Add(this.btnMuonSach);
             this.pnlChucNangSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlChucNangSubMenu.Location = new System.Drawing.Point(0, 350);
             this.pnlChucNangSubMenu.Name = "pnlChucNangSubMenu";
-            this.pnlChucNangSubMenu.Size = new System.Drawing.Size(214, 80);
+            this.pnlChucNangSubMenu.Size = new System.Drawing.Size(214, 120);
             this.pnlChucNangSubMenu.TabIndex = 9;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 80);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Padding = new System.Windows.Forms.Padding(30, 0, 20, 0);
+            this.btnThongKe.Size = new System.Drawing.Size(214, 40);
+            this.btnThongKe.TabIndex = 2;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnTraSach
             // 
@@ -427,5 +447,6 @@
         private System.Windows.Forms.Button btnBanIn;
         private System.Windows.Forms.Button btnTheThuVien;
         private System.Windows.Forms.Button btnDocGia;
+        private System.Windows.Forms.Button btnThongKe;
     }
 }

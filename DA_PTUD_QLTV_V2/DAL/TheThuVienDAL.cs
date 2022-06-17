@@ -23,6 +23,11 @@ namespace DAL
             return db.view_DSTheThuViens.Select(t => t).ToList<view_DSTheThuVien>();
         }
 
+        public List<view_DSTheThuVien> GetDSView_DSTheThuVienTheoTenDocGia(string tenDocGia)
+        {
+            return db.view_DSTheThuViens.Where(t => t.TenDocGia.Contains(tenDocGia)).Select(t => t).ToList<view_DSTheThuVien>();
+        }
+
         public TheThuVien GetTheThuVienTheoMaDocGia(int maDocGia)
         {
             try

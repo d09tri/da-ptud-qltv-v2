@@ -19,6 +19,11 @@ namespace BLL
             return pmDAL.GetDSPhieuMuon();
         }
 
+        public List<PhieuMuon> GetDSPhieuMuonTheoMaTheThuVien(int maThe)
+        {
+            return pmDAL.GetDSPhieuMuonTheoMaTheThuVien(maThe);
+        }
+
         public List<view_DSPhieuMuon> GetDSView_DSPhieuMuonTheoTinhTrang(bool tinhTrang)
         {
             return pmDAL.GetDSView_DSPhieuMuonTheoTinhTrang(tinhTrang);
@@ -27,6 +32,11 @@ namespace BLL
         public view_DSPhieuMuon GetView_DSPhieuMuonTheoMa(int maPhieuMuon)
         {
             return pmDAL.GetView_DSPhieuMuonTheoMaPhieuMuon(maPhieuMuon);
+        }
+
+        public List<view_DSPhieuMuon> GetDSView_DSPhieuMuon()
+        {
+            return pmDAL.GetDSView_DSPhieuMuon();
         }
 
         public bool TaoPhieuMuon(PhieuMuon pm)

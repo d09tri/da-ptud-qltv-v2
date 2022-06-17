@@ -18,7 +18,7 @@ namespace DAL
             return db.ChiTietPhieuMuons.ToList();
         }
 
-        public List<ChiTietPhieuMuon> GetDSCTPhieuMuonTheoMa(int maPhieuMuon)
+        public List<ChiTietPhieuMuon> GetDSCTPhieuMuonTheoMaPhieuMuon(int maPhieuMuon)
         {
             return db.ChiTietPhieuMuons.Where(t => t.MaPhieuMuon == maPhieuMuon && t.NgayTra == null).ToList();
         }

@@ -57,6 +57,8 @@
             this.dgvDSCTPhieuTra = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pnlTieuDe = new System.Windows.Forms.Panel();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.ucThongTinDauSach = new CustomControls.UcThongTinDauSach();
             this.grbTTPhieuMuon.SuspendLayout();
             this.grbCTPhieuMuon.SuspendLayout();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTPhieuMuon)).BeginInit();
             this.grbCTPhieuTra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTPhieuTra)).BeginInit();
+            this.pnlTieuDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbTTPhieuMuon
@@ -80,7 +83,7 @@
             this.grbTTPhieuMuon.Controls.Add(this.label2);
             this.grbTTPhieuMuon.Controls.Add(this.txtMaThe);
             this.grbTTPhieuMuon.Controls.Add(this.dtpNgayMuon);
-            this.grbTTPhieuMuon.Location = new System.Drawing.Point(12, 12);
+            this.grbTTPhieuMuon.Location = new System.Drawing.Point(12, 62);
             this.grbTTPhieuMuon.Name = "grbTTPhieuMuon";
             this.grbTTPhieuMuon.Size = new System.Drawing.Size(248, 227);
             this.grbTTPhieuMuon.TabIndex = 14;
@@ -107,6 +110,7 @@
             // 
             // cmbPhieuMuon
             // 
+            this.cmbPhieuMuon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPhieuMuon.FormattingEnabled = true;
             this.cmbPhieuMuon.Location = new System.Drawing.Point(95, 24);
             this.cmbPhieuMuon.Name = "cmbPhieuMuon";
@@ -146,6 +150,7 @@
             // 
             this.txtNhanVien.Location = new System.Drawing.Point(95, 51);
             this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.ReadOnly = true;
             this.txtNhanVien.Size = new System.Drawing.Size(147, 20);
             this.txtNhanVien.TabIndex = 2;
             // 
@@ -162,6 +167,7 @@
             // 
             this.txtDocGia.Location = new System.Drawing.Point(95, 77);
             this.txtDocGia.Name = "txtDocGia";
+            this.txtDocGia.ReadOnly = true;
             this.txtDocGia.Size = new System.Drawing.Size(147, 20);
             this.txtDocGia.TabIndex = 4;
             // 
@@ -178,6 +184,7 @@
             // 
             this.txtMaThe.Location = new System.Drawing.Point(95, 103);
             this.txtMaThe.Name = "txtMaThe";
+            this.txtMaThe.ReadOnly = true;
             this.txtMaThe.Size = new System.Drawing.Size(147, 20);
             this.txtMaThe.TabIndex = 5;
             // 
@@ -193,7 +200,7 @@
             // btnLapPhieuTra
             // 
             this.btnLapPhieuTra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLapPhieuTra.Location = new System.Drawing.Point(812, 264);
+            this.btnLapPhieuTra.Location = new System.Drawing.Point(812, 214);
             this.btnLapPhieuTra.Name = "btnLapPhieuTra";
             this.btnLapPhieuTra.Size = new System.Drawing.Size(147, 23);
             this.btnLapPhieuTra.TabIndex = 13;
@@ -207,7 +214,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCTPhieuMuon.Controls.Add(this.toolStrip);
             this.grbCTPhieuMuon.Controls.Add(this.dgvDSCTPhieuMuon);
-            this.grbCTPhieuMuon.Location = new System.Drawing.Point(266, 12);
+            this.grbCTPhieuMuon.Location = new System.Drawing.Point(266, 62);
             this.grbCTPhieuMuon.Name = "grbCTPhieuMuon";
             this.grbCTPhieuMuon.Size = new System.Drawing.Size(711, 227);
             this.grbCTPhieuMuon.TabIndex = 13;
@@ -307,9 +314,9 @@
             this.grbCTPhieuTra.Controls.Add(this.btnLapPhieuTra);
             this.grbCTPhieuTra.Controls.Add(this.dgvDSCTPhieuTra);
             this.grbCTPhieuTra.Controls.Add(this.ucThongTinDauSach);
-            this.grbCTPhieuTra.Location = new System.Drawing.Point(12, 245);
+            this.grbCTPhieuTra.Location = new System.Drawing.Point(12, 295);
             this.grbCTPhieuTra.Name = "grbCTPhieuTra";
-            this.grbCTPhieuTra.Size = new System.Drawing.Size(965, 293);
+            this.grbCTPhieuTra.Size = new System.Drawing.Size(965, 243);
             this.grbCTPhieuTra.TabIndex = 1;
             this.grbCTPhieuTra.TabStop = false;
             this.grbCTPhieuTra.Text = "Chi tiết phiếu trả";
@@ -328,7 +335,7 @@
             this.dgvDSCTPhieuTra.MultiSelect = false;
             this.dgvDSCTPhieuTra.Name = "dgvDSCTPhieuTra";
             this.dgvDSCTPhieuTra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSCTPhieuTra.Size = new System.Drawing.Size(233, 268);
+            this.dgvDSCTPhieuTra.Size = new System.Drawing.Size(233, 218);
             this.dgvDSCTPhieuTra.TabIndex = 1;
             this.dgvDSCTPhieuTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSCTPhieuTra_CellClick);
             // 
@@ -345,6 +352,28 @@
             this.Column7.HeaderText = "Đã trả";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // pnlTieuDe
+            // 
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.pnlTieuDe.TabIndex = 15;
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "TRẢ SÁCH";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucThongTinDauSach
             // 
@@ -366,7 +395,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.pnlTieuDe);
             this.Controls.Add(this.grbCTPhieuMuon);
             this.Controls.Add(this.grbTTPhieuMuon);
             this.Controls.Add(this.grbCTPhieuTra);
@@ -381,6 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTPhieuMuon)).EndInit();
             this.grbCTPhieuTra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTPhieuTra)).EndInit();
+            this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -416,5 +448,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlTieuDe;
+        private System.Windows.Forms.Label lblTieuDe;
     }
 }

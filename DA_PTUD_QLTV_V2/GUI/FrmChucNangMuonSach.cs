@@ -26,17 +26,22 @@ namespace GUI
 
         Helper helper = new Helper();
         static List<int> lstMaBanIn;
+        NhanVien nv = new NhanVien();
+        bool dieuKienMuon;
 
-        public FrmChucNangMuonSach()
+        public FrmChucNangMuonSach(NhanVien nv)
         {
             InitializeComponent();
             lstMaBanIn = new List<int>();
+            this.nv = nv;
+            txtNhanVien.Text = nv.TenNhanVien;
         }
 
         private void FrmChucNangMuonSach_Load(object sender, EventArgs e)
         {
             LoadDuLieu();
             dtpNgayMuon.MinDate = dtpNgayMuon.MaxDate = DateTime.Now;
+            dgvDSCTPhieuMuonChuaTra.AutoGenerateColumns = false;
             cmbDocGia.SelectedIndex = 0;
             cmbDocGia_SelectedIndexChanged(sender, e);
         }
@@ -66,7 +71,7 @@ namespace GUI
                 MessageBox.Show("Chưa có đầu sách mượn, vui lòng quét đầu sách trước tiên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
+
             fpnlDSDauSachMuon.Controls.Clear();
 
             foreach (int maBanIn in lstMaBanIn)
@@ -104,7 +109,33 @@ namespace GUI
                 return;
 
             TheThuVien ttv = ttvBLL.GetTheThuVienTheoMaDocGia(int.Parse(maDocGia));
+            List<PhieuMuon> lstPM = pmBLL.GetDSPhieuMuonTheoMaTheThuVien(ttv.MaThe).Where(t => t.TinhTrang == false).Select(t => t).ToList();
+            List<ChiTietPhieuMuon> lstCTPM = new List<ChiTietPhieuMuon>();
+            foreach (PhieuMuon pm in lstPM)
+            {
+                lstCTPM.AddRange(ctpmBLL.GetDSCTPhieuMuonTheoMa(pm.MaPhieuMuon));
+            }
+
+            if (lstCTPM.Count <= 5)
+            {
+                chkDat.Checked = true;
+                label6.ForeColor = label7.ForeColor = label8.ForeColor = Color.Green;
+                dieuKienMuon = true;
+            }
+            else
+            {
+                chkDat.Checked = false;
+                label6.ForeColor = label7.ForeColor = label8.ForeColor = Color.Red;
+                dieuKienMuon = false;
+            }
+
             txtTheThuVien.Text = ttv.MaThe.ToString();
+            txtSLPhieuMuonChuaTra.Text = lstPM.Count.ToString();
+            txtSLDauSachChuaTra.Text = lstCTPM.Count.ToString();
+
+            dgvDSCTPhieuMuonChuaTra.DataSource = null;
+            dgvDSCTPhieuMuonChuaTra.ClearSelection();
+            dgvDSCTPhieuMuonChuaTra.DataSource = lstCTPM;
         }
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
@@ -115,9 +146,15 @@ namespace GUI
                 return;
             }
 
+            if (!dieuKienMuon)
+            {
+                MessageBox.Show("Độc giả không đủ điều kiện mượn tiếp, vui lòng trả sách trước khi tiếp tục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             PhieuMuon pm = new PhieuMuon()
             {
-                MaNhanVien = int.Parse(txtNhanVien.Text),
+                MaNhanVien = nv.MaNhanVien,
                 MaThe = int.Parse(txtTheThuVien.Text),
                 NgayMuon = dtpNgayMuon.Value,
                 TinhTrang = false
@@ -161,7 +198,7 @@ namespace GUI
                 return;
             }
 
-            lstMaBanIn = new List<int>();
+            lstMaBanIn.Clear();
             cmbDocGia.SelectedIndex = 0;
             cmbDocGia_SelectedIndexChanged(sender, e);
             fpnlDSDauSachMuon.Controls.Clear();

@@ -48,12 +48,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ucThongTinDauSach = new CustomControls.UcThongTinDauSach();
+            this.pnlTieuDe = new System.Windows.Forms.Panel();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.grbDSBanIn.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBanIn)).BeginInit();
             this.grbDSDauSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).BeginInit();
             this.grbLocDauSach.SuspendLayout();
+            this.pnlTieuDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbDSBanIn
@@ -62,9 +65,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDSBanIn.Controls.Add(this.toolStripChucNang);
             this.grbDSBanIn.Controls.Add(this.dgvDSBanIn);
-            this.grbDSBanIn.Location = new System.Drawing.Point(440, 185);
+            this.grbDSBanIn.Location = new System.Drawing.Point(440, 235);
             this.grbDSBanIn.Name = "grbDSBanIn";
-            this.grbDSBanIn.Size = new System.Drawing.Size(537, 353);
+            this.grbDSBanIn.Size = new System.Drawing.Size(537, 303);
             this.grbDSBanIn.TabIndex = 6;
             this.grbDSBanIn.TabStop = false;
             this.grbDSBanIn.Text = "Bản in đầu sách";
@@ -124,7 +127,7 @@
             this.dgvDSBanIn.MultiSelect = false;
             this.dgvDSBanIn.Name = "dgvDSBanIn";
             this.dgvDSBanIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSBanIn.Size = new System.Drawing.Size(525, 303);
+            this.dgvDSBanIn.Size = new System.Drawing.Size(525, 253);
             this.dgvDSBanIn.TabIndex = 2;
             this.dgvDSBanIn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBanIn_CellClick);
             // 
@@ -155,9 +158,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDSDauSach.Controls.Add(this.dgvDSDauSach);
             this.grbDSDauSach.Controls.Add(this.grbLocDauSach);
-            this.grbDSDauSach.Location = new System.Drawing.Point(12, 12);
+            this.grbDSDauSach.Location = new System.Drawing.Point(12, 62);
             this.grbDSDauSach.Name = "grbDSDauSach";
-            this.grbDSDauSach.Size = new System.Drawing.Size(422, 526);
+            this.grbDSDauSach.Size = new System.Drawing.Size(422, 476);
             this.grbDSDauSach.TabIndex = 4;
             this.grbDSDauSach.TabStop = false;
             this.grbDSDauSach.Text = "Danh sách đầu sách";
@@ -178,7 +181,7 @@
             this.dgvDSDauSach.MultiSelect = false;
             this.dgvDSDauSach.Name = "dgvDSDauSach";
             this.dgvDSDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSDauSach.Size = new System.Drawing.Size(410, 395);
+            this.dgvDSDauSach.Size = new System.Drawing.Size(410, 345);
             this.dgvDSDauSach.TabIndex = 1;
             this.dgvDSDauSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDauSach_CellClick);
             // 
@@ -254,7 +257,7 @@
             // 
             this.ucThongTinDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ucThongTinDauSach.AnhBia = null;
-            this.ucThongTinDauSach.Location = new System.Drawing.Point(440, 12);
+            this.ucThongTinDauSach.Location = new System.Drawing.Point(440, 62);
             this.ucThongTinDauSach.MaBanIn = null;
             this.ucThongTinDauSach.Name = "ucThongTinDauSach";
             this.ucThongTinDauSach.NamXuatBan = null;
@@ -265,11 +268,35 @@
             this.ucThongTinDauSach.TenSach = null;
             this.ucThongTinDauSach.TheLoai = null;
             // 
+            // pnlTieuDe
+            // 
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.pnlTieuDe.TabIndex = 7;
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "QUẢN LÝ BẢN IN";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmQuanLyBanIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.pnlTieuDe);
             this.Controls.Add(this.grbDSBanIn);
             this.Controls.Add(this.ucThongTinDauSach);
             this.Controls.Add(this.grbDSDauSach);
@@ -285,6 +312,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).EndInit();
             this.grbLocDauSach.ResumeLayout(false);
             this.grbLocDauSach.PerformLayout();
+            this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,5 +338,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSach_ds;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenSach;
+        private System.Windows.Forms.Panel pnlTieuDe;
+        private System.Windows.Forms.Label lblTieuDe;
     }
 }

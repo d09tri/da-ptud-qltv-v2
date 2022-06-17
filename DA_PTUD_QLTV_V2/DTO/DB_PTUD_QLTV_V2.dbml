@@ -184,4 +184,14 @@
       <Association Name="ChucNang_PhanQuyen" Member="PhanQuyens" ThisKey="MaChucNang" OtherKey="MaChucNang" Type="PhanQuyen" />
     </Type>
   </Table>
+  <Table Name="dbo.view_DSPhieuTra" Member="view_DSPhieuTras">
+    <Type Name="view_DSPhieuTra">
+      <Column Name="MaPhieuTra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhieuMuon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaThe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenDocGia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NgayTra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

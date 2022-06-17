@@ -29,6 +29,11 @@ namespace BLL
             return ttvDAL.GetDSView_DSTheThuVien();
         }
 
+        public List<view_DSTheThuVien> GetDSView_DSTheThuVienTheoTenDocGia(string tenDocGia)
+        {
+            return ttvDAL.GetDSView_DSTheThuVienTheoTenDocGia(tenDocGia);
+        }
+
         public bool ThemTheThuVien(TheThuVien ttv)
         {
             return ttvDAL.ThemTheThuVien(ttv);

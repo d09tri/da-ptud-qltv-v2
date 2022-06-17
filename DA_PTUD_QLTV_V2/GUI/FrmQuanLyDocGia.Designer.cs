@@ -53,10 +53,13 @@
             this.grbTimKiem = new System.Windows.Forms.GroupBox();
             this.txtTimKiemDocGia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pnlTieuDe = new System.Windows.Forms.Panel();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.grbTTDocGia.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDocGia)).BeginInit();
             this.grbTimKiem.SuspendLayout();
+            this.pnlTieuDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbTTDocGia
@@ -71,7 +74,7 @@
             this.grbTTDocGia.Controls.Add(this.label3);
             this.grbTTDocGia.Controls.Add(this.label2);
             this.grbTTDocGia.Controls.Add(this.label1);
-            this.grbTTDocGia.Location = new System.Drawing.Point(514, 11);
+            this.grbTTDocGia.Location = new System.Drawing.Point(514, 61);
             this.grbTTDocGia.Margin = new System.Windows.Forms.Padding(2);
             this.grbTTDocGia.Name = "grbTTDocGia";
             this.grbTTDocGia.Padding = new System.Windows.Forms.Padding(2);
@@ -236,14 +239,14 @@
             this.TenDocGia,
             this.NgaySinh,
             this.CMND});
-            this.dgvDanhSachDocGia.Location = new System.Drawing.Point(11, 76);
+            this.dgvDanhSachDocGia.Location = new System.Drawing.Point(11, 126);
             this.dgvDanhSachDocGia.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSachDocGia.MultiSelect = false;
             this.dgvDanhSachDocGia.Name = "dgvDanhSachDocGia";
             this.dgvDanhSachDocGia.ReadOnly = true;
             this.dgvDanhSachDocGia.RowTemplate.Height = 28;
             this.dgvDanhSachDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachDocGia.Size = new System.Drawing.Size(499, 463);
+            this.dgvDanhSachDocGia.Size = new System.Drawing.Size(499, 413);
             this.dgvDanhSachDocGia.TabIndex = 1;
             this.dgvDanhSachDocGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachDocGia_CellClick);
             // 
@@ -281,7 +284,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbTimKiem.Controls.Add(this.txtTimKiemDocGia);
             this.grbTimKiem.Controls.Add(this.label5);
-            this.grbTimKiem.Location = new System.Drawing.Point(11, 11);
+            this.grbTimKiem.Location = new System.Drawing.Point(11, 61);
             this.grbTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.grbTimKiem.Name = "grbTimKiem";
             this.grbTimKiem.Padding = new System.Windows.Forms.Padding(2);
@@ -309,11 +312,35 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Tên độc giả:";
             // 
+            // pnlTieuDe
+            // 
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.pnlTieuDe.TabIndex = 16;
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "QUẢN LÝ ĐỘC GIẢ";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmQuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.pnlTieuDe);
             this.Controls.Add(this.dgvDanhSachDocGia);
             this.Controls.Add(this.grbTimKiem);
             this.Controls.Add(this.grbTTDocGia);
@@ -328,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDocGia)).EndInit();
             this.grbTimKiem.ResumeLayout(false);
             this.grbTimKiem.PerformLayout();
+            this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,5 +386,7 @@
         private System.Windows.Forms.Label lblMaDocGia;
         private System.Windows.Forms.TextBox txtTimKiemDocGia;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnlTieuDe;
+        private System.Windows.Forms.Label lblTieuDe;
     }
 }

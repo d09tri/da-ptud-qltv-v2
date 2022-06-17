@@ -21,7 +21,7 @@ namespace BLL
 
         public List<ChiTietPhieuMuon> GetDSCTPhieuMuonTheoMa(int maPhieuMuon)
         {
-            return ctpmDAL.GetDSCTPhieuMuonTheoMa(maPhieuMuon);
+            return ctpmDAL.GetDSCTPhieuMuonTheoMaPhieuMuon(maPhieuMuon);
         }
 
         public ChiTietPhieuMuon GetCTPhieuMuonTheoMaPhieuMuonVaMaBanIn(int maPhieuMuon, int maBanIn)

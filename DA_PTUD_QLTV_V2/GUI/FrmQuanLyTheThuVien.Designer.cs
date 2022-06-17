@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuanLyTheThuVien));
             this.grbTTTheThuVien = new System.Windows.Forms.GroupBox();
+            this.chkTinhTrang = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
             this.toolStripChucNang = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -56,13 +59,13 @@
             this.grbTimKiem = new System.Windows.Forms.GroupBox();
             this.txtTimKiemDocGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.chkTinhTrang = new System.Windows.Forms.CheckBox();
+            this.pnlTieuDe = new System.Windows.Forms.Panel();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.grbTTTheThuVien.SuspendLayout();
             this.toolStripChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTheThuVien)).BeginInit();
             this.grbTimKiem.SuspendLayout();
+            this.pnlTieuDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbTTTheThuVien
@@ -81,7 +84,7 @@
             this.grbTTTheThuVien.Controls.Add(this.label1);
             this.grbTTTheThuVien.Controls.Add(this.lblMaThe);
             this.grbTTTheThuVien.Controls.Add(this.label4);
-            this.grbTTTheThuVien.Location = new System.Drawing.Point(601, 11);
+            this.grbTTTheThuVien.Location = new System.Drawing.Point(601, 61);
             this.grbTTTheThuVien.Margin = new System.Windows.Forms.Padding(2);
             this.grbTTTheThuVien.Name = "grbTTTheThuVien";
             this.grbTTTheThuVien.Padding = new System.Windows.Forms.Padding(2);
@@ -89,6 +92,33 @@
             this.grbTTTheThuVien.TabIndex = 0;
             this.grbTTTheThuVien.TabStop = false;
             this.grbTTTheThuVien.Text = "Thông tin thẻ thư viện";
+            // 
+            // chkTinhTrang
+            // 
+            this.chkTinhTrang.AutoSize = true;
+            this.chkTinhTrang.Location = new System.Drawing.Point(68, 95);
+            this.chkTinhTrang.Name = "chkTinhTrang";
+            this.chkTinhTrang.Size = new System.Drawing.Size(104, 17);
+            this.chkTinhTrang.TabIndex = 43;
+            this.chkTinhTrang.Text = "Đang hoạt động";
+            this.chkTinhTrang.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Tình trạng:";
+            // 
+            // rtxtGhiChu
+            // 
+            this.rtxtGhiChu.Location = new System.Drawing.Point(8, 136);
+            this.rtxtGhiChu.Name = "rtxtGhiChu";
+            this.rtxtGhiChu.Size = new System.Drawing.Size(364, 133);
+            this.rtxtGhiChu.TabIndex = 41;
+            this.rtxtGhiChu.Text = "";
             // 
             // toolStripChucNang
             // 
@@ -258,14 +288,14 @@
             this.NgayHetHan,
             this.GhiChu,
             this.TinhTrang});
-            this.dgvDSTheThuVien.Location = new System.Drawing.Point(11, 76);
+            this.dgvDSTheThuVien.Location = new System.Drawing.Point(11, 126);
             this.dgvDSTheThuVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDSTheThuVien.MultiSelect = false;
             this.dgvDSTheThuVien.Name = "dgvDSTheThuVien";
             this.dgvDSTheThuVien.ReadOnly = true;
             this.dgvDSTheThuVien.RowTemplate.Height = 28;
             this.dgvDSTheThuVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSTheThuVien.Size = new System.Drawing.Size(586, 463);
+            this.dgvDSTheThuVien.Size = new System.Drawing.Size(586, 413);
             this.dgvDSTheThuVien.TabIndex = 0;
             this.dgvDSTheThuVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTheThuVien_CellClick);
             // 
@@ -274,36 +304,42 @@
             this.MaThe.DataPropertyName = "MaThe";
             this.MaThe.HeaderText = "Mã thẻ";
             this.MaThe.Name = "MaThe";
+            this.MaThe.ReadOnly = true;
             // 
             // MaDocGia
             // 
             this.MaDocGia.DataPropertyName = "TenDocGia";
             this.MaDocGia.HeaderText = "Tên đọc giả";
             this.MaDocGia.Name = "MaDocGia";
+            this.MaDocGia.ReadOnly = true;
             // 
             // NgayLap
             // 
             this.NgayLap.DataPropertyName = "NgayLap";
             this.NgayLap.HeaderText = "Ngày lập";
             this.NgayLap.Name = "NgayLap";
+            this.NgayLap.ReadOnly = true;
             // 
             // NgayHetHan
             // 
             this.NgayHetHan.DataPropertyName = "NgayHetHan";
             this.NgayHetHan.HeaderText = "Ngày hết hạn";
             this.NgayHetHan.Name = "NgayHetHan";
+            this.NgayHetHan.ReadOnly = true;
             // 
             // GhiChu
             // 
             this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
             // 
             // TinhTrang
             // 
             this.TinhTrang.DataPropertyName = "TinhTrang";
             this.TinhTrang.HeaderText = "Tình trạng";
             this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.ReadOnly = true;
             // 
             // grbTimKiem
             // 
@@ -311,7 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbTimKiem.Controls.Add(this.txtTimKiemDocGia);
             this.grbTimKiem.Controls.Add(this.label6);
-            this.grbTimKiem.Location = new System.Drawing.Point(11, 11);
+            this.grbTimKiem.Location = new System.Drawing.Point(11, 61);
             this.grbTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.grbTimKiem.Name = "grbTimKiem";
             this.grbTimKiem.Padding = new System.Windows.Forms.Padding(2);
@@ -328,6 +364,7 @@
             this.txtTimKiemDocGia.Name = "txtTimKiemDocGia";
             this.txtTimKiemDocGia.Size = new System.Drawing.Size(501, 20);
             this.txtTimKiemDocGia.TabIndex = 3;
+            this.txtTimKiemDocGia.TextChanged += new System.EventHandler(this.txtTimKiemDocGia_TextChanged);
             // 
             // label6
             // 
@@ -338,38 +375,35 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Tên độc giả:";
             // 
-            // rtxtGhiChu
+            // pnlTieuDe
             // 
-            this.rtxtGhiChu.Location = new System.Drawing.Point(8, 136);
-            this.rtxtGhiChu.Name = "rtxtGhiChu";
-            this.rtxtGhiChu.Size = new System.Drawing.Size(364, 133);
-            this.rtxtGhiChu.TabIndex = 41;
-            this.rtxtGhiChu.Text = "";
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.pnlTieuDe.TabIndex = 17;
             // 
-            // label7
+            // lblTieuDe
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Tình trạng:";
-            // 
-            // chkTinhTrang
-            // 
-            this.chkTinhTrang.AutoSize = true;
-            this.chkTinhTrang.Location = new System.Drawing.Point(68, 95);
-            this.chkTinhTrang.Name = "chkTinhTrang";
-            this.chkTinhTrang.Size = new System.Drawing.Size(104, 17);
-            this.chkTinhTrang.TabIndex = 43;
-            this.chkTinhTrang.Text = "Đang hoạt động";
-            this.chkTinhTrang.UseVisualStyleBackColor = true;
+            this.lblTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(989, 56);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "QUẢN LÝ THẺ THƯ VIỆN";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmQuanLyTheThuVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(989, 550);
+            this.Controls.Add(this.pnlTieuDe);
             this.Controls.Add(this.dgvDSTheThuVien);
             this.Controls.Add(this.grbTimKiem);
             this.Controls.Add(this.grbTTTheThuVien);
@@ -384,6 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTheThuVien)).EndInit();
             this.grbTimKiem.ResumeLayout(false);
             this.grbTimKiem.PerformLayout();
+            this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -420,5 +455,7 @@
         private System.Windows.Forms.CheckBox chkTinhTrang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox rtxtGhiChu;
+        private System.Windows.Forms.Panel pnlTieuDe;
+        private System.Windows.Forms.Label lblTieuDe;
     }
 }

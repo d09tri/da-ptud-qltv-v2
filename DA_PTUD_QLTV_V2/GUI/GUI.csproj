@@ -45,6 +45,9 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -119,6 +122,12 @@
     <Compile Include="FrmQuetDauSach.Designer.cs">
       <DependentUpon>FrmQuetDauSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKe.Designer.cs">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuetDauSach.resx">
       <DependentUpon>FrmQuetDauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKe.resx">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>

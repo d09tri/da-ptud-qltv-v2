@@ -45,7 +45,7 @@ namespace GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult rs = MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (rs == DialogResult.Yes)
             {
                 Application.Exit();

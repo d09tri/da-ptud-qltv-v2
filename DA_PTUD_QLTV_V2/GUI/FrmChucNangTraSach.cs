@@ -25,12 +25,15 @@ namespace GUI
 
         List<ChiTietPhieuTra> lstCTPhieuTra;
         Helper helper = new Helper();
+        NhanVien nv = new NhanVien();
 
-        public FrmChucNangTraSach()
+        public FrmChucNangTraSach(NhanVien nv)
         {
             InitializeComponent();
             dgvDSCTPhieuMuon.AutoGenerateColumns = false;
             dgvDSCTPhieuTra.AutoGenerateColumns = false;
+            this.nv = nv;
+            txtNhanVien.Text = nv.TenNhanVien;
         }
 
         private void LoadDuLieu()
@@ -237,7 +240,7 @@ namespace GUI
             PhieuTra pt = new PhieuTra()
             {
                 MaPhieuMuon = maPhieuMuon,
-                MaNhanVien = 1,
+                MaNhanVien = nv.MaNhanVien,
                 MaThe = int.Parse(txtMaThe.Text),
                 NgayTra = DateTime.Now
             };
@@ -277,6 +280,7 @@ namespace GUI
             }
 
             MessageBox.Show("Lập phiếu trả thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            cmbPhieuMuon.DataSource = null;
             cmbPhieuMuon.Items.Clear();
             cmbPhieuMuon.ResetText();
             LoadDefault(sender, e);

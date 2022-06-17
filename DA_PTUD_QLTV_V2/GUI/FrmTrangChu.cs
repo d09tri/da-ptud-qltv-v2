@@ -104,14 +104,21 @@ namespace GUI
         #region Sub menu Chức năng
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
-            FrmChucNangMuonSach frm = new FrmChucNangMuonSach();
+            FrmChucNangMuonSach frm = new FrmChucNangMuonSach(nv);
             helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            FrmChucNangTraSach frm = new FrmChucNangTraSach();
+            FrmChucNangTraSach frm = new FrmChucNangTraSach(nv);
+            helper.LoadChildForm(frm, pnlMain);
+            HideSubMenu();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            FrmThongKe frm = new FrmThongKe();
             helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }

@@ -19,6 +19,11 @@ namespace BLL
             return ptDAL.GetDSPhieuTra();
         }
 
+        public List<view_DSPhieuTra> GetDSView_DSPhieuTra()
+        {
+            return ptDAL.GetDSView_DSPhieuTra();
+        }
+
         public bool TaoPhieuTra(PhieuTra pt)
         {
             return ptDAL.TaoPhieuTra(pt);

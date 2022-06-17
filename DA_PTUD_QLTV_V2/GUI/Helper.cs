@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using DTO;
 using BLL;
 using System.Windows.Forms;
+using System.Data;
+using System.Reflection;
 
 namespace GUI
 {
@@ -74,6 +76,29 @@ namespace GUI
             pnl.Tag = frm;
 
             frm.Show();
+        }
+
+        public DataTable ChuyenDoiListSangDataTable<T>(List<T> lst)
+        {
+            DataTable dt = new DataTable(typeof(T).Name);
+            PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (PropertyInfo prop in props)
+            {
+                dt.Columns.Add(prop.Name);
+            }
+
+            foreach (T item in lst)
+            {
+                var values = new object[props.Length];
+                for (int i = 0; i < props.Length; i++)
+                {
+                    values[i] = props[i].GetValue(item, null);
+                }
+                dt.Rows.Add(values);
+            }
+
+            return dt;
         }
     }
 }
