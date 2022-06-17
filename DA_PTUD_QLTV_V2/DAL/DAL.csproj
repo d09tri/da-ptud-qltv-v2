@@ -46,6 +46,8 @@
     <Compile Include="DauSachDAL.cs" />
     <Compile Include="HelperDAL.cs" />
     <Compile Include="DocGiaDAL.cs" />
+    <Compile Include="NguoiDungDAL.cs" />
+    <Compile Include="NhanVienDAL.cs" />
     <Compile Include="NhaXuatBanDAL.cs" />
     <Compile Include="PhieuMuonDAL.cs" />
     <Compile Include="PhieuTraDAL.cs" />

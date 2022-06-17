@@ -324,6 +324,65 @@ insert into NhanVien values
 (N'Trí Em', '3/9/2001'),
 (N'Lộc Ú', '29/12/2001')
 
+-- Thêm bảng NguoiDung, NhomNguoiDung, ChucNang và PhanQuyen
+create table NhomNguoiDung
+(
+	MaNhom int identity(1,1),
+	TenNhom nvarchar(100),
+	constraint PK_NhomNguoiDung primary key (MaNhom)
+)
+
+create table NguoiDung
+(
+	TenDangNhap varchar(100),
+	MatKhau varchar(100),
+	HoatDong bit,
+	MaNhanVien int,
+	MaNhom int,
+	constraint PK_NguoiDung primary key (TenDangNhap)
+)
+
+alter table NguoiDung add 
+constraint FK_NguoiDung_NhanVien foreign key (MaNhanVien) references NhanVien(MaNhanVien), 
+constraint FK_NguoiDung_NhomNguoiDung foreign key (MaNhom) references NhomNguoiDung(MaNhom)
+
+create table ChucNang
+(
+	MaChucNang int identity(1,1),
+	TenChucNang nvarchar(100),
+	constraint PK_ChucNang primary key (MaChucNang)
+)
+
+create table PhanQuyen
+(
+	MaNhom int,
+	MaChucNang int,
+	CoQuyen bit,
+	constraint PK_PhanQuyen primary key (MaNhom, MaChucNang)
+)
+
+alter table PhanQuyen add 
+constraint FK_PhanQuyen_NhomNguoiDung foreign key (MaNhom) references NhomNguoiDung(MaNhom),
+constraint FK_PhanQuyen_ChucNang foreign key (MaChucNang) references ChucNang(MaChucNang)
+
+insert into NhomNguoiDung values
+(N'Quản lý'),
+(N'Nhân viên')
+
+insert into ChucNang values 
+(N'QL-Đầu sách'),
+(N'QL-Bản in'),
+(N'QL-Độc giả'),
+(N'QL-Thẻ thư viện'),
+(N'CN-Mượn sách'),
+(N'CN-Trả sách'),
+(N'HT-Backup'),
+(N'HT-Restore'),
+(N'HT-Tài khoản')
+
+insert into NguoiDung values
+('triem', '123', 1, 1, 1),
+('locus', '123', 1, 2, 2)
 /*	======================================
 	Bãi thử
 	======================================	*/

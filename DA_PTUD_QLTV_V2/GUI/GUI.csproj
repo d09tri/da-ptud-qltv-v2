@@ -77,6 +77,12 @@
     <Compile Include="FrmChucNangTraSach.Designer.cs">
       <DependentUpon>FrmChucNangTraSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDangNhap.Designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQuanLyBanIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +113,6 @@
     <Compile Include="FrmQuetDauSach.Designer.cs">
       <DependentUpon>FrmQuetDauSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTest.Designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChucNangTraSach.resx">
       <DependentUpon>FrmChucNangTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyBanIn.resx">
       <DependentUpon>FrmQuanLyBanIn.cs</DependentUpon>
@@ -143,9 +146,6 @@
     <EmbeddedResource Include="FrmQuetDauSach.resx">
       <DependentUpon>FrmQuetDauSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTest.resx">
-      <DependentUpon>FrmTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -269,6 +270,7 @@
     <Content Include="Resources\AnhBia\Truyen-co-tich-cua-anh-em-grim.jpg" />
     <Content Include="Resources\AnhBia\Tuyen-tap-trieu-kim-van.jpg" />
     <Content Include="Resources\AnhBia\Vo-nga-va-luan-hoi.jpg" />
+    <None Include="Resources\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

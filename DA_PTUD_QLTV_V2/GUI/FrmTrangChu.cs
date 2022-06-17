@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
 namespace GUI
 {
     public partial class FrmTrangChu : Form
     {
         Helper helper = new Helper();
+        NhanVien nv = new NhanVien();
 
-        public FrmTrangChu()
+        public FrmTrangChu(NhanVien nv)
         {
             InitializeComponent();
+            this.nv = nv;
+            lblTaiKhoan.Text = "Xin chào " + nv.TenNhanVien;
         }
 
         private void FrmTrangChu_Load(object sender, EventArgs e)
@@ -90,7 +95,9 @@ namespace GUI
 
         private void btnTheThuVien_Click(object sender, EventArgs e)
         {
-
+            FrmQuanLyTheThuVien frm = new FrmQuanLyTheThuVien();
+            helper.LoadChildForm(frm, pnlMain);
+            HideSubMenu();
         }
         #endregion
 
@@ -126,5 +133,18 @@ namespace GUI
             HideSubMenu();
         }
         #endregion
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn muốn đăng xuất khỏi hệ thống?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (rs == DialogResult.Yes)
+            {
+                this.SetVisibleCore(false);
+                FrmDangNhap frm = new FrmDangNhap();
+                frm.Show();
+            }
+
+            return;
+        }
     }
 }

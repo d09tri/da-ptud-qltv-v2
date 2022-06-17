@@ -45,6 +45,7 @@
     <Compile Include="DauSachBLL.cs" />
     <Compile Include="DocGiaBLL.cs" />
     <Compile Include="HelperBLL.cs" />
+    <Compile Include="NguoiDungBLL.cs" />
     <Compile Include="NhaXuatBanBLL.cs" />
     <Compile Include="PhieuMuonBLL.cs" />
     <Compile Include="PhieuTraBLL.cs" />
