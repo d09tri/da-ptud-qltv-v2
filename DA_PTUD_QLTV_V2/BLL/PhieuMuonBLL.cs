@@ -26,7 +26,7 @@ namespace BLL
 
         public view_DSPhieuMuon GetView_DSPhieuMuonTheoMa(int maPhieuMuon)
         {
-            return pmDAL.GetView_DSPhieuMuonTheoMa(maPhieuMuon);
+            return pmDAL.GetView_DSPhieuMuonTheoMaPhieuMuon(maPhieuMuon);
         }
 
         public bool TaoPhieuMuon(PhieuMuon pm)

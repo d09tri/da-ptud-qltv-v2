@@ -18,7 +18,7 @@ namespace DAL
             return db.TheLoais.ToList();
         }
 
-        public TheLoai GetTheLoaiTheoMa(int maTheLoai)
+        public TheLoai GetTheLoaiTheoMaTheLoai(int maTheLoai)
         {
             return db.TheLoais.First(t => t.MaTheLoai == maTheLoai);
         }

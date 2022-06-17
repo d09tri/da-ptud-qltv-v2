@@ -36,7 +36,7 @@ namespace BLL
 
         public DauSach GetDauSachTheoMa(int maSach)
         {
-            return dsDAL.GetDauSachTheoMa(maSach);
+            return dsDAL.GetDauSachTheoMaSach(maSach);
         }
 
         #region view_DSDauSach

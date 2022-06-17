@@ -9,7 +9,7 @@ namespace DAL
 {
     public class HelperDAL
     {
-        DB_PTUD_QLTV_V2DataContext dt = new DB_PTUD_QLTV_V2DataContext();
+        DB_PTUD_QLTV_V2DataContext db = new DB_PTUD_QLTV_V2DataContext();
 
         /// <summary>
         /// Lấy thông tin mã cuối cùng vừa được thêm của bảng
@@ -19,7 +19,7 @@ namespace DAL
         public int LayThongTinMaVuaThem(string tenBang)
         {
             string query = string.Format("Select IDENT_CURRENT ('{0}')", tenBang);
-            return Convert.ToInt32(dt.ExecuteQuery<decimal>(query, new object[0]).FirstOrDefault());
+            return Convert.ToInt32(db.ExecuteQuery<decimal>(query, new object[0]).FirstOrDefault());
         }
     }
 }

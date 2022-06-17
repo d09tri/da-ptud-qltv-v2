@@ -10,7 +10,6 @@ namespace DAL
     public class PhieuTraDAL
     {
         DB_PTUD_QLTV_V2DataContext db = new DB_PTUD_QLTV_V2DataContext();
-        HelperDAL helperDAL = new HelperDAL();
 
         public PhieuTraDAL() { }
 

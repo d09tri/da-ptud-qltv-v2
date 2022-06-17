@@ -13,6 +13,7 @@ namespace GUI
     public partial class FrmTrangChu : Form
     {
         Helper helper = new Helper();
+
         public FrmTrangChu()
         {
             InitializeComponent();
@@ -86,6 +87,11 @@ namespace GUI
             helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
+
+        private void btnTheThuVien_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region Sub menu Chức năng
@@ -120,8 +126,5 @@ namespace GUI
             HideSubMenu();
         }
         #endregion
-
-      
-
     }
 }

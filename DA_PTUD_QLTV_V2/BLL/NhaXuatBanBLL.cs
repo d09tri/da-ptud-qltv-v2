@@ -21,7 +21,7 @@ namespace BLL
 
         public NhaXuatBan GetNhaXuatBanTheoMa(int maNXB)
         {
-            return nxbDAL.GetNhaXuatBanTheoMa(maNXB);
+            return nxbDAL.GetNhaXuatBanTheoMaNXB(maNXB);
         }
     }
 }

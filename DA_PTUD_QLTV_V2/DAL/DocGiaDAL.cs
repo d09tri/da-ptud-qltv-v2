@@ -19,9 +19,9 @@ namespace DAL
             return db.DocGias.ToList();
         }
 
-        public List<DocGia> GetDSDocGiaTheoTen(string tendg)
+        public List<DocGia> GetDSDocGiaTheoTen(string tenDocGia)
         {
-            return db.DocGias.Where(t => t.TenDocGia.Contains(tendg)).ToList();
+            return db.DocGias.Where(t => t.TenDocGia.Contains(tenDocGia)).ToList();
         }
 
         public List<DocGia> GetDSDocGiaChuaCoTheThuVien()
@@ -46,11 +46,11 @@ namespace DAL
         }
 
 
-        public bool XoaDocGia(int madg)
+        public bool XoaDocGia(int maDocGia)
         {
             try
             {
-                DocGia dgXoa = db.DocGias.Where(t => t.MaDocGia == madg).FirstOrDefault();
+                DocGia dgXoa = db.DocGias.Where(t => t.MaDocGia == maDocGia).FirstOrDefault();
                 db.DocGias.DeleteOnSubmit(dgXoa);
                 db.SubmitChanges();
                 return true;
@@ -66,7 +66,6 @@ namespace DAL
             try
             {
                 DocGia dgSua = db.DocGias.Where(t => t.MaDocGia == dg.MaDocGia).FirstOrDefault();
-                dgSua.MaDocGia = dg.MaDocGia;
                 dgSua.TenDocGia = dg.TenDocGia;
                 dgSua.NgaySinh = dg.NgaySinh;
                 dgSua.CMND = dg.CMND;

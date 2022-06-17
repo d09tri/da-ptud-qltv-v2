@@ -34,7 +34,7 @@ namespace DAL
             return db.DauSaches.Where(t => t.MaTheLoai == maTheLoai && t.MaNXB == maNXB).ToList();
         }
 
-        public DauSach GetDauSachTheoMa(int maSach)
+        public DauSach GetDauSachTheoMaSach(int maSach)
         {
             return db.DauSaches.First(t => t.MaSach == maSach);
         }

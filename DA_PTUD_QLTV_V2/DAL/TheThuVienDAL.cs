@@ -35,8 +35,6 @@ namespace DAL
             }
         }
 
-       
-
         #region Xử lý thêm, xóa và sửa cơ bản
         public bool ThemTheThuVien(TheThuVien ttv)
         {
@@ -53,11 +51,11 @@ namespace DAL
         }
 
 
-        public bool XoaTheThuVien(int mattv)
+        public bool XoaTheThuVien(int maThe)
         {
             try
             {
-                TheThuVien ttvXoa = db.TheThuViens.Where(t => t.MaThe == mattv).FirstOrDefault();
+                TheThuVien ttvXoa = db.TheThuViens.Where(t => t.MaThe == maThe).FirstOrDefault();
                 db.TheThuViens.DeleteOnSubmit(ttvXoa);
                 db.SubmitChanges();
                 return true;
@@ -68,7 +66,7 @@ namespace DAL
             }
         }
 
-        //Sửa ngày lập, ngày hết hạn, ghi chú và tình trạng//
+        // Sửa ngày lập, ngày hết hạn, ghi chú và tình trạng
         public bool SuaTheThuVien(TheThuVien ttv)
         {
             try
