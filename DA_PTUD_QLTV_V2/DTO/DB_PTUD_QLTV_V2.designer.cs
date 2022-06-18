@@ -258,6 +258,14 @@ namespace DTO
 				return this.GetTable<view_DSPhieuTra>();
 			}
 		}
+		
+		public System.Data.Linq.Table<view_DSPhanQuyen> view_DSPhanQuyens
+		{
+			get
+			{
+				return this.GetTable<view_DSPhanQuyen>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BanIn")]
@@ -3900,6 +3908,105 @@ namespace DTO
 				if ((this._NgayTra != value))
 				{
 					this._NgayTra = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.view_DSPhanQuyen")]
+	public partial class view_DSPhanQuyen
+	{
+		
+		private int _MaNhom;
+		
+		private string _TenNhom;
+		
+		private int _MaChucNang;
+		
+		private string _TenChucNang;
+		
+		private System.Nullable<bool> _CoQuyen;
+		
+		public view_DSPhanQuyen()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhom", DbType="Int NOT NULL")]
+		public int MaNhom
+		{
+			get
+			{
+				return this._MaNhom;
+			}
+			set
+			{
+				if ((this._MaNhom != value))
+				{
+					this._MaNhom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNhom", DbType="NVarChar(100)")]
+		public string TenNhom
+		{
+			get
+			{
+				return this._TenNhom;
+			}
+			set
+			{
+				if ((this._TenNhom != value))
+				{
+					this._TenNhom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChucNang", DbType="Int NOT NULL")]
+		public int MaChucNang
+		{
+			get
+			{
+				return this._MaChucNang;
+			}
+			set
+			{
+				if ((this._MaChucNang != value))
+				{
+					this._MaChucNang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenChucNang", DbType="NVarChar(100)")]
+		public string TenChucNang
+		{
+			get
+			{
+				return this._TenChucNang;
+			}
+			set
+			{
+				if ((this._TenChucNang != value))
+				{
+					this._TenChucNang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoQuyen", DbType="Bit")]
+		public System.Nullable<bool> CoQuyen
+		{
+			get
+			{
+				return this._CoQuyen;
+			}
+			set
+			{
+				if ((this._CoQuyen != value))
+				{
+					this._CoQuyen = value;
 				}
 			}
 		}

@@ -23,5 +23,10 @@ namespace BLL
         {
             return ndDAL.GetNhanVienTheoTenDangNhap(tenDangNhap);
         }
+
+        public int GetMaNhomTuTenDangNhap(string tenDangNhap)
+        {
+            return ndDAL.GetMaNhomTuTenDangNhap(tenDangNhap);
+        }
     }
 }

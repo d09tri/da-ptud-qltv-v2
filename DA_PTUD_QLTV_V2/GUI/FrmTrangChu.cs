@@ -14,19 +14,62 @@ namespace GUI
 {
     public partial class FrmTrangChu : Form
     {
+        PhanQuyenBLL pqBLL = new PhanQuyenBLL();
         Helper helper = new Helper();
-        NhanVien nv = new NhanVien();
 
-        public FrmTrangChu(NhanVien nv)
+        NhanVien nv = new NhanVien();
+        List<view_DSPhanQuyen> lstPQ = new List<view_DSPhanQuyen>();
+        int maNhom = 0;
+
+        public FrmTrangChu(NhanVien nv, int maNhom)
         {
             InitializeComponent();
             this.nv = nv;
+            this.maNhom = maNhom;
             lblTaiKhoan.Text = "Xin chào " + nv.TenNhanVien;
         }
 
         private void FrmTrangChu_Load(object sender, EventArgs e)
         {
+            lstPQ = pqBLL.GetDSView_DSPhanQuyenTheoMaNhom(maNhom);
+            LoadPhanQuyen();
             HideSubMenu();
+        }
+
+        private void LoadPhanQuyen()
+        {
+            pnlQuanLySubMenu.Height = pnlChucNangSubMenu.Height = pnlHeThongSubMenu.Height = 0;
+            pnlQuanLySubMenu.Controls.OfType<Button>().ToList().ForEach(t => t.Visible = false);
+            pnlChucNangSubMenu.Controls.OfType<Button>().ToList().ForEach(t => t.Visible = false);
+            pnlHeThongSubMenu.Controls.OfType<Button>().ToList().ForEach(t => t.Visible = false);
+
+            foreach (view_DSPhanQuyen pq in lstPQ)
+            {
+                int index = pq.TenChucNang.IndexOf('-');
+                string menuPanel = pq.TenChucNang.Substring(0, index);
+                string subMenuButton = pq.TenChucNang.Substring(index + 1);
+
+                if (menuPanel.Equals("QL") && pq.CoQuyen == true)
+                {
+                    pnlQuanLySubMenu.Height += 40;
+                    Button btn = pnlQuanLySubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(subMenuButton));
+                    btn.Visible = true;
+                }
+                
+                if (menuPanel.Equals("CN") && pq.CoQuyen == true)
+                {
+                    pnlChucNangSubMenu.Height += 40;
+                    Button btn = pnlChucNangSubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(subMenuButton));
+                    btn.Visible = true;
+                }
+
+                if (menuPanel.Equals("HT") && pq.CoQuyen == true)
+                {
+                    pnlHeThongSubMenu.Height += 40;
+                    Button btn = pnlHeThongSubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(subMenuButton));
+                    btn.Visible = true;
+                }
+            }
         }
 
         #region Sub menu functions

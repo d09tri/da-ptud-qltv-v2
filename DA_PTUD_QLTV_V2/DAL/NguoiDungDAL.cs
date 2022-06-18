@@ -28,17 +28,21 @@ namespace DAL
 
             if (nd == null)
                 return 0;
-
-            if (nd.HoatDong == null || nd.HoatDong == false)
+            else if (nd.HoatDong == null || nd.HoatDong == false)
                 return -1;
-
-            return 1;
+            else
+                return 1;
         }
 
         public NhanVien GetNhanVienTheoTenDangNhap(string tenDangNhap)
         {
             int maNhanVien = (int)db.NguoiDungs.First(t => t.TenDangNhap == tenDangNhap).MaNhanVien;
             return nvDAL.GetNhanVienTheoMaNhanVien(maNhanVien);
+        }
+
+        public int GetMaNhomTuTenDangNhap(string tenDangNhap)
+        {
+            return (int)db.NguoiDungs.First(t => t.TenDangNhap == tenDangNhap).MaNhom;
         }
     }
 }

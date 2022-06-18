@@ -37,7 +37,8 @@ namespace GUI
             else
             {
                 NhanVien nv = ndBLL.GetNhanVienTheoTenDangNhap(txtTenDangNhap.Text);
-                FrmTrangChu frm = new FrmTrangChu(nv);
+                int maNhom = ndBLL.GetMaNhomTuTenDangNhap(txtTenDangNhap.Text);
+                FrmTrangChu frm = new FrmTrangChu(nv, maNhom);
                 frm.Show();
                 this.Hide();
             }
@@ -47,9 +48,7 @@ namespace GUI
         {
             DialogResult rs = MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (rs == DialogResult.Yes)
-            {
                 Application.Exit();
-            }
 
             return;
         }

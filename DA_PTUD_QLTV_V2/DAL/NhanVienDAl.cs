@@ -66,7 +66,7 @@ namespace DAL
                 NhanVien nvSua = db.NhanViens.Where(t => t.MaNhanVien == nv.MaNhanVien).FirstOrDefault();
                 nvSua.TenNhanVien = nv.TenNhanVien;
                 nvSua.NgaySinh = nv.NgaySinh;
-               
+
                 db.SubmitChanges();
                 return true;
             }

@@ -257,6 +257,14 @@ FROM   dbo.TheThuVien INNER JOIN
 
 select * from view_DSTheThuVien
 
+create view view_DSPhanQuyen as
+SELECT dbo.NhomNguoiDung.MaNhom, dbo.NhomNguoiDung.TenNhom, dbo.ChucNang.MaChucNang, dbo.ChucNang.TenChucNang, dbo.PhanQuyen.CoQuyen
+FROM dbo.ChucNang INNER JOIN
+     dbo.PhanQuyen ON dbo.ChucNang.MaChucNang = dbo.PhanQuyen.MaChucNang INNER JOIN
+     dbo.NhomNguoiDung ON dbo.PhanQuyen.MaNhom = dbo.NhomNguoiDung.MaNhom
+
+select * from view_DSPhanQuyen
+
 /*	======================================
 	Trigger
 	======================================	*/
@@ -388,9 +396,38 @@ insert into ChucNang values
 (N'HT-Restore'),
 (N'HT-Tài khoản')
 
+select * from ChucNang
+
+insert into ChucNang values 
+(N'QL-Nhân viên')
+
 insert into NguoiDung values
 ('triem', '123', 1, 1, 1),
 ('locus', '123', 1, 2, 2)
+
+select * from ChucNang
+
+insert into PhanQuyen values
+(1, 1, 1),
+(1, 2, 1),
+(1, 3, 0),
+(1, 4, 0),
+(1, 5, 0),
+(1, 6, 0),
+(1, 7, 1),
+(1, 8, 1),
+(1, 9, 1),
+(1, 10, 1),
+(2, 1, 1),
+(2, 2, 0),
+(2, 3, 1),
+(2, 4, 1),
+(2, 5, 1),
+(2, 6, 1),
+(2, 7, 1),
+(2, 8, 1),
+(2, 9, 0),
+(2, 10, 0)
 /*	======================================
 	Bãi thử
 	======================================	*/
