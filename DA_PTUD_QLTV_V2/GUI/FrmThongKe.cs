@@ -96,7 +96,7 @@ namespace GUI
 
             Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
             cl1.Value2 = col1;
-            cl1.ColumnWidth = 12;
+            cl1.ColumnWidth = 25.0;
 
             Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
             cl2.Value2 = col2;
@@ -104,19 +104,19 @@ namespace GUI
 
             Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
             cl3.Value2 = col3;
-            cl3.ColumnWidth = 12.0;
+            cl3.ColumnWidth = 25.0;
 
             Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
             cl4.Value2 = col4;
-            cl4.ColumnWidth = 10.5;
+            cl4.ColumnWidth = 25.0;
 
             Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
             cl5.Value2 = col5;
-            cl5.ColumnWidth = 20.5;
+            cl5.ColumnWidth = 25.0;
 
             Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
             cl6.Value2 = col6;
-            cl6.ColumnWidth = 18.5;
+            cl6.ColumnWidth = 25.0;
 
             Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "F3");
             rowHead.Font.Bold = true;

@@ -118,14 +118,14 @@ namespace GUI
 
             if (lstCTPM.Count <= 5)
             {
-                chkDat.Checked = true;
                 label6.ForeColor = label7.ForeColor = label8.ForeColor = Color.Green;
+                label8.Text = "Đủ điều kiện cho phép mượn";
                 dieuKienMuon = true;
             }
             else
             {
-                chkDat.Checked = false;
                 label6.ForeColor = label7.ForeColor = label8.ForeColor = Color.Red;
+                label8.Text = "Không đủ điều kiện cho phép mượn";
                 dieuKienMuon = false;
             }
 
@@ -140,15 +140,15 @@ namespace GUI
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
-            if (lstMaBanIn.Count <= 0)
+            if (!dieuKienMuon)
             {
-                MessageBox.Show("Chưa có đầu sách mượn, vui lòng quét đầu sách trước tiên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Độc giả không đủ điều kiện cho phép mượn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!dieuKienMuon)
+            if (lstMaBanIn.Count <= 0)
             {
-                MessageBox.Show("Độc giả không đủ điều kiện mượn tiếp, vui lòng trả sách trước khi tiếp tục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa có đầu sách mượn, vui lòng quét đầu sách trước tiên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

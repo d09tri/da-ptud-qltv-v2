@@ -38,7 +38,6 @@
             this.dgvDSCTPhieuMuonChuaTra = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chkDat = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSLDauSachChuaTra = new System.Windows.Forms.TextBox();
@@ -149,7 +148,6 @@
             // 
             this.grbDieuKien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.grbDieuKien.Controls.Add(this.dgvDSCTPhieuMuonChuaTra);
-            this.grbDieuKien.Controls.Add(this.chkDat);
             this.grbDieuKien.Controls.Add(this.label8);
             this.grbDieuKien.Controls.Add(this.label7);
             this.grbDieuKien.Controls.Add(this.txtSLDauSachChuaTra);
@@ -192,17 +190,6 @@
             this.Column2.HeaderText = "Bản in";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            // 
-            // chkDat
-            // 
-            this.chkDat.AutoSize = true;
-            this.chkDat.Enabled = false;
-            this.chkDat.Location = new System.Drawing.Point(161, 67);
-            this.chkDat.Name = "chkDat";
-            this.chkDat.Size = new System.Drawing.Size(43, 17);
-            this.chkDat.TabIndex = 15;
-            this.chkDat.Text = "Đạt";
-            this.chkDat.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -399,7 +386,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSLDauSachChuaTra;
         private System.Windows.Forms.TextBox txtSLPhieuMuonChuaTra;
-        private System.Windows.Forms.CheckBox chkDat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvDSCTPhieuMuonChuaTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

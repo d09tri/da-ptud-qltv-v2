@@ -99,6 +99,13 @@ namespace GUI
             helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyNhanVien frm = new FrmQuanLyNhanVien();
+            helper.LoadChildForm(frm, pnlMain);
+            HideSubMenu();
+        }
         #endregion
 
         #region Sub menu Chức năng
