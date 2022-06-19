@@ -135,6 +135,7 @@
             // 
             this.cmbLocNhaXuatBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbLocNhaXuatBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocNhaXuatBan.FormattingEnabled = true;
             this.cmbLocNhaXuatBan.Location = new System.Drawing.Point(83, 58);
             this.cmbLocNhaXuatBan.Name = "cmbLocNhaXuatBan";
@@ -146,6 +147,7 @@
             // 
             this.cmbLocTheLoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbLocTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocTheLoai.FormattingEnabled = true;
             this.cmbLocTheLoai.Location = new System.Drawing.Point(83, 31);
             this.cmbLocTheLoai.Name = "cmbLocTheLoai";

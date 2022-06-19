@@ -21,7 +21,5 @@ namespace DAL
             string query = string.Format("Select IDENT_CURRENT ('{0}')", tenBang);
             return Convert.ToInt32(db.ExecuteQuery<decimal>(query, new object[0]).FirstOrDefault());
         }
-
-
     }
 }

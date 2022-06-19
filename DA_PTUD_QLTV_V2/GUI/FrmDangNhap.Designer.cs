@@ -84,6 +84,7 @@
             this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
             this.txtMatKhau.Location = new System.Drawing.Point(162, 68);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(208, 20);
             this.txtMatKhau.TabIndex = 3;
             // 
@@ -150,7 +151,6 @@
             this.MinimizeBox = false;
             this.Name = "FrmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thư viện Hoa Nhài";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDangNhap_FormClosed);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

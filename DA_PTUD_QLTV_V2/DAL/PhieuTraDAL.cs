@@ -18,6 +18,11 @@ namespace DAL
             return db.PhieuTras.ToList();
         }
 
+        public List<view_DSPhieuTra> GetDSView_DSPhieuTra()
+        {
+            return db.view_DSPhieuTras.ToList();
+        }
+
         public bool TaoPhieuTra(PhieuTra pt)
         {
             try
@@ -30,11 +35,6 @@ namespace DAL
             {
                 return false;
             }
-        }
-
-        public List<view_DSPhieuTra> GetDSView_DSPhieuTra()
-        {
-            return db.view_DSPhieuTras.ToList();
         }
     }
 }

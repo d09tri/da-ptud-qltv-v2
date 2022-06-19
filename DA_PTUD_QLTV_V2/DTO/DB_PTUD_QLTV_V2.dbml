@@ -174,6 +174,24 @@
       <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.view_DSNguoiDung" Member="view_DSNguoiDungs">
+    <Type Name="view_DSNguoiDung">
+      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenNhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_DSPhanQuyen" Member="view_DSPhanQuyens">
+    <Type Name="view_DSPhanQuyen">
+      <Column Name="MaNhom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaChucNang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenChucNang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CoQuyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.view_DSPhieuMuon" Member="view_DSPhieuMuons">
     <Type Name="view_DSPhieuMuon">
       <Column Name="MaPhieuMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -192,15 +210,6 @@
       <Column Name="MaThe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TenDocGia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="NgayTra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.view_DSPhanQuyen" Member="view_DSPhanQuyens">
-    <Type Name="view_DSPhanQuyen">
-      <Column Name="MaNhom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MaChucNang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenChucNang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CoQuyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -28,7 +28,7 @@ namespace DAL
             return db.NhanViens.Where(t => t.TenNhanVien.Contains(tenNhanVien)).ToList();
         }
 
-        #region Xử lý thêm, xóa và sửa cơ bản
+        #region Xử lý thêm, xóa và sửa nhân viên
         public bool ThemNhanVien(NhanVien nv)
         {
             try

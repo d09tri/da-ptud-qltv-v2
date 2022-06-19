@@ -265,6 +265,13 @@ FROM dbo.ChucNang INNER JOIN
 
 select * from view_DSPhanQuyen
 
+create view view_DSNguoiDung as
+SELECT dbo.NguoiDung.TenDangNhap, dbo.NguoiDung.MatKhau, dbo.NhanVien.TenNhanVien, dbo.NhomNguoiDung.TenNhom, dbo.NguoiDung.HoatDong
+FROM dbo.NguoiDung INNER JOIN
+     dbo.NhanVien ON dbo.NguoiDung.MaNhanVien = dbo.NhanVien.MaNhanVien INNER JOIN
+     dbo.NhomNguoiDung ON dbo.NguoiDung.MaNhom = dbo.NhomNguoiDung.MaNhom
+
+select * from view_DSNguoiDung
 /*	======================================
 	Trigger
 	======================================	*/

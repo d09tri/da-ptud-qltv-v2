@@ -14,7 +14,8 @@ namespace GUI
     public partial class FrmQuanLyNhanVien : Form
     {
         NhanVienBLL nvBLL = new NhanVienBLL();
-        string _loaithucthi = string.Empty;
+        string loaiThucThi = string.Empty;
+
         public FrmQuanLyNhanVien()
         {
             InitializeComponent();
@@ -55,7 +56,6 @@ namespace GUI
 
         public void ThemNhanVien()
         {
-
             NhanVien nv = new NhanVien();
             nv.TenNhanVien = txtTenNhanVien.Text;
             nv.NgaySinh = dtpNgaySinh.Value;
@@ -65,7 +65,7 @@ namespace GUI
             {
                 LoadDSNhanVien();
                 LoadControlChucNang();
-                _loaithucthi = string.Empty;
+                loaiThucThi = string.Empty;
             }
             else
             {
@@ -79,7 +79,7 @@ namespace GUI
             {
                 LoadDSNhanVien();
                 LoadControlChucNang();
-                _loaithucthi = string.Empty;
+                loaiThucThi = string.Empty;
             }
             else
             {
@@ -93,13 +93,12 @@ namespace GUI
             nv.MaNhanVien = int.Parse(lblMaNhanVien.Text);
             nv.TenNhanVien = txtTenNhanVien.Text;
             nv.NgaySinh = dtpNgaySinh.Value;
-            
 
             if (nvBLL.SuaNhanVien(nv))
             {
                 LoadDSNhanVien();
                 LoadControlChucNang();
-                _loaithucthi = string.Empty;
+                loaiThucThi = string.Empty;
             }
             else
             {
@@ -114,7 +113,7 @@ namespace GUI
             lblMaNhanVien.Text =txtTenNhanVien.Text = string.Empty;
             dtpNgaySinh.Value = DateTime.Now;
             txtTenNhanVien.Enabled = dtpNgaySinh.Enabled = true;
-            _loaithucthi = "Them";
+            loaiThucThi = "Them";
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -135,7 +134,7 @@ namespace GUI
             btnLuu.Enabled = btnHuy.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = dgvDanhSachNhanVien.Enabled = false;
             txtTenNhanVien.Enabled = dtpNgaySinh.Enabled = true;
-            _loaithucthi = "Sua";
+            loaiThucThi = "Sua";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -146,7 +145,7 @@ namespace GUI
                 return;
             }
 
-            switch (_loaithucthi)
+            switch (loaiThucThi)
             {
                 case "Them":
                     ThemNhanVien();
@@ -162,7 +161,7 @@ namespace GUI
             DialogResult rs = MessageBox.Show("Bạn có muốn hủy thao tác?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                _loaithucthi = string.Empty;
+                loaiThucThi = string.Empty;
                 LoadControlChucNang();
             }
         }

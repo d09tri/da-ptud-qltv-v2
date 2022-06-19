@@ -17,5 +17,20 @@ namespace DAL
         {
             return db.view_DSPhanQuyens.Where(t => t.MaNhom == maNhom).ToList();
         }
+
+        public bool SuaPhanQuyen(PhanQuyen pq)
+        {
+            try
+            {
+                PhanQuyen pqSua = db.PhanQuyens.First(t => t.MaChucNang == pq.MaChucNang && t.MaNhom == pq.MaNhom);
+                pqSua.CoQuyen = pq.CoQuyen;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;   
+            }
+        }
     }
 }

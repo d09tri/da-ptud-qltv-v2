@@ -18,16 +18,6 @@ namespace DAL
             return db.TheThuViens.ToList();
         }
 
-        public List<view_DSTheThuVien> GetDSView_DSTheThuVien()
-        {
-            return db.view_DSTheThuViens.Select(t => t).ToList<view_DSTheThuVien>();
-        }
-
-        public List<view_DSTheThuVien> GetDSView_DSTheThuVienTheoTenDocGia(string tenDocGia)
-        {
-            return db.view_DSTheThuViens.Where(t => t.TenDocGia.Contains(tenDocGia)).Select(t => t).ToList<view_DSTheThuVien>();
-        }
-
         public TheThuVien GetTheThuVienTheoMaDocGia(int maDocGia)
         {
             try
@@ -40,7 +30,17 @@ namespace DAL
             }
         }
 
-        #region Xử lý thêm, xóa và sửa cơ bản
+        public List<view_DSTheThuVien> GetDSView_DSTheThuVien()
+        {
+            return db.view_DSTheThuViens.Select(t => t).ToList<view_DSTheThuVien>();
+        }
+
+        public List<view_DSTheThuVien> GetDSView_DSTheThuVienTheoTenDocGia(string tenDocGia)
+        {
+            return db.view_DSTheThuViens.Where(t => t.TenDocGia.Contains(tenDocGia)).Select(t => t).ToList<view_DSTheThuVien>();
+        }
+        
+        #region Xử lý thêm, xóa và sửa thẻ thư viện
         public bool ThemTheThuVien(TheThuVien ttv)
         {
             try
@@ -71,7 +71,7 @@ namespace DAL
             }
         }
 
-        // Sửa ngày lập, ngày hết hạn, ghi chú và tình trạng
+        // Chỉ sửa ngày lập, ngày hết hạn, ghi chú và tình trạng
         public bool SuaTheThuVien(TheThuVien ttv)
         {
             try

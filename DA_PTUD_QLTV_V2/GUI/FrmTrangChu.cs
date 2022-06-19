@@ -32,11 +32,11 @@ namespace GUI
         private void FrmTrangChu_Load(object sender, EventArgs e)
         {
             lstPQ = pqBLL.GetDSView_DSPhanQuyenTheoMaNhom(maNhom);
-            LoadPhanQuyen();
+            PhanQuyenNguoDung();
             HideSubMenu();
         }
 
-        private void LoadPhanQuyen()
+        private void PhanQuyenNguoDung()
         {
             pnlQuanLySubMenu.Height = pnlChucNangSubMenu.Height = pnlHeThongSubMenu.Height = 0;
             pnlQuanLySubMenu.Controls.OfType<Button>().ToList().ForEach(t => t.Visible = false);
@@ -46,28 +46,37 @@ namespace GUI
             foreach (view_DSPhanQuyen pq in lstPQ)
             {
                 int index = pq.TenChucNang.IndexOf('-');
-                string menuPanel = pq.TenChucNang.Substring(0, index);
-                string subMenuButton = pq.TenChucNang.Substring(index + 1);
+                string loaiChucNang = pq.TenChucNang.Substring(0, index);
+                string tenChucNang = pq.TenChucNang.Substring(index + 1);
 
-                if (menuPanel.Equals("QL") && pq.CoQuyen == true)
+                switch (loaiChucNang)
                 {
-                    pnlQuanLySubMenu.Height += 40;
-                    Button btn = pnlQuanLySubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(subMenuButton));
-                    btn.Visible = true;
-                }
-                
-                if (menuPanel.Equals("CN") && pq.CoQuyen == true)
-                {
-                    pnlChucNangSubMenu.Height += 40;
-                    Button btn = pnlChucNangSubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(subMenuButton));
-                    btn.Visible = true;
-                }
+                    case "QL":
+                        if (pq.CoQuyen == true)
+                        {
+                            pnlQuanLySubMenu.Height += 40;
+                            Button btn = pnlQuanLySubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(tenChucNang));
+                            btn.Visible = true;
+                        }
+                        break;
 
-                if (menuPanel.Equals("HT") && pq.CoQuyen == true)
-                {
-                    pnlHeThongSubMenu.Height += 40;
-                    Button btn = pnlHeThongSubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(subMenuButton));
-                    btn.Visible = true;
+                    case "CN":
+                        if (pq.CoQuyen == true)
+                        {
+                            pnlChucNangSubMenu.Height += 40;
+                            Button btn = pnlChucNangSubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(tenChucNang));
+                            btn.Visible = true;
+                        }
+                        break;
+
+                    case "HT":
+                        if (pq.CoQuyen == true)
+                        {
+                            pnlHeThongSubMenu.Height += 40;
+                            Button btn = pnlHeThongSubMenu.Controls.OfType<Button>().First(t => t.Text.Equals(tenChucNang));
+                            btn.Visible = true;
+                        }
+                        break;
                 }
             }
         }
@@ -187,6 +196,8 @@ namespace GUI
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
+            FrmTaiKhoan frm = new FrmTaiKhoan();
+            helper.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
         #endregion

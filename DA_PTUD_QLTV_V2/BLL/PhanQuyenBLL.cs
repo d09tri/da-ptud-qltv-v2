@@ -18,5 +18,10 @@ namespace BLL
         {
             return pqDAL.GetDSView_DSPhanQuyenTheoMaNhom(maNhom);
         }
+
+        public bool SuaPhanQuyen(PhanQuyen pq)
+        {
+            return pqDAL.SuaPhanQuyen(pq);
+        }
     }
 }
